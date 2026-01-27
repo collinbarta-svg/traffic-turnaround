@@ -57,6 +57,11 @@ const CreateInvoiceDialog = ({ open, onOpenChange, onSuccess }: CreateInvoiceDia
       return;
     }
 
+    if (action === "send" && !formData.customer_email) {
+      toast.error("Please enter customer email to send invoice");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const { data, error } = await supabase
@@ -75,9 +80,8 @@ const CreateInvoiceDialog = ({ open, onOpenChange, onSuccess }: CreateInvoiceDia
       .select()
       .single();
 
-    setIsSubmitting(false);
-
     if (error) {
+      setIsSubmitting(false);
       toast.error("Failed to create invoice");
       console.error(error);
       return;
@@ -86,22 +90,52 @@ const CreateInvoiceDialog = ({ open, onOpenChange, onSuccess }: CreateInvoiceDia
     const invoiceUrl = `${window.location.origin}/invoice/${data.id}`;
 
     if (action === "charge") {
+      setIsSubmitting(false);
       toast.success("Payment recorded successfully!");
       resetForm();
       onOpenChange(false);
       onSuccess();
     } else if (action === "copy") {
       await navigator.clipboard.writeText(invoiceUrl);
+      setIsSubmitting(false);
       toast.success("Invoice link copied to clipboard!");
       setCreatedInvoiceId(data.id);
+      onSuccess();
     } else if (action === "send") {
-      // For now, copy the link - email integration can be added later
-      await navigator.clipboard.writeText(invoiceUrl);
-      toast.success("Invoice created! Link copied - send via email or text.");
-      setCreatedInvoiceId(data.id);
-    }
+      // Send email via edge function
+      try {
+        const { error: emailError } = await supabase.functions.invoke("send-invoice-email", {
+          body: {
+            customerName: formData.customer_name,
+            customerEmail: formData.customer_email,
+            invoiceNumber: data.invoice_number,
+            serviceType: formData.service_type,
+            amount: parseFloat(formData.amount),
+            invoiceUrl,
+          },
+        });
 
-    onSuccess();
+        setIsSubmitting(false);
+
+        if (emailError) {
+          console.error("Email error:", emailError);
+          // Still copy link as fallback
+          await navigator.clipboard.writeText(invoiceUrl);
+          toast.error("Email failed to send. Invoice link copied to clipboard instead.");
+        } else {
+          toast.success(`Invoice sent to ${formData.customer_email}!`);
+        }
+        setCreatedInvoiceId(data.id);
+        onSuccess();
+      } catch (err) {
+        setIsSubmitting(false);
+        console.error("Email error:", err);
+        await navigator.clipboard.writeText(invoiceUrl);
+        toast.error("Email failed. Invoice link copied to clipboard.");
+        setCreatedInvoiceId(data.id);
+        onSuccess();
+      }
+    }
   };
 
   const handleClose = () => {
