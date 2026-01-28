@@ -1,0 +1,106 @@
+import { ArrowRight, Phone, Shield, Clock, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const HeroNew = () => {
+  return (
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 hero-gradient" />
+      <div className="absolute inset-0 tech-grid opacity-30" />
+      
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-2xl" />
+
+      {/* Content */}
+      <div className="relative z-10 container pt-24 pb-16">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-2 mb-6 opacity-0 animate-fade-up">
+            <div className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+              <Shield className="w-4 h-4 text-secondary" />
+              <span className="text-primary-foreground/90 text-sm font-medium">
+                Licensed & Insured
+              </span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+              <Award className="w-4 h-4 text-secondary" />
+              <span className="text-primary-foreground/90 text-sm font-medium">
+                24 Years Experience
+              </span>
+            </div>
+          </div>
+
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6 opacity-0 animate-fade-up stagger-1">
+            Professional Property
+            <br />
+            <span className="text-gradient">Maintenance Services</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-8 opacity-0 animate-fade-up stagger-2">
+            From snow removal to lawn care, we've been keeping Minnesota properties
+            pristine for over two decades. Get an instant estimate and experience
+            the difference of working with trusted professionals.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 opacity-0 animate-fade-up stagger-3">
+            <Button
+              size="lg"
+              className="text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 text-secondary-foreground accent-glow"
+              asChild
+            >
+              <a href="#estimator">
+                Get Instant Estimate
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20"
+              asChild
+            >
+              <a href="tel:612-298-5590">
+                <Phone className="w-5 h-5 mr-2" />
+                612-298-5590
+              </a>
+            </Button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-6 max-w-lg opacity-0 animate-fade-up stagger-4">
+            <div>
+              <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
+                24+
+              </div>
+              <div className="text-sm text-primary-foreground/70">Years Experience</div>
+            </div>
+            <div>
+              <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
+                500+
+              </div>
+              <div className="text-sm text-primary-foreground/70">Happy Clients</div>
+            </div>
+            <div>
+              <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
+                24/7
+              </div>
+              <div className="text-sm text-primary-foreground/70">Emergency Service</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in stagger-5">
+        <a href="#how-it-works" className="flex flex-col items-center gap-2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors">
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <div className="w-6 h-10 border-2 border-current rounded-full flex items-start justify-center pt-2">
+            <div className="w-1 h-2 bg-current rounded-full animate-bounce" />
+          </div>
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default HeroNew;
