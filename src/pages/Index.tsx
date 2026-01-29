@@ -2,8 +2,12 @@ import HeaderNew from "@/components/HeaderNew";
 import HeroNew from "@/components/HeroNew";
 import HowItWorks from "@/components/HowItWorks";
 import ServiceEstimator from "@/components/ServiceEstimator";
+import ServiceDetails from "@/components/ServiceDetails";
 import ServicesGrid from "@/components/ServicesGrid";
+import ProjectGallery from "@/components/ProjectGallery";
+import AboutOwner from "@/components/AboutOwner";
 import TrustSection from "@/components/TrustSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import FooterNew from "@/components/FooterNew";
 
 const Index = () => {
@@ -13,8 +17,12 @@ const Index = () => {
       <HeroNew />
       <HowItWorks />
       <ServiceEstimator />
+      <ServiceDetails />
       <ServicesGrid />
+      <ProjectGallery />
+      <AboutOwner />
       <TrustSection />
+      <ServiceAreaSection />
       <FooterNew />
     </div>
   );

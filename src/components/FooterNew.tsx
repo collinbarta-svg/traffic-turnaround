@@ -50,18 +50,10 @@ const FooterNew = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#how-it-works"
+                  href="#about"
                   className="text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#estimator"
-                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
-                >
-                  Get Estimate
+                  About James
                 </a>
               </li>
               <li>
@@ -74,10 +66,26 @@ const FooterNew = () => {
               </li>
               <li>
                 <a
-                  href="/admin"
+                  href="#estimator"
                   className="text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
-                  Admin Portal
+                  Get Estimate
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                >
+                  Our Work
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#areas"
+                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                >
+                  Service Areas
                 </a>
               </li>
             </ul>

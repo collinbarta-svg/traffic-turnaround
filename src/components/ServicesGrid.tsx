@@ -1,4 +1,4 @@
-import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets } from "lucide-react";
+import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -6,37 +6,42 @@ const services = [
   {
     icon: TreeDeciduous,
     title: "Lawn Mowing",
-    description: "Professional mowing with string trimming and debris cleanup for a pristine lawn.",
+    description: "Professional mowing with attention to detail—clean edges, proper trimming, and debris cleared. Same person every visit.",
     price: "$75",
     unit: "per ¼ acre",
+    highlights: ["Mowing & edging", "String trimming", "Debris cleanup"],
   },
   {
     icon: Leaf,
     title: "Dethatching",
-    description: "Remove harmful thatch buildup with complete waste haul-away and disposal.",
+    description: "Remove harmful thatch buildup that chokes your lawn. Complete waste removal and disposal included.",
     price: "$165",
     unit: "per ¼ acre",
+    highlights: ["Thatch removal", "Waste hauled away", "Proper disposal"],
   },
   {
     icon: Droplets,
     title: "Aerating",
-    description: "Core aeration to improve soil health, drainage, and root development.",
+    description: "Core aeration to improve soil health, water absorption, and root growth for a stronger lawn.",
     price: "$175",
     unit: "per ¼ acre",
+    highlights: ["Core aeration", "Better drainage", "Healthier roots"],
   },
   {
     icon: Sprout,
     title: "Fertilizer & Weed Control",
-    description: "Four seasonal treatments for optimal lawn nutrition and weed prevention.",
+    description: "Four seasonal treatments designed for Minnesota lawns. Balanced nutrition and targeted weed prevention.",
     price: "$150",
     unit: "per ¼ acre",
+    highlights: ["4 treatments/season", "Weed prevention", "Lawn nutrition"],
   },
   {
     icon: Snowflake,
     title: "Snow Plowing",
-    description: "Reliable snow removal including driveway plowing and walkway shoveling.",
+    description: "Reliable snow removal with hand-cleared edges, walkways, and steps. Salt/sand applied as needed for safety.",
     price: "$75+",
     unit: "per visit",
+    highlights: ["Driveway plowing", "Hand shoveling", "Salt & sand"],
   },
 ];
 
@@ -46,14 +51,14 @@ const ServicesGrid = () => {
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
-            Our Services
+            Services & Pricing
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Year-Round Property Care
           </h2>
           <p className="text-lg text-muted-foreground">
-            From spring thaw to winter blizzards, we keep your property looking its best
-            with professional-grade equipment and experienced crews.
+            From spring lawn care through winter snow removal, I provide consistent, 
+            quality service with attention to detail that larger companies can't match.
           </p>
         </div>
 
@@ -75,18 +80,30 @@ const ServicesGrid = () => {
                 {service.description}
               </p>
               
-              <div className="flex items-baseline gap-2 mb-4">
+              <ul className="space-y-1.5 mb-4">
+                {service.highlights.map((highlight) => (
+                  <li key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Check className="w-4 h-4 text-secondary flex-shrink-0" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="flex items-baseline gap-2 pt-4 border-t border-border">
                 <span className="font-heading text-2xl font-bold text-foreground">
                   {service.price}
                 </span>
                 <span className="text-sm text-muted-foreground">{service.unit}</span>
               </div>
-              
-              <p className="text-xs text-muted-foreground italic">
-                *Preliminary estimate. Final pricing after evaluation.
-              </p>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-8 max-w-2xl mx-auto">
+          <p className="text-center text-sm text-muted-foreground italic">
+            *All pricing shown is preliminary. Every property is different—final pricing 
+            confirmed after on-site evaluation. No work performed without your approval.
+          </p>
         </div>
 
         <div className="text-center mt-12">
