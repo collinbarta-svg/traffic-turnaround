@@ -7,6 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FULL_DISCLAIMER, CONFIRMATION_MESSAGE, type Service } from "@/lib/services";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface ServiceRequestFormProps {
   selectedServices: (Service & { estimatedPrice: number })[];
@@ -21,6 +23,9 @@ const formSchema = z.object({
   phone: z.string().min(10, "Please enter a valid phone number").max(20),
   address: z.string().min(5, "Please enter a complete address").max(200),
 });
+
+// Zapier webhook URL - can be configured here
+const ZAPIER_WEBHOOK_URL = "";
 
 const ServiceRequestForm = ({
   selectedServices,
@@ -38,6 +43,7 @@ const ServiceRequestForm = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const { toast } = useToast();
 
   const acreDisplay = (quarterAcres * 0.25).toFixed(2);
 
@@ -71,11 +77,40 @@ const ServiceRequestForm = ({
 
     setIsSubmitting(true);
 
-    // Simulate form submission (in production, this would go to a backend)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const { data, error } = await supabase.functions.invoke("submit-service-request", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          propertySizeAcres: quarterAcres * 0.25,
+          services: selectedServices.map((s) => ({
+            id: s.id,
+            name: s.name,
+            estimatedPrice: s.estimatedPrice,
+          })),
+          estimatedTotal: total,
+          zapierWebhookUrl: ZAPIER_WEBHOOK_URL || undefined,
+        },
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      console.log("Service request submitted:", data);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting service request:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
