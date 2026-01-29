@@ -4,39 +4,39 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 // Import project images
-import stoneWork from "@/assets/projects/stone-work.jpg";
-import gravelPath from "@/assets/projects/gravel-path.jpg";
-import landscapeFeature from "@/assets/projects/landscape-feature.jpg";
-import snowClearing from "@/assets/projects/snow-clearing.jpg";
+import snowClearing from "@/assets/projects/snow-clearing.webp";
+import stonePath from "@/assets/projects/stone-path.webp";
+import stoneWalkway from "@/assets/projects/stone-walkway.webp";
+import landscapeFeature from "@/assets/projects/landscape-feature.webp";
 
 const projects = [
   {
     id: 1,
-    image: stoneWork,
-    title: "Stone & Gravel Pathway",
-    category: "Outdoor Projects",
-    description: "Custom stone work and gravel pathway installation with clean edges and proper drainage.",
-  },
-  {
-    id: 2,
-    image: gravelPath,
-    title: "Gravel Landscape Area",
-    category: "Outdoor Projects",
-    description: "Functional gravel area with defined borders for a clean, low-maintenance outdoor space.",
-  },
-  {
-    id: 3,
-    image: landscapeFeature,
-    title: "Landscape Enhancement",
-    category: "Outdoor Projects",
-    description: "Simple landscape feature installation with attention to detail and clean finishing.",
-  },
-  {
-    id: 4,
     image: snowClearing,
     title: "Winter Property Care",
     category: "Snow Services",
-    description: "Thorough snow clearing with attention to walkways, edges, and safety.",
+    description: "Thorough snow clearing with attention to driveways, walkways, and safety—captured during an evening plowing session.",
+  },
+  {
+    id: 2,
+    image: stonePath,
+    title: "Natural Stone Pathway",
+    category: "Outdoor Projects",
+    description: "Custom flagstone pathway with mulch borders, winding through lush garden landscaping.",
+  },
+  {
+    id: 3,
+    image: stoneWalkway,
+    title: "Stone Walkway & Garden Bed",
+    category: "Outdoor Projects",
+    description: "Decorative stone walkway with curved edges, complemented by hostas and flowering plants.",
+  },
+  {
+    id: 4,
+    image: landscapeFeature,
+    title: "Landscape Enhancement",
+    category: "Outdoor Projects",
+    description: "Clean stone edging with white gravel bed, creating a low-maintenance, attractive border around mature evergreens.",
   },
 ];
 
