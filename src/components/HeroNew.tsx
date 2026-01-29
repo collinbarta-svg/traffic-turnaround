@@ -1,4 +1,4 @@
-import { ArrowRight, Phone, Shield, Clock, Award } from "lucide-react";
+import { ArrowRight, Phone, Shield, Award, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroNew = () => {
@@ -15,7 +15,13 @@ const HeroNew = () => {
       {/* Content */}
       <div className="relative z-10 container pt-24 pb-16">
         <div className="max-w-4xl">
-          <div className="flex items-center gap-2 mb-6 opacity-0 animate-fade-up">
+          <div className="flex flex-wrap items-center gap-2 mb-6 opacity-0 animate-fade-up">
+            <div className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+              <User className="w-4 h-4 text-secondary" />
+              <span className="text-primary-foreground/90 text-sm font-medium">
+                Private Local Contractor
+              </span>
+            </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
               <Shield className="w-4 h-4 text-secondary" />
               <span className="text-primary-foreground/90 text-sm font-medium">
@@ -31,15 +37,15 @@ const HeroNew = () => {
           </div>
 
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6 opacity-0 animate-fade-up stagger-1">
-            Professional Property
+            Your Local Property
             <br />
-            <span className="text-gradient">Maintenance Services</span>
+            <span className="text-gradient">Maintenance Expert</span>
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-8 opacity-0 animate-fade-up stagger-2">
-            From snow removal to lawn care, we've been keeping Minnesota properties
-            pristine for over two decades. Get an instant estimate and experience
-            the difference of working with trusted professionals.
+            Not a franchise. Not a call center. I'm James—a private, licensed contractor 
+            based in St. Michael with 24 years of hands-on experience. When you call, 
+            you're talking directly to the person who does the work.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12 opacity-0 animate-fade-up stagger-3">
@@ -76,15 +82,15 @@ const HeroNew = () => {
             </div>
             <div>
               <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
-                500+
+                Local
               </div>
-              <div className="text-sm text-primary-foreground/70">Happy Clients</div>
+              <div className="text-sm text-primary-foreground/70">Owner-Operated</div>
             </div>
             <div>
               <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
-                24/7
+                Direct
               </div>
-              <div className="text-sm text-primary-foreground/70">Emergency Service</div>
+              <div className="text-sm text-primary-foreground/70">Communication</div>
             </div>
           </div>
         </div>

@@ -1,35 +1,35 @@
-import { Shield, Clock, Award, Users, ThumbsUp, Zap } from "lucide-react";
+import { Shield, Clock, Award, User, ThumbsUp, MessageCircle } from "lucide-react";
 
 const trustPoints = [
   {
-    icon: Award,
-    title: "24 Years of Excellence",
-    description: "Over two decades of reliable service to the West Metro community",
+    icon: User,
+    title: "Owner-Operated",
+    description: "Work directly with James, not a rotating crew or call center",
   },
   {
     icon: Shield,
     title: "Licensed & Insured",
-    description: "Full liability coverage for complete peace of mind",
+    description: "Full liability coverage for complete peace of mind on every job",
+  },
+  {
+    icon: Award,
+    title: "24 Years Experience",
+    description: "Nearly three decades of reliable service to local property owners",
   },
   {
     icon: Clock,
-    title: "Reliable & Punctual",
-    description: "We show up on time, every time—no exceptions",
+    title: "Reliable & Consistent",
+    description: "Same person, same quality, same attention to detail every time",
   },
   {
-    icon: Users,
-    title: "500+ Happy Clients",
-    description: "Building lasting relationships with property owners",
+    icon: MessageCircle,
+    title: "Direct Communication",
+    description: "No middlemen—talk directly to the person doing the work",
   },
   {
     icon: ThumbsUp,
-    title: "Satisfaction Guaranteed",
-    description: "We're not done until you're completely satisfied",
-  },
-  {
-    icon: Zap,
-    title: "24/7 Emergency Service",
-    description: "Available when you need us most during snow emergencies",
+    title: "Approval Required",
+    description: "No work performed without your explicit confirmation first",
   },
 ];
 
@@ -39,14 +39,15 @@ const TrustSection = () => {
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
-            Why Choose Us
+            Why Choose a Local Contractor
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Trusted by Hundreds of Property Owners
+            The Private Contractor Difference
           </h2>
           <p className="text-lg text-muted-foreground">
-            We've built our reputation on reliability, transparency, and quality
-            workmanship. Here's why property owners continue to choose us.
+            Large companies prioritize volume. I prioritize your property. 
+            Here's why working with a local, owner-operated contractor makes 
+            all the difference.
           </p>
         </div>
 
