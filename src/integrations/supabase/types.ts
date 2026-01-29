@@ -62,6 +62,48 @@ export type Database = {
         }
         Relationships: []
       }
+      service_requests: {
+        Row: {
+          address: string
+          created_at: string
+          email: string
+          estimated_total: number
+          id: string
+          name: string
+          phone: string
+          property_size_acres: number
+          services: Json
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          email: string
+          estimated_total: number
+          id?: string
+          name: string
+          phone: string
+          property_size_acres: number
+          services: Json
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          email?: string
+          estimated_total?: number
+          id?: string
+          name?: string
+          phone?: string
+          property_size_acres?: number
+          services?: Json
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
