@@ -1,7 +1,6 @@
 import HeaderNew from "@/components/HeaderNew";
 import HeroNew from "@/components/HeroNew";
 import HowItWorks from "@/components/HowItWorks";
-import ServiceEstimator from "@/components/ServiceEstimator";
 import ServiceDetails from "@/components/ServiceDetails";
 import ServicesGrid from "@/components/ServicesGrid";
 import ProjectGallery from "@/components/ProjectGallery";
@@ -16,9 +15,8 @@ const Index = () => {
       <HeaderNew />
       <HeroNew />
       <HowItWorks />
-      <ServiceEstimator />
-      <ServiceDetails />
       <ServicesGrid />
+      <ServiceDetails />
       <ProjectGallery />
       <AboutOwner />
       <TrustSection />

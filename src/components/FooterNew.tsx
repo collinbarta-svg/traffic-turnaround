@@ -66,7 +66,7 @@ const FooterNew = () => {
               </li>
               <li>
                 <a
-                  href="#estimator"
+                  href="/estimate"
                   className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
                   Get Estimate

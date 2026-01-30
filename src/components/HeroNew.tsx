@@ -55,7 +55,7 @@ const HeroNew = () => {
               className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 bg-secondary hover:bg-secondary/90 text-secondary-foreground accent-glow w-full sm:w-auto"
               asChild
             >
-              <a href="#estimator">
+              <a href="/estimate">
                 Get Instant Estimate
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
