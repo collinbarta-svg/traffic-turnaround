@@ -2,8 +2,10 @@ export interface Service {
   id: string;
   name: string;
   description: string;
-  pricePerQuarterAcre: number;
+  basePrice: number;
+  additionalQuarterAcrePrice: number;
   isPerVisit?: boolean;
+  isCustom?: boolean;
   features: string[];
   icon: string;
 }
@@ -13,7 +15,8 @@ export const services: Service[] = [
     id: "lawn-mowing",
     name: "Lawn Mowing",
     description: "Complete lawn care including mowing, string trimming, and blowing",
-    pricePerQuarterAcre: 75,
+    basePrice: 75,
+    additionalQuarterAcrePrice: 25,
     features: ["Professional mowing", "String trimming", "Debris blowing"],
     icon: "grass",
   },
@@ -21,7 +24,8 @@ export const services: Service[] = [
     id: "dethatching",
     name: "Dethatching",
     description: "Remove thatch buildup to promote healthy lawn growth",
-    pricePerQuarterAcre: 165,
+    basePrice: 165,
+    additionalQuarterAcrePrice: 25,
     features: ["Thatch removal", "Waste haul-away", "Proper disposal"],
     icon: "rake",
   },
@@ -29,7 +33,8 @@ export const services: Service[] = [
     id: "aerating",
     name: "Aerating",
     description: "Core aeration to improve soil health and root growth",
-    pricePerQuarterAcre: 175,
+    basePrice: 175,
+    additionalQuarterAcrePrice: 25,
     features: ["Core aeration", "Improved drainage", "Better nutrient absorption"],
     icon: "shovel",
   },
@@ -37,7 +42,8 @@ export const services: Service[] = [
     id: "fertilizer-weed-control",
     name: "Fertilizer & Weed Control",
     description: "Four seasonal treatments for a healthy, weed-free lawn",
-    pricePerQuarterAcre: 150,
+    basePrice: 150,
+    additionalQuarterAcrePrice: 25,
     features: ["Four treatments per season", "Weed prevention", "Lawn nutrition"],
     icon: "spray",
   },
@@ -45,7 +51,8 @@ export const services: Service[] = [
     id: "snow-plowing",
     name: "Snow Plowing",
     description: "Reliable snow removal to keep your property safe and accessible",
-    pricePerQuarterAcre: 75,
+    basePrice: 75,
+    additionalQuarterAcrePrice: 0,
     isPerVisit: true,
     features: ["Driveway plowing", "Sidewalk shoveling", "Front steps clearing"],
     icon: "snowflake",
@@ -59,7 +66,12 @@ export const FULL_DISCLAIMER = "All prices shown are approximate estimates and s
 export const CONFIRMATION_MESSAGE = "Thank you for your request. A team member will contact you to schedule an on-site evaluation and confirm final pricing before any service is performed.";
 
 export function calculateServicePrice(service: Service, quarterAcres: number): number {
-  return service.pricePerQuarterAcre * quarterAcres;
+  if (service.isPerVisit || service.isCustom) {
+    return service.basePrice;
+  }
+  // Base price for first 1/4 acre, then +$25 for each additional 1/4 acre
+  const additionalQuarterAcres = Math.max(0, quarterAcres - 1);
+  return service.basePrice + (additionalQuarterAcres * service.additionalQuarterAcrePrice);
 }
 
 export function calculateTotal(selectedServices: string[], quarterAcres: number): number {

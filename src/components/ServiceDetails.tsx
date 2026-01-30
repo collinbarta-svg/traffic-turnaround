@@ -8,9 +8,9 @@ const snowFeatures = [
   "Sidewalk clearing from door to street",
   "Front steps and entryway cleared",
   "All edges carefully finished—no snow ridges left behind",
-  "Salt and sand applied as needed for traction and safety",
+  "Salt and sand available at $25 per application",
   "Every property evaluated individually for fair pricing",
-  "Reliable service, not mass-produced—quality over volume",
+  "Reliable service with consistent results—quality over volume",
 ];
 
 const lawnFeatures = [
@@ -21,7 +21,7 @@ const lawnFeatures = [
   "Core aeration for healthier root development",
   "Seasonal fertilizer and weed control treatments",
   "Attention to detail on every visit",
-  "Personalized service from the same person every time",
+  "Personalized service with work personally reviewed",
 ];
 
 const ServiceDetails = () => {
@@ -36,9 +36,9 @@ const ServiceDetails = () => {
             Quality Work, Done Right
           </h2>
           <p className="text-lg text-muted-foreground">
-            As a private contractor, I take the time to do things properly. 
+            As a family-owned company, we take the time to do things properly. 
             No rushing, no cutting corners, no rotating crews. Just consistent, 
-            detail-focused work from someone who takes pride in the results.
+            detail-focused work from people who take pride in the results.
           </p>
         </div>
 
@@ -58,10 +58,10 @@ const ServiceDetails = () => {
             </div>
             
             <p className="text-muted-foreground mb-6">
-              When winter hits, you need someone you can count on. My snow services 
-              go beyond basic plowing—I clear edges, shovel walkways by hand, and 
-              make sure your property is safe and accessible. No rushing to the 
-              next job, no sloppy work.
+              When winter hits, you need someone you can count on. Our snow services 
+              go beyond basic plowing—we clear edges, shovel walkways by hand, and 
+              make sure your property is safe and accessible. Family-owned businesses 
+              often offer better value and flexibility than large companies.
             </p>
 
             <ul className="space-y-3 mb-8">
@@ -77,7 +77,7 @@ const ServiceDetails = () => {
               <p className="text-sm text-muted-foreground">
                 <strong className="text-foreground">Snow plowing starts at $75 per visit</strong> — 
                 includes plowing plus hand shoveling. Final pricing based on property 
-                evaluation. Salt/sand applied as conditions require.
+                evaluation. Salt & sand: $25 per application.
               </p>
             </div>
           </Card>
@@ -97,10 +97,10 @@ const ServiceDetails = () => {
             </div>
             
             <p className="text-muted-foreground mb-6">
-              Your lawn deserves more than a quick once-over. I take time on every 
+              Your lawn deserves more than a quick once-over. We take time on every 
               property to ensure clean edges, proper trimming, and the kind of 
               attention to detail that large crews simply can't provide. Consistent 
-              service from the same person every time.
+              service from the same team every time, with work personally reviewed.
             </p>
 
             <ul className="space-y-3 mb-8">
@@ -114,8 +114,9 @@ const ServiceDetails = () => {
 
             <div className="bg-muted/50 rounded-lg p-4">
               <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">All lawn services priced per quarter acre</strong> — 
-                use the estimator above for preliminary pricing. Final pricing confirmed 
+                <strong className="text-foreground">Lawn services priced per quarter acre</strong> — 
+                base price for first ¼ acre, then $25 for each additional ¼ acre.
+                Use the estimator above for preliminary pricing. Final pricing confirmed 
                 after on-site evaluation.
               </p>
             </div>

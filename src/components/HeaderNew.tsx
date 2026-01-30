@@ -35,15 +35,15 @@ const HeaderNew = () => {
           <a href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
               <span className="font-heading font-bold text-secondary-foreground text-lg">
-                WM
+                JP
               </span>
             </div>
             <div className="hidden sm:block">
               <div className={`font-heading font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-                West Metro
+                JP Grounds & Snow
               </div>
               <div className={`text-xs ${isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/70'}`}>
-                Snow Plowing LLC
+                Family-Owned Since {new Date().getFullYear() - 24}
               </div>
             </div>
           </a>

@@ -24,7 +24,7 @@ const steps = [
   {
     icon: Wrench,
     title: "Service Performed",
-    description: "Our professional team completes the work to your satisfaction",
+    description: "Our team completes the work to your satisfaction",
   },
 ];
 
