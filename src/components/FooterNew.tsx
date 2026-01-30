@@ -2,43 +2,43 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const FooterNew = () => {
   return (
-    <footer id="contact" className="bg-primary text-primary-foreground py-16">
+    <footer id="contact" className="bg-primary text-primary-foreground py-10 sm:py-16">
       <div className="container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-                <span className="font-heading font-bold text-secondary-foreground text-lg">
+          <div className="col-span-2 lg:col-span-2">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+                <span className="font-heading font-bold text-secondary-foreground text-base sm:text-lg">
                   JP
                 </span>
               </div>
               <div>
-                <div className="font-heading font-bold text-lg">JP Grounds & Snow</div>
-                <div className="text-sm text-primary-foreground/70">Family-Owned & Locally Operated</div>
+                <div className="font-heading font-bold text-base sm:text-lg">JP Grounds & Snow</div>
+                <div className="text-xs sm:text-sm text-primary-foreground/70">Family-Owned & Locally Operated</div>
               </div>
             </div>
-            <p className="text-primary-foreground/80 max-w-sm mb-6">
+            <p className="text-sm sm:text-base text-primary-foreground/80 max-w-sm mb-4 sm:mb-6">
               Family-owned property maintenance services proudly based in St. Michael, MN.
               Licensed, insured, and committed to consistent, quality results for over 24 years.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <a
                 href="tel:612-298-5590"
-                className="flex items-center gap-3 text-primary-foreground/80 hover:text-secondary transition-colors"
+                className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-primary-foreground/80 hover:text-secondary transition-colors"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 sm:w-5 h-4 sm:h-5" />
                 612-298-5590
               </a>
               <a
                 href="mailto:info@jpgroundsandsnow.com"
-                className="flex items-center gap-3 text-primary-foreground/80 hover:text-secondary transition-colors"
+                className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-primary-foreground/80 hover:text-secondary transition-colors break-all"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                 info@jpgroundsandsnow.com
               </a>
-              <div className="flex items-start gap-3 text-primary-foreground/80">
-                <MapPin className="w-5 h-5 mt-0.5" />
+              <div className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-primary-foreground/80">
+                <MapPin className="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 flex-shrink-0" />
                 <span>Locally operated in St. Michael, Minnesota</span>
               </div>
             </div>
@@ -46,12 +46,12 @@ const FooterNew = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-heading font-semibold text-base sm:text-lg mb-3 sm:mb-4">Quick Links</h4>
+            <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <a
                   href="#about"
-                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
                   About Us
                 </a>
@@ -59,7 +59,7 @@ const FooterNew = () => {
               <li>
                 <a
                   href="#services"
-                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
                   Services
                 </a>
@@ -67,7 +67,7 @@ const FooterNew = () => {
               <li>
                 <a
                   href="#estimator"
-                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
                   Get Estimate
                 </a>
@@ -75,7 +75,7 @@ const FooterNew = () => {
               <li>
                 <a
                   href="#projects"
-                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
                   Our Work
                 </a>
@@ -83,7 +83,7 @@ const FooterNew = () => {
               <li>
                 <a
                   href="#areas"
-                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
                   Service Areas
                 </a>
@@ -91,7 +91,7 @@ const FooterNew = () => {
               <li>
                 <a
                   href="/admin"
-                  className="text-primary-foreground/50 hover:text-secondary transition-colors text-sm"
+                  className="text-xs sm:text-sm text-primary-foreground/50 hover:text-secondary transition-colors"
                 >
                   Admin
                 </a>
@@ -101,36 +101,36 @@ const FooterNew = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Services</h4>
-            <ul className="space-y-2">
+            <h4 className="font-heading font-semibold text-base sm:text-lg mb-3 sm:mb-4">Services</h4>
+            <ul className="space-y-1.5 sm:space-y-2">
               <li>
-                <span className="text-primary-foreground/70">Lawn Mowing</span>
+                <span className="text-sm sm:text-base text-primary-foreground/70">Lawn Mowing</span>
               </li>
               <li>
-                <span className="text-primary-foreground/70">Dethatching</span>
+                <span className="text-sm sm:text-base text-primary-foreground/70">Dethatching</span>
               </li>
               <li>
-                <span className="text-primary-foreground/70">Aerating</span>
+                <span className="text-sm sm:text-base text-primary-foreground/70">Aerating</span>
               </li>
               <li>
-                <span className="text-primary-foreground/70">Fertilizer & Weed Control</span>
+                <span className="text-sm sm:text-base text-primary-foreground/70">Fertilizer & Weed Control</span>
               </li>
               <li>
-                <span className="text-primary-foreground/70">Snow Plowing</span>
+                <span className="text-sm sm:text-base text-primary-foreground/70">Snow Plowing</span>
               </li>
               <li>
-                <span className="text-primary-foreground/70">Brush Cleanup</span>
+                <span className="text-sm sm:text-base text-primary-foreground/70">Brush Cleanup</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-primary-foreground/60">
+        <div className="border-t border-primary-foreground/20 pt-6 sm:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+            <p className="text-xs sm:text-sm text-primary-foreground/60 text-center md:text-left">
               © {new Date().getFullYear()} JP Grounds & Snow. All rights reserved.
             </p>
-            <p className="text-sm text-primary-foreground/60">
+            <p className="text-xs sm:text-sm text-primary-foreground/60 text-center md:text-right">
               Licensed & Insured | Family-Owned Since {new Date().getFullYear() - 24}
             </p>
           </div>

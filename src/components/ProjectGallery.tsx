@@ -44,22 +44,22 @@ const ProjectGallery = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section id="projects" className="py-20 md:py-28 section-gradient">
+    <section id="projects" className="py-12 sm:py-20 md:py-28 section-gradient">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/10 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             Our Work
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Real Projects, Real Results
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-2">
             See the quality and attention to detail that goes into every project. 
             From snow removal to outdoor improvements, every job is completed with care.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-8 sm:mb-12">
           {projects.map((project) => (
             <Card
               key={project.id}
@@ -73,11 +73,11 @@ const ProjectGallery = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <span className="text-xs text-secondary font-medium uppercase tracking-wider">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+                    <span className="text-[10px] sm:text-xs text-secondary font-medium uppercase tracking-wider">
                       {project.category}
                     </span>
-                    <h3 className="font-heading font-bold text-primary-foreground mt-1">
+                    <h3 className="font-heading font-bold text-primary-foreground mt-1 text-sm sm:text-base">
                       {project.title}
                     </h3>
                   </div>
@@ -87,18 +87,18 @@ const ProjectGallery = () => {
           ))}
         </div>
 
-        <div className="bg-card border border-border rounded-xl p-8 max-w-4xl mx-auto">
+        <div className="bg-card border border-border rounded-xl p-5 sm:p-8 max-w-4xl mx-auto">
           <div className="text-center">
-            <h3 className="font-heading text-xl font-bold text-foreground mb-3">
+            <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">
               Custom Outdoor Projects Available
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
               In addition to regular lawn care and snow services, we also complete basic, 
               functional outdoor improvement projects—stone work, landscape features, 
               brush cleanup, and similar enhancements. These custom projects are 
               available by request and discussed after initial contact.
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               Interested in a custom outdoor project? Call{" "}
               <a href="tel:612-298-5590" className="text-secondary hover:underline font-medium">
                 612-298-5590
@@ -120,14 +120,14 @@ const ProjectGallery = () => {
                   alt={selectedProject.title}
                   className="w-full aspect-video object-cover"
                 />
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <span className="text-xs text-secondary font-medium uppercase tracking-wider">
                     {selectedProject.category}
                   </span>
-                  <h3 className="font-heading text-2xl font-bold text-foreground mt-1 mb-2">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground mt-1 mb-2">
                     {selectedProject.title}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     {selectedProject.description}
                   </p>
                 </div>

@@ -35,36 +35,36 @@ const trustPoints = [
 
 const TrustSection = () => {
   return (
-    <section className="py-20 md:py-28 section-gradient">
+    <section className="py-12 sm:py-20 md:py-28 section-gradient">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/10 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             Why Choose Us
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             The Family-Owned Difference
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-2">
             Large companies prioritize volume. We prioritize your property. 
             Here's why working with a local, family-owned company makes 
             all the difference.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {trustPoints.map((point, index) => (
             <div
               key={point.title}
-              className="group p-6 rounded-xl bg-card border border-border transition-all duration-300 card-elevated"
+              className="group p-4 sm:p-6 rounded-xl bg-card border border-border transition-all duration-300 card-elevated"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">
-                <point.icon className="w-6 h-6" />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">
+                <point.icon className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
+              <h3 className="font-heading text-sm sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">
                 {point.title}
               </h3>
-              <p className="text-muted-foreground">{point.description}</p>
+              <p className="text-xs sm:text-base text-muted-foreground">{point.description}</p>
             </div>
           ))}
         </div>

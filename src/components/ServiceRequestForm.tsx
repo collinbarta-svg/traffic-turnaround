@@ -115,27 +115,27 @@ const ServiceRequestForm = ({
 
   if (isSubmitted) {
     return (
-      <section className="py-20 md:py-28 section-gradient">
+      <section className="py-12 sm:py-20 md:py-28 section-gradient">
         <div className="container">
-          <Card className="max-w-2xl mx-auto p-8 text-center">
-            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-secondary" />
+          <Card className="max-w-2xl mx-auto p-5 sm:p-8 text-center">
+            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <CheckCircle className="w-6 sm:w-8 h-6 sm:h-8 text-secondary" />
             </div>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4">
               Request Submitted!
             </h2>
-            <p className="text-muted-foreground mb-6">{CONFIRMATION_MESSAGE}</p>
-            <div className="bg-muted/50 rounded-lg p-4 mb-6">
-              <h4 className="font-heading font-semibold text-foreground mb-2">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{CONFIRMATION_MESSAGE}</p>
+            <div className="bg-muted/50 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+              <h4 className="font-heading font-semibold text-foreground mb-2 text-sm sm:text-base">
                 Your Request Summary
               </h4>
-              <div className="text-sm text-muted-foreground space-y-1">
+              <div className="text-xs sm:text-sm text-muted-foreground space-y-1">
                 <p>Property Size: {acreDisplay} acres</p>
                 <p>Services: {selectedServices.map((s) => s.name).join(", ")}</p>
                 <p>Estimated Total: ${total.toLocaleString()}</p>
               </div>
             </div>
-            <Button onClick={onBack} variant="outline">
+            <Button onClick={onBack} variant="outline" className="w-full sm:w-auto">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Start New Estimate
             </Button>
@@ -146,43 +146,43 @@ const ServiceRequestForm = ({
   }
 
   return (
-    <section className="py-20 md:py-28 section-gradient">
+    <section className="py-12 sm:py-20 md:py-28 section-gradient">
       <div className="container">
         <div className="max-w-4xl mx-auto">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-foreground mb-4 sm:mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Estimator
           </button>
 
-          <div className="grid md:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-5 gap-6 sm:gap-8">
             {/* Form */}
             <div className="md:col-span-3">
-              <Card className="p-6 md:p-8">
-                <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
+              <Card className="p-4 sm:p-6 md:p-8">
+                <h2 className="font-heading text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">
                   Request Service
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name" className="text-sm sm:text-base">Full Name *</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="John Smith"
-                      className={errors.name ? "border-destructive" : ""}
+                      className={`mt-1.5 ${errors.name ? "border-destructive" : ""}`}
                     />
                     {errors.name && (
-                      <p className="text-sm text-destructive mt-1">{errors.name}</p>
+                      <p className="text-xs sm:text-sm text-destructive mt-1">{errors.name}</p>
                     )}
                   </div>
 
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email" className="text-sm sm:text-base">Email Address *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -190,15 +190,15 @@ const ServiceRequestForm = ({
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="john@example.com"
-                      className={errors.email ? "border-destructive" : ""}
+                      className={`mt-1.5 ${errors.email ? "border-destructive" : ""}`}
                     />
                     {errors.email && (
-                      <p className="text-sm text-destructive mt-1">{errors.email}</p>
+                      <p className="text-xs sm:text-sm text-destructive mt-1">{errors.email}</p>
                     )}
                   </div>
 
                   <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone" className="text-sm sm:text-base">Phone Number *</Label>
                     <Input
                       id="phone"
                       name="phone"
@@ -206,47 +206,48 @@ const ServiceRequestForm = ({
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="(612) 555-0123"
-                      className={errors.phone ? "border-destructive" : ""}
+                      className={`mt-1.5 ${errors.phone ? "border-destructive" : ""}`}
                     />
                     {errors.phone && (
-                      <p className="text-sm text-destructive mt-1">{errors.phone}</p>
+                      <p className="text-xs sm:text-sm text-destructive mt-1">{errors.phone}</p>
                     )}
                   </div>
 
                   <div>
-                    <Label htmlFor="address">Property Address *</Label>
+                    <Label htmlFor="address" className="text-sm sm:text-base">Property Address *</Label>
                     <Input
                       id="address"
                       name="address"
                       value={formData.address}
                       onChange={handleInputChange}
                       placeholder="123 Main St, Minneapolis, MN 55401"
-                      className={errors.address ? "border-destructive" : ""}
+                      className={`mt-1.5 ${errors.address ? "border-destructive" : ""}`}
                     />
                     {errors.address && (
-                      <p className="text-sm text-destructive mt-1">{errors.address}</p>
+                      <p className="text-xs sm:text-sm text-destructive mt-1">{errors.address}</p>
                     )}
                   </div>
 
                   {/* Disclaimer */}
-                  <div className="bg-muted/50 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertCircle className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
-                      <p className="text-sm text-muted-foreground">{FULL_DISCLAIMER}</p>
+                  <div className="bg-muted/50 rounded-lg p-3 sm:p-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <AlertCircle className="w-4 sm:w-5 h-4 sm:h-5 text-muted-foreground mt-0.5 shrink-0" />
+                      <p className="text-xs sm:text-sm text-muted-foreground">{FULL_DISCLAIMER}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-2 sm:gap-3">
                     <Checkbox
                       id="disclaimer"
                       checked={disclaimerAccepted}
                       onCheckedChange={(checked) =>
                         setDisclaimerAccepted(checked as boolean)
                       }
+                      className="mt-0.5"
                     />
                     <Label
                       htmlFor="disclaimer"
-                      className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+                      className="text-xs sm:text-sm text-muted-foreground leading-relaxed cursor-pointer"
                     >
                       I understand that all prices are estimates, do not include sales
                       tax, and that final pricing will be determined after an on-site
@@ -275,21 +276,21 @@ const ServiceRequestForm = ({
             </div>
 
             {/* Summary */}
-            <div className="md:col-span-2">
-              <Card className="p-6 sticky top-24">
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-4">
+            <div className="md:col-span-2 order-first md:order-last">
+              <Card className="p-4 sm:p-6 md:sticky md:top-24">
+                <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">
                   Order Summary
                 </h3>
 
-                <div className="space-y-3 mb-4">
-                  <div className="flex justify-between text-sm">
+                <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
+                  <div className="flex justify-between text-xs sm:text-sm">
                     <span className="text-muted-foreground">Property Size</span>
                     <span className="font-medium">{acreDisplay} acres</span>
                   </div>
                   {selectedServices.map((service) => (
                     <div
                       key={service.id}
-                      className="flex justify-between py-2 border-b border-border text-sm"
+                      className="flex justify-between py-2 border-b border-border text-xs sm:text-sm"
                     >
                       <span className="text-foreground">{service.name}</span>
                       <span className="font-medium">
@@ -300,14 +301,14 @@ const ServiceRequestForm = ({
                   ))}
                 </div>
 
-                <div className="border-t-2 border-border pt-4">
+                <div className="border-t-2 border-border pt-3 sm:pt-4">
                   <div className="flex justify-between">
-                    <span className="font-heading font-semibold">Estimated Total</span>
-                    <span className="font-heading font-bold text-xl text-secondary">
+                    <span className="font-heading font-semibold text-sm sm:text-base">Estimated Total</span>
+                    <span className="font-heading font-bold text-lg sm:text-xl text-secondary">
                       ${total.toLocaleString()}
                     </span>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-2 italic">
+                  <p className="text-[10px] sm:text-xs text-muted-foreground mt-2 italic">
                     * Estimate only. Final pricing determined after on-site evaluation.
                   </p>
                 </div>
