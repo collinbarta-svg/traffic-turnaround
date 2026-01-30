@@ -44,9 +44,9 @@ const HeroNew = () => {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-6 sm:mb-8 opacity-0 animate-fade-up stagger-2 leading-relaxed">
-            Not a franchise. Not a call center. We're a family-owned, licensed company 
-            based in St. Michael with 24 years of hands-on experience. When you call, 
-            you're talking directly to the people who do the work.
+            We're a family-owned, licensed company based in St. Michael with 24 years 
+            of hands-on experience. When you call, you're talking directly to the 
+            people who do the work.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 opacity-0 animate-fade-up stagger-3">
