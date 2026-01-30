@@ -249,9 +249,9 @@ const ServiceRequestForm = ({
                       htmlFor="disclaimer"
                       className="text-xs sm:text-sm text-muted-foreground leading-relaxed cursor-pointer"
                     >
-                      I understand that all prices are estimates, do not include sales
+                      By submitting, you understand that all prices are estimates, do not include sales
                       tax, and that final pricing will be determined after an on-site
-                      evaluation. I agree that no work will be performed without my
+                      evaluation. No work will be performed without your
                       approval of the final estimate.
                     </Label>
                   </div>
