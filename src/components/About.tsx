@@ -37,22 +37,22 @@ const About = () => {
               <span className="text-gradient">Property Expert</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Hi, my name is James. I'm a private licensed and insured contractor who provides 
-              quality outdoor property maintenance. I live in Saint Michael and service the 
-              entire West Metro area.
+              We're a family-owned, licensed and insured company providing quality outdoor 
+              property maintenance. Based in St. Michael, we serve our local community 
+              with pride.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
-              With 24 years of experience, I enjoy making peoples' homes and businesses look 
+              With 24 years of experience, we enjoy making peoples' homes and businesses look 
               and feel nicer. Whether you need help keeping the lawn nice during summer or 
-              the snow cleared during winter — I look forward to serving you.
+              the snow cleared during winter — we look forward to serving you.
             </p>
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                <span className="font-heading text-2xl font-bold text-primary-foreground">J</span>
+                <span className="font-heading text-2xl font-bold text-primary-foreground">JP</span>
               </div>
               <div>
-                <div className="font-heading font-bold text-foreground">James</div>
-                <div className="text-sm text-muted-foreground">Owner & Operator</div>
+                <div className="font-heading font-bold text-foreground">JP Grounds & Snow</div>
+                <div className="text-sm text-muted-foreground">Family-Owned & Operated</div>
               </div>
             </div>
           </div>
