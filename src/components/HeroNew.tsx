@@ -17,24 +17,24 @@ const HeroNew = () => {
         <div className="max-w-4xl">
           {/* Trust badges - horizontal scroll on mobile */}
           <div className="flex flex-wrap items-center gap-2 mb-4 sm:mb-6 opacity-0 animate-fade-up">
-            <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+            <a href="#about" className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-colors cursor-pointer">
               <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
               <span className="text-primary-foreground/90 text-xs sm:text-sm font-medium">
                 Family-Owned
               </span>
-            </div>
-            <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+            </a>
+            <a href="#about" className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-colors cursor-pointer">
               <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
               <span className="text-primary-foreground/90 text-xs sm:text-sm font-medium">
                 Licensed & Insured
               </span>
-            </div>
-            <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+            </a>
+            <a href="#about" className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-colors cursor-pointer">
               <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
               <span className="text-primary-foreground/90 text-xs sm:text-sm font-medium">
                 24 Years Experience
               </span>
-            </div>
+            </a>
           </div>
 
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6 opacity-0 animate-fade-up stagger-1">
