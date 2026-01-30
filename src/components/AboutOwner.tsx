@@ -46,9 +46,8 @@ const AboutOwner = () => {
               and honest communication.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
-              Unlike large national franchises that rotate crews and prioritize volume, we take 
-              a hands-on approach to every property we service. When you call, you're talking 
-              directly to the people who actually do the work. This means consistent 
+              We take a hands-on approach to every property we service. When you call, 
+              you're talking directly to the people who actually do the work. This means consistent
               results, personalized service, and someone who knows your property inside and out.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8">

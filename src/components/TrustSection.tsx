@@ -45,9 +45,9 @@ const TrustSection = () => {
             The Family-Owned Difference
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground px-2">
-            Large companies prioritize volume. We prioritize your property. 
-            Here's why working with a local, family-owned company makes 
-            all the difference.
+            We prioritize your property and take pride in every job. 
+            Here's what you can expect when working with our 
+            family-owned team.
           </p>
         </div>
 

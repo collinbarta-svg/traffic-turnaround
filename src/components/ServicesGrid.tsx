@@ -66,7 +66,7 @@ const ServicesGrid = () => {
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground px-2">
             From spring lawn care through winter snow removal, we provide consistent, 
-            quality service with the attention to detail that larger companies can't match.
+            quality service with careful attention to detail on every property.
           </p>
         </div>
 

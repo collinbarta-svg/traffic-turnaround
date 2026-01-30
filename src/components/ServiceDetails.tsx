@@ -60,8 +60,8 @@ const ServiceDetails = () => {
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               When winter hits, you need someone you can count on. Our snow services 
               go beyond basic plowing—we clear edges, shovel walkways by hand, and 
-              make sure your property is safe and accessible. Family-owned businesses 
-              often offer better value and flexibility than large companies.
+              make sure your property is safe and accessible. We take pride in 
+              providing reliable service and fair, transparent pricing.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
@@ -98,9 +98,9 @@ const ServiceDetails = () => {
             
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               Your lawn deserves more than a quick once-over. We take time on every 
-              property to ensure clean edges, proper trimming, and the kind of 
-              attention to detail that large crews simply can't provide. Consistent 
-              service from the same team every time, with work personally reviewed.
+              property to ensure clean edges, proper trimming, and careful attention 
+              to detail. Consistent service from the same team every time, with work 
+              personally reviewed.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
