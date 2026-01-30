@@ -89,45 +89,45 @@ const ServiceEstimator = () => {
   }
 
   return (
-    <section id="estimator" className="py-20 md:py-28 section-gradient tech-grid">
+    <section id="estimator" className="py-12 sm:py-20 md:py-28 section-gradient tech-grid">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-semibold rounded-full mb-4">
-            <Calculator className="w-4 h-4" />
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/10 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
+            <Calculator className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
             Instant Estimate
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Get Your Free Estimate
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-2">
             Select your services and property size to see preliminary pricing instantly.
             All estimates are subject to on-site evaluation.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {/* Service Selection */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="font-heading text-xl font-semibold text-foreground mb-4">
+            <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">
               1. Select Services
             </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {services.map((service) => {
                 const isSelected = selectedServices.includes(service.id);
                 const priceInfo = getPriceDisplay(service);
                 return (
                   <Card
                     key={service.id}
-                    className={`p-5 cursor-pointer transition-all duration-300 ${
+                    className={`p-4 sm:p-5 cursor-pointer transition-all duration-300 ${
                       isSelected
                         ? "border-secondary bg-secondary/5 ring-2 ring-secondary/20"
                         : "hover:border-muted-foreground/30"
                     }`}
                     onClick={() => toggleService(service.id)}
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
                       <div
-                        className={`p-2.5 rounded-lg transition-colors ${
+                        className={`p-2 sm:p-2.5 rounded-lg transition-colors flex-shrink-0 ${
                           isSelected
                             ? "bg-secondary text-secondary-foreground"
                             : "bg-muted text-muted-foreground"
@@ -135,13 +135,13 @@ const ServiceEstimator = () => {
                       >
                         <ServiceIcon icon={service.icon} />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-heading font-semibold text-foreground">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between mb-1 gap-2">
+                          <h4 className="font-heading font-semibold text-foreground text-sm sm:text-base truncate">
                             {service.name}
                           </h4>
                           <div
-                            className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                            className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors flex-shrink-0 ${
                               isSelected
                                 ? "bg-secondary border-secondary"
                                 : "border-muted-foreground/30"
@@ -150,14 +150,14 @@ const ServiceEstimator = () => {
                             {isSelected && <Check className="w-3 h-3 text-secondary-foreground" />}
                           </div>
                         </div>
-                        <p className="text-sm text-muted-foreground mb-2">
+                        <p className="text-xs sm:text-sm text-muted-foreground mb-2 line-clamp-2">
                           {service.description}
                         </p>
-                        <div className="flex items-baseline gap-1">
-                          <span className="font-heading font-bold text-lg text-foreground">
+                        <div className="flex items-baseline gap-1 flex-wrap">
+                          <span className="font-heading font-bold text-base sm:text-lg text-foreground">
                             {priceInfo.price}
                           </span>
-                          <span className="text-sm text-muted-foreground">
+                          <span className="text-xs sm:text-sm text-muted-foreground">
                             {priceInfo.unit}
                           </span>
                         </div>
@@ -169,42 +169,42 @@ const ServiceEstimator = () => {
             </div>
 
             {/* Property Size */}
-            <div className="mt-8">
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-4">
+            <div className="mt-6 sm:mt-8">
+              <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">
                 2. Property Size
               </h3>
-              <Card className="p-6">
-                <div className="flex items-center justify-between">
+              <Card className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
-                    <p className="text-muted-foreground mb-1">
+                    <p className="text-sm sm:text-base text-muted-foreground mb-1">
                       Enter your property size in quarter-acre increments
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xs sm:text-sm text-muted-foreground">
                       (rounded up to the nearest ¼ acre)
                     </p>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center justify-center sm:justify-end gap-3 sm:gap-4">
                     <Button
                       variant="outline"
                       size="icon"
                       onClick={decrementAcres}
                       disabled={quarterAcres <= 1}
-                      className="h-10 w-10"
+                      className="h-10 w-10 sm:h-10 sm:w-10"
                     >
                       <Minus className="w-4 h-4" />
                     </Button>
-                    <div className="text-center min-w-[100px]">
-                      <div className="font-heading text-3xl font-bold text-foreground">
+                    <div className="text-center min-w-[80px] sm:min-w-[100px]">
+                      <div className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
                         {acreDisplay}
                       </div>
-                      <div className="text-sm text-muted-foreground">acres</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground">acres</div>
                     </div>
                     <Button
                       variant="outline"
                       size="icon"
                       onClick={incrementAcres}
                       disabled={quarterAcres >= 20}
-                      className="h-10 w-10"
+                      className="h-10 w-10 sm:h-10 sm:w-10"
                     >
                       <Plus className="w-4 h-4" />
                     </Button>
@@ -216,26 +216,26 @@ const ServiceEstimator = () => {
 
           {/* Estimate Summary */}
           <div className="lg:sticky lg:top-24 h-fit">
-            <Card className="p-6 border-secondary/20 bg-card">
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-4">
+            <Card className="p-4 sm:p-6 border-secondary/20 bg-card">
+              <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">
                 Your Estimate
               </h3>
 
               {selectedServices.length === 0 ? (
-                <div className="py-8 text-center text-muted-foreground">
-                  <Calculator className="w-12 h-12 mx-auto mb-3 opacity-30" />
-                  <p>Select services to see your estimate</p>
+                <div className="py-6 sm:py-8 text-center text-muted-foreground">
+                  <Calculator className="w-10 sm:w-12 h-10 sm:h-12 mx-auto mb-2 sm:mb-3 opacity-30" />
+                  <p className="text-sm sm:text-base">Select services to see your estimate</p>
                 </div>
               ) : (
                 <>
-                  <div className="space-y-3 mb-4">
+                  <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
                     {selectedServiceDetails.map((service) => (
                       <div
                         key={service.id}
                         className="flex items-center justify-between py-2 border-b border-border last:border-0"
                       >
-                        <span className="text-foreground">{service.name}</span>
-                        <span className="font-heading font-semibold">
+                        <span className="text-sm sm:text-base text-foreground">{service.name}</span>
+                        <span className="font-heading font-semibold text-sm sm:text-base">
                           ${service.estimatedPrice.toLocaleString()}
                           {service.isPerVisit && "+"}
                         </span>
@@ -243,12 +243,12 @@ const ServiceEstimator = () => {
                     ))}
                   </div>
 
-                  <div className="border-t-2 border-border pt-4 mb-4">
+                  <div className="border-t-2 border-border pt-3 sm:pt-4 mb-3 sm:mb-4">
                     <div className="flex items-center justify-between">
-                      <span className="font-heading font-semibold text-lg">
+                      <span className="font-heading font-semibold text-base sm:text-lg">
                         Estimated Total
                       </span>
-                      <span className="font-heading font-bold text-2xl text-secondary">
+                      <span className="font-heading font-bold text-xl sm:text-2xl text-secondary">
                         ${total.toLocaleString()}
                       </span>
                     </div>
@@ -257,8 +257,8 @@ const ServiceEstimator = () => {
                     </p>
                   </div>
 
-                  <div className="bg-muted/50 rounded-lg p-3 mb-4">
-                    <p className="text-xs text-muted-foreground italic">
+                  <div className="bg-muted/50 rounded-lg p-2.5 sm:p-3 mb-3 sm:mb-4">
+                    <p className="text-[10px] sm:text-xs text-muted-foreground italic">
                       {DISCLAIMER_TEXT}
                     </p>
                   </div>

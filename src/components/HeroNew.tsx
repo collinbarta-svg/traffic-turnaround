@@ -13,45 +13,46 @@ const HeroNew = () => {
       <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-2xl" />
 
       {/* Content */}
-      <div className="relative z-10 container pt-24 pb-16">
+      <div className="relative z-10 container pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="max-w-4xl">
-          <div className="flex flex-wrap items-center gap-2 mb-6 opacity-0 animate-fade-up">
-            <div className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
-              <Users className="w-4 h-4 text-secondary" />
-              <span className="text-primary-foreground/90 text-sm font-medium">
-                Family-Owned & Operated
+          {/* Trust badges - horizontal scroll on mobile */}
+          <div className="flex flex-wrap items-center gap-2 mb-4 sm:mb-6 opacity-0 animate-fade-up">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+              <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
+              <span className="text-primary-foreground/90 text-xs sm:text-sm font-medium">
+                Family-Owned
               </span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
-              <Shield className="w-4 h-4 text-secondary" />
-              <span className="text-primary-foreground/90 text-sm font-medium">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+              <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
+              <span className="text-primary-foreground/90 text-xs sm:text-sm font-medium">
                 Licensed & Insured
               </span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
-              <Award className="w-4 h-4 text-secondary" />
-              <span className="text-primary-foreground/90 text-sm font-medium">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+              <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
+              <span className="text-primary-foreground/90 text-xs sm:text-sm font-medium">
                 24 Years Experience
               </span>
             </div>
           </div>
 
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6 opacity-0 animate-fade-up stagger-1">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-4 sm:mb-6 opacity-0 animate-fade-up stagger-1">
             Your Local Property
             <br />
             <span className="text-gradient">Maintenance Experts</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-8 opacity-0 animate-fade-up stagger-2">
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-6 sm:mb-8 opacity-0 animate-fade-up stagger-2 leading-relaxed">
             Not a franchise. Not a call center. We're a family-owned, licensed company 
             based in St. Michael with 24 years of hands-on experience. When you call, 
             you're talking directly to the people who do the work.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 opacity-0 animate-fade-up stagger-3">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 opacity-0 animate-fade-up stagger-3">
             <Button
               size="lg"
-              className="text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 text-secondary-foreground accent-glow"
+              className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 bg-secondary hover:bg-secondary/90 text-secondary-foreground accent-glow w-full sm:w-auto"
               asChild
             >
               <a href="#estimator">
@@ -62,7 +63,7 @@ const HeroNew = () => {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20"
+              className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 w-full sm:w-auto"
               asChild
             >
               <a href="tel:612-298-5590">
@@ -73,31 +74,31 @@ const HeroNew = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-lg opacity-0 animate-fade-up stagger-4">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-lg opacity-0 animate-fade-up stagger-4">
             <div>
-              <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
+              <div className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">
                 24+
               </div>
-              <div className="text-sm text-primary-foreground/70">Years Experience</div>
+              <div className="text-xs sm:text-sm text-primary-foreground/70">Years Experience</div>
             </div>
             <div>
-              <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
+              <div className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">
                 Local
               </div>
-              <div className="text-sm text-primary-foreground/70">Family-Owned</div>
+              <div className="text-xs sm:text-sm text-primary-foreground/70">Family-Owned</div>
             </div>
             <div>
-              <div className="font-heading text-3xl md:text-4xl font-bold text-secondary">
+              <div className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">
                 Direct
               </div>
-              <div className="text-sm text-primary-foreground/70">Communication</div>
+              <div className="text-xs sm:text-sm text-primary-foreground/70">Communication</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in stagger-5">
+      {/* Scroll indicator - hide on mobile */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in stagger-5 hidden sm:block">
         <a href="#how-it-works" className="flex flex-col items-center gap-2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors">
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <div className="w-6 h-10 border-2 border-current rounded-full flex items-start justify-center pt-2">
