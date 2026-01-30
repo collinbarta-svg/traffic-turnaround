@@ -43,6 +43,13 @@ const ServiceIcon = ({ icon }: { icon: string }) => {
   }
 };
 
+const getPriceDisplay = (service: Service) => {
+  if (service.isPerVisit) {
+    return { price: `$${service.basePrice}`, unit: "starting price per visit" };
+  }
+  return { price: `$${service.basePrice}`, unit: "for first ¼ acre (+$25/additional)" };
+};
+
 const ServiceEstimator = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [quarterAcres, setQuarterAcres] = useState(1);
@@ -107,6 +114,7 @@ const ServiceEstimator = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               {services.map((service) => {
                 const isSelected = selectedServices.includes(service.id);
+                const priceInfo = getPriceDisplay(service);
                 return (
                   <Card
                     key={service.id}
@@ -147,10 +155,10 @@ const ServiceEstimator = () => {
                         </p>
                         <div className="flex items-baseline gap-1">
                           <span className="font-heading font-bold text-lg text-foreground">
-                            ${service.pricePerQuarterAcre}
+                            {priceInfo.price}
                           </span>
                           <span className="text-sm text-muted-foreground">
-                            {service.isPerVisit ? "starting price per visit" : "per ¼ acre"}
+                            {priceInfo.unit}
                           </span>
                         </div>
                       </div>

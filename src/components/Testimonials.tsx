@@ -3,20 +3,20 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Sarah M.",
-    location: "Maple Grove, MN",
-    text: "James has been plowing our driveway for 3 winters now. Always on time, even during the worst storms. Couldn't ask for better service!",
+    location: "St. Michael, MN",
+    text: "JP Grounds & Snow has been plowing our driveway for 3 winters now. Always on time, even during the worst storms. Couldn't ask for better service!",
     rating: 5,
   },
   {
     name: "Tom & Linda K.",
-    location: "Rogers, MN",
-    text: "We use West Metro for both lawn care and snow plowing. Our yard has never looked better. James is reliable, professional, and fairly priced.",
+    location: "Albertville, MN",
+    text: "We use them for both lawn care and snow plowing. Our yard has never looked better. They're reliable, professional, and fairly priced.",
     rating: 5,
   },
   {
     name: "Mike R.",
-    location: "Saint Michael, MN",
-    text: "Finally found a contractor who shows up when he says he will. The spring cleanup they did was incredible. Highly recommend!",
+    location: "Hanover, MN",
+    text: "Finally found a company that shows up when they say they will. The spring cleanup they did was incredible. Highly recommend!",
     rating: 5,
   },
 ];
@@ -38,7 +38,7 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
               className="bg-card p-6 md:p-8 rounded-xl card-elevated"

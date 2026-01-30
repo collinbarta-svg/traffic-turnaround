@@ -93,9 +93,9 @@ const ProjectGallery = () => {
               Custom Outdoor Projects Available
             </h3>
             <p className="text-muted-foreground mb-4">
-              In addition to regular lawn care and snow services, I also complete basic, 
-              functional outdoor improvement projects—stone work, gravel areas, simple 
-              landscape features, and similar enhancements. These custom projects are 
+              In addition to regular lawn care and snow services, we also complete basic, 
+              functional outdoor improvement projects—stone work, landscape features, 
+              brush cleanup, and similar enhancements. These custom projects are 
               available by request and discussed after initial contact.
             </p>
             <p className="text-sm text-muted-foreground">

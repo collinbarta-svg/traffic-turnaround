@@ -1,4 +1,4 @@
-import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Check } from "lucide-react";
+import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -6,9 +6,9 @@ const services = [
   {
     icon: TreeDeciduous,
     title: "Lawn Mowing",
-    description: "Professional mowing with attention to detail—clean edges, proper trimming, and debris cleared. Same person every visit.",
+    description: "Professional mowing with attention to detail—clean edges, proper trimming, and debris cleared. Same team every visit.",
     price: "$75",
-    unit: "per ¼ acre",
+    unit: "starting (¼ acre)",
     highlights: ["Mowing & edging", "String trimming", "Debris cleanup"],
   },
   {
@@ -16,7 +16,7 @@ const services = [
     title: "Dethatching",
     description: "Remove harmful thatch buildup that chokes your lawn. Complete waste removal and disposal included.",
     price: "$165",
-    unit: "per ¼ acre",
+    unit: "starting (¼ acre)",
     highlights: ["Thatch removal", "Waste hauled away", "Proper disposal"],
   },
   {
@@ -24,7 +24,7 @@ const services = [
     title: "Aerating",
     description: "Core aeration to improve soil health, water absorption, and root growth for a stronger lawn.",
     price: "$175",
-    unit: "per ¼ acre",
+    unit: "starting (¼ acre)",
     highlights: ["Core aeration", "Better drainage", "Healthier roots"],
   },
   {
@@ -32,16 +32,24 @@ const services = [
     title: "Fertilizer & Weed Control",
     description: "Four seasonal treatments designed for Minnesota lawns. Balanced nutrition and targeted weed prevention.",
     price: "$150",
-    unit: "per ¼ acre",
+    unit: "starting (¼ acre)",
     highlights: ["4 treatments/season", "Weed prevention", "Lawn nutrition"],
   },
   {
     icon: Snowflake,
     title: "Snow Plowing",
-    description: "Reliable snow removal with hand-cleared edges, walkways, and steps. Salt/sand applied as needed for safety.",
+    description: "Reliable snow removal with hand-cleared edges, walkways, and steps. Salt & sand applied as needed for safety.",
     price: "$75+",
     unit: "per visit",
-    highlights: ["Driveway plowing", "Hand shoveling", "Salt & sand"],
+    highlights: ["Driveway plowing", "Hand shoveling", "Salt & sand ($25)"],
+  },
+  {
+    icon: Trees,
+    title: "Brush Cleanup",
+    description: "Professional brush and debris removal for your property. Contact us for a custom quote based on your specific needs.",
+    price: "Custom",
+    unit: "quote",
+    highlights: ["Brush removal", "Debris hauling", "Custom pricing"],
   },
 ];
 
@@ -57,8 +65,8 @@ const ServicesGrid = () => {
             Year-Round Property Care
           </h2>
           <p className="text-lg text-muted-foreground">
-            From spring lawn care through winter snow removal, I provide consistent, 
-            quality service with attention to detail that larger companies can't match.
+            From spring lawn care through winter snow removal, we provide consistent, 
+            quality service with the attention to detail that larger companies can't match.
           </p>
         </div>
 
@@ -66,7 +74,7 @@ const ServicesGrid = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group p-6 hover:border-secondary/30 transition-all duration-300 card-elevated"
+              className="group p-6 transition-all duration-300 card-elevated"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">

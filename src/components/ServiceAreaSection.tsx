@@ -12,17 +12,17 @@ const benefits = [
   {
     icon: Clock,
     title: "Faster Response Times",
-    description: "Being local means I can respond quickly, especially during snow emergencies when timing matters most.",
+    description: "Being local means we can respond quickly, especially during snow emergencies when timing matters most.",
   },
   {
     icon: MapPin,
     title: "Property Familiarity",
-    description: "Serving a focused area means I know the properties, the neighborhoods, and the specific needs of each location.",
+    description: "Serving a focused area means we know the properties, the neighborhoods, and the specific needs of each location.",
   },
   {
     icon: Shield,
     title: "Consistent Quality",
-    description: "By not overextending, I can give every property the attention it deserves—no rushed jobs, no corners cut.",
+    description: "By not overextending, we can give every property the attention it deserves—no rushed jobs, no corners cut.",
   },
 ];
 
@@ -36,11 +36,11 @@ const ServiceAreaSection = () => {
               Service Area
             </span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Proudly Serving the<br />
-              <span className="text-secondary">West Metro Area</span>
+              Locally Operated in<br />
+              <span className="text-secondary">St. Michael, MN</span>
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8">
-              I intentionally keep my service area focused to ensure every customer receives 
+              We intentionally keep our service area focused to ensure every customer receives 
               the quality and reliability they deserve. This means faster response times, 
               familiarity with your property, and consistent results you can count on.
             </p>
@@ -63,8 +63,8 @@ const ServiceAreaSection = () => {
             </div>
 
             <p className="text-primary-foreground/70 text-sm">
-              Live nearby but don't see your city listed? Give me a call—I may still be able to help 
-              depending on location and schedule.
+              Live nearby but don't see your city listed? Give us a call—we may be able to help 
+              on a case-by-case basis depending on location and schedule.
             </p>
           </div>
 

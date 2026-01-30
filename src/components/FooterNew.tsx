@@ -10,17 +10,17 @@ const FooterNew = () => {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
                 <span className="font-heading font-bold text-secondary-foreground text-lg">
-                  WM
+                  JP
                 </span>
               </div>
               <div>
-                <div className="font-heading font-bold text-lg">West Metro</div>
-                <div className="text-sm text-primary-foreground/70">Snow Plowing LLC</div>
+                <div className="font-heading font-bold text-lg">JP Grounds & Snow</div>
+                <div className="text-sm text-primary-foreground/70">Family-Owned & Locally Operated</div>
               </div>
             </div>
             <p className="text-primary-foreground/80 max-w-sm mb-6">
-              Professional property maintenance services serving the West Metro area
-              for over 24 years. Licensed, insured, and committed to your satisfaction.
+              Family-owned property maintenance services proudly based in St. Michael, MN.
+              Licensed, insured, and committed to consistent, quality results for over 24 years.
             </p>
             <div className="space-y-3">
               <a
@@ -31,15 +31,15 @@ const FooterNew = () => {
                 612-298-5590
               </a>
               <a
-                href="mailto:info@westmetrosnowplowing.com"
+                href="mailto:info@jpgroundsandsnow.com"
                 className="flex items-center gap-3 text-primary-foreground/80 hover:text-secondary transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                info@westmetrosnowplowing.com
+                info@jpgroundsandsnow.com
               </a>
               <div className="flex items-start gap-3 text-primary-foreground/80">
                 <MapPin className="w-5 h-5 mt-0.5" />
-                <span>Serving the West Metro Area, Minnesota</span>
+                <span>Locally operated in St. Michael, Minnesota</span>
               </div>
             </div>
           </div>
@@ -118,6 +118,9 @@ const FooterNew = () => {
               <li>
                 <span className="text-primary-foreground/70">Snow Plowing</span>
               </li>
+              <li>
+                <span className="text-primary-foreground/70">Brush Cleanup</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -125,10 +128,10 @@ const FooterNew = () => {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/60">
-              © {new Date().getFullYear()} West Metro Snow Plowing LLC. All rights reserved.
+              © {new Date().getFullYear()} JP Grounds & Snow. All rights reserved.
             </p>
             <p className="text-sm text-primary-foreground/60">
-              Licensed & Insured | Serving Minnesota Since {new Date().getFullYear() - 24}
+              Licensed & Insured | Family-Owned Since {new Date().getFullYear() - 24}
             </p>
           </div>
         </div>
