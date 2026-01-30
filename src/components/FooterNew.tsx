@@ -53,7 +53,7 @@ const FooterNew = () => {
                   href="#about"
                   className="text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
-                  About James
+                  About Us
                 </a>
               </li>
               <li>
