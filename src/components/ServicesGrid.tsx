@@ -116,7 +116,7 @@ const ServicesGrid = () => {
 
         <div className="text-center mt-8 sm:mt-12">
           <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full sm:w-auto" asChild>
-            <a href="#estimator">
+            <a href="/estimate">
               Get Your Estimate
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
