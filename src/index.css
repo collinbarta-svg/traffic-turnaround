@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   :root {
     /* Modern high-tech palette: charcoal, steel gray, ice-blue */
     --background: 210 15% 97%;
@@ -116,6 +120,11 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+  }
+
+  /* Offset for fixed header when scrolling to anchors */
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 }
 
