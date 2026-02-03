@@ -1,6 +1,5 @@
 import HeaderNew from "@/components/HeaderNew";
 import HeroNew from "@/components/HeroNew";
-import ServiceDetails from "@/components/ServiceDetails";
 import ServicesGrid from "@/components/ServicesGrid";
 import ProjectGallery from "@/components/ProjectGallery";
 import AboutOwner from "@/components/AboutOwner";
@@ -14,7 +13,6 @@ const Index = () => {
       <HeaderNew />
       <HeroNew />
       <ServicesGrid />
-      <ServiceDetails />
       <ProjectGallery />
       <AboutOwner />
       <TrustSection />
