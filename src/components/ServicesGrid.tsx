@@ -55,16 +55,16 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-    <section id="services" className="py-12 sm:py-20 md:py-28 bg-card">
+    <section id="services" className="py-12 sm:py-20 md:py-28 hero-gradient text-primary-foreground">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/10 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
+          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-foreground/20 text-primary-foreground text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             Services & Pricing
           </span>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-3 sm:mb-4">
             Year-Round Property Care
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground px-2">
+          <p className="text-base sm:text-lg text-primary-foreground/80 px-2">
             From spring lawn care through winter snow removal, we provide consistent, 
             quality service with careful attention to detail on every property.
           </p>
@@ -74,41 +74,41 @@ const ServicesGrid = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group p-4 sm:p-6 transition-all duration-300 card-elevated"
+              className="group p-4 sm:p-6 transition-all duration-300 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-muted flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">
-                <service.icon className="w-5 sm:w-6 h-5 sm:h-6" />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">
+                <service.icon className="w-5 sm:w-6 h-5 sm:h-6 text-secondary" />
               </div>
               
-              <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-1.5 sm:mb-2">
+              <h3 className="font-heading text-lg sm:text-xl font-semibold text-primary-foreground mb-1.5 sm:mb-2">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-3 sm:mb-4 text-xs sm:text-sm">
+              <p className="text-primary-foreground/70 mb-3 sm:mb-4 text-xs sm:text-sm">
                 {service.description}
               </p>
               
               <ul className="space-y-1 sm:space-y-1.5 mb-3 sm:mb-4">
                 {service.highlights.map((highlight) => (
-                  <li key={highlight} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                  <li key={highlight} className="flex items-center gap-2 text-xs sm:text-sm text-primary-foreground/70">
                     <Check className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-secondary flex-shrink-0" />
                     {highlight}
                   </li>
                 ))}
               </ul>
               
-              <div className="flex items-baseline gap-2 pt-3 sm:pt-4 border-t border-border">
-                <span className="font-heading text-xl sm:text-2xl font-bold text-foreground">
+              <div className="flex items-baseline gap-2 pt-3 sm:pt-4 border-t border-primary-foreground/20">
+                <span className="font-heading text-xl sm:text-2xl font-bold text-primary-foreground">
                   {service.price}
                 </span>
-                <span className="text-xs sm:text-sm text-muted-foreground">{service.unit}</span>
+                <span className="text-xs sm:text-sm text-primary-foreground/70">{service.unit}</span>
               </div>
             </Card>
           ))}
         </div>
 
         <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
-          <p className="text-center text-xs sm:text-sm text-muted-foreground italic px-4">
+          <p className="text-center text-xs sm:text-sm text-primary-foreground/70 italic px-4">
             *All pricing shown is preliminary. Every property is different—final pricing 
             confirmed after on-site evaluation. No work performed without your approval.
           </p>
