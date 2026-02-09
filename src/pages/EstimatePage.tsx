@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -15,6 +15,7 @@ const TOTAL_STEPS = 4;
 
 const EstimatePage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,6 +23,17 @@ const EstimatePage = () => {
 
   // Form state
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  // Pre-select service from URL param
+  useEffect(() => {
+    const serviceParam = searchParams.get("service");
+    if (serviceParam) {
+      const validIds = services.map(s => s.id);
+      if (validIds.includes(serviceParam)) {
+        setSelectedServices(prev => prev.includes(serviceParam) ? prev : [serviceParam]);
+      }
+    }
+  }, [searchParams]);
   const [quarterAcres, setQuarterAcres] = useState(2);
   const [address, setAddress] = useState("");
   const [frequency, setFrequency] = useState("one-time");
@@ -201,6 +213,16 @@ const EstimatePage = () => {
           <div className="mb-8">
             <EstimateProgress currentStep={currentStep} totalSteps={TOTAL_STEPS} />
           </div>
+
+          {/* Pre-selected service confirmation */}
+          {currentStep === 1 && selectedServices.length > 0 && searchParams.get("service") && (
+            <div className="mb-4 p-3 bg-secondary/10 rounded-lg border border-secondary/20">
+              <p className="text-sm text-foreground">
+                <span className="font-medium">Selected service: </span>
+                {services.filter(s => selectedServices.includes(s.id)).map(s => s.name).join(", ")}
+              </p>
+            </div>
+          )}
 
           {/* Step Content */}
           <div className="mb-8">
