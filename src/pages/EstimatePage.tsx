@@ -39,6 +39,7 @@ const EstimatePage = () => {
   const [frequency, setFrequency] = useState("one-time");
   const [notes, setNotes] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const [pricingAcknowledged, setPricingAcknowledged] = useState(false);
   const [contactInfo, setContactInfo] = useState({
     name: "",
     email: "",
@@ -66,6 +67,7 @@ const EstimatePage = () => {
       case 4:
         return (
           agreed &&
+          pricingAcknowledged &&
           contactInfo.name.trim() &&
           contactInfo.email.trim() &&
           contactInfo.phone.trim()
@@ -259,6 +261,8 @@ const EstimatePage = () => {
                 onContactInfoChange={setContactInfo}
                 agreed={agreed}
                 onAgreedChange={setAgreed}
+                pricingAcknowledged={pricingAcknowledged}
+                onPricingAcknowledgedChange={setPricingAcknowledged}
               />
             )}
           </div>

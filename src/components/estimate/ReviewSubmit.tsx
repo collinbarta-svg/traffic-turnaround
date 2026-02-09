@@ -22,6 +22,8 @@ interface ReviewSubmitProps {
   onContactInfoChange: (info: ReviewSubmitProps["contactInfo"]) => void;
   agreed: boolean;
   onAgreedChange: (agreed: boolean) => void;
+  pricingAcknowledged: boolean;
+  onPricingAcknowledgedChange: (val: boolean) => void;
 }
 
 const timeframeOptions = [
@@ -41,6 +43,8 @@ const ReviewSubmit = ({
   onContactInfoChange,
   agreed,
   onAgreedChange,
+  pricingAcknowledged,
+  onPricingAcknowledgedChange,
 }: ReviewSubmitProps) => {
   const selectedServiceDetails = services.filter((s) =>
     selectedServices.includes(s.id)
@@ -129,13 +133,21 @@ const ReviewSubmit = ({
         )}
       </div>
 
-      {/* Disclaimer */}
-      <div className="flex items-start gap-3 p-4 bg-muted/50 rounded-lg">
-        <AlertCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-        <p className="text-xs sm:text-sm text-muted-foreground">
+      {/* Pricing Acknowledgment Checkbox */}
+      <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+        <Checkbox
+          id="pricing-acknowledgment"
+          checked={pricingAcknowledged}
+          onCheckedChange={(checked) => onPricingAcknowledgedChange(checked as boolean)}
+          className="mt-0.5"
+        />
+        <Label
+          htmlFor="pricing-acknowledgment"
+          className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+        >
           This is an estimated price. Final pricing is confirmed after an on-site
           assessment and follow-up. No work is performed without your approval.
-        </p>
+        </Label>
       </div>
 
       {/* Contact Form */}
