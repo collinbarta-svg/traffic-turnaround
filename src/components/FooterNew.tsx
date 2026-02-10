@@ -69,7 +69,7 @@ const FooterNew = () => {
                   href="/estimate"
                   className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
                 >
-                  Get Estimate
+                  Get Started
                 </a>
               </li>
               <li>
