@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0 stagger-3">
             <Button size="lg" variant="secondary" className="text-lg px-8 py-6 accent-glow" asChild>
               <a href="#contact">
-                Get Free Estimate
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </Button>

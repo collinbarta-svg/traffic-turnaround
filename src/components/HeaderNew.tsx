@@ -16,7 +16,7 @@ const HeaderNew = () => {
 
   const navLinks = [
     { href: "#how-it-works", label: "How It Works" },
-    { href: "/estimate", label: "Get Estimate" },
+    { href: "/estimate", label: "Get Started" },
     { href: "#services", label: "Services" },
     { href: "#contact", label: "Contact" },
   ];
@@ -75,7 +75,7 @@ const HeaderNew = () => {
               612-298-5590
             </a>
             <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground" asChild>
-              <a href="/estimate">Get Estimate</a>
+              <a href="/estimate">Get Started</a>
             </Button>
           </div>
 
@@ -112,7 +112,7 @@ const HeaderNew = () => {
                 612-298-5590
               </a>
               <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground mt-2" asChild>
-                <a href="/estimate">Get Estimate</a>
+                <a href="/estimate">Get Started</a>
               </Button>
             </nav>
           </div>
