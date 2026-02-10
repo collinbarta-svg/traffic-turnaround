@@ -56,7 +56,7 @@ const HeroNew = () => {
               asChild
             >
               <a href="/estimate">
-                Get Instant Estimate
+                Get Started
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
