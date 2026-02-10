@@ -29,7 +29,7 @@ const AboutOwner = () => {
   return (
     <section id="about" className="py-12 sm:py-20 md:py-28 hero-gradient text-primary-foreground">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div className="max-w-3xl mx-auto">
           <div>
             <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-foreground/20 text-primary-foreground text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
               About Us
@@ -74,25 +74,6 @@ const AboutOwner = () => {
                 </a>
               </Button>
             </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 sm:gap-6">
-            {features.map((feature) => (
-              <Card
-                key={feature.title}
-                className="p-4 sm:p-6 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20"
-              >
-                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
-                  <feature.icon className="w-5 sm:w-6 h-5 sm:h-6 text-secondary" />
-                </div>
-                <h3 className="font-heading font-bold text-primary-foreground mb-1 sm:mb-2 text-sm sm:text-base">
-                  {feature.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-primary-foreground/70">
-                  {feature.description}
-                </p>
-              </Card>
-            ))}
           </div>
         </div>
       </div>
