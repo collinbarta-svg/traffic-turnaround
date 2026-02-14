@@ -13,8 +13,8 @@ const HeroNew = () => {
       <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-2xl" />
 
       {/* Content */}
-      <div className="relative z-10 container pt-20 sm:pt-24 pb-12 sm:pb-16">
-        <div className="max-w-4xl">
+      <div className="relative z-10 container pt-20 sm:pt-24 pb-12 sm:pb-16 flex justify-center">
+        <div className="max-w-4xl text-center">
           {/* Trust badges - horizontal scroll on mobile */}
           <div className="flex items-center mb-4 sm:mb-6 opacity-0 animate-fade-up">
             <a href="#about" className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-colors cursor-pointer">
@@ -37,7 +37,7 @@ const HeroNew = () => {
             people who do the work.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 opacity-0 animate-fade-up stagger-3">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 opacity-0 animate-fade-up stagger-3">
             <Button
               size="lg"
               className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 bg-secondary hover:bg-secondary/90 text-secondary-foreground accent-glow w-full sm:w-auto"
@@ -62,7 +62,7 @@ const HeroNew = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-lg opacity-0 animate-fade-up stagger-4">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-lg mx-auto opacity-0 animate-fade-up stagger-4">
             <div>
               <div className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">
                 24+
