@@ -22,7 +22,7 @@ const HeroNew = () => {
         </div>
 
         <div className="max-w-4xl text-center">
-          <div className="flex items-center mb-4 sm:mb-6 opacity-0 animate-fade-up">
+          <div className="flex justify-center items-center mb-4 sm:mb-6 opacity-0 animate-fade-up">
             <a href="#about" className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-colors cursor-pointer">
               <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
               <span className="text-primary-foreground/90 text-xs sm:text-sm font-medium">
