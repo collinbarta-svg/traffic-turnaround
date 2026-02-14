@@ -133,23 +133,6 @@ const ReviewSubmit = ({
         )}
       </div>
 
-      {/* Pricing Acknowledgment Checkbox */}
-      <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
-        <Checkbox
-          id="pricing-acknowledgment"
-          checked={pricingAcknowledged}
-          onCheckedChange={(checked) => onPricingAcknowledgedChange(checked as boolean)}
-          className="mt-0.5"
-        />
-        <Label
-          htmlFor="pricing-acknowledgment"
-          className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
-        >
-          This is an estimated price. Final pricing is confirmed after an on-site
-          assessment and follow-up. No work is performed without your approval.
-        </Label>
-      </div>
-
       {/* Contact Form */}
       <div className="space-y-4">
         <h3 className="font-heading font-semibold text-lg text-foreground">
@@ -264,6 +247,28 @@ const ReviewSubmit = ({
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Review notice */}
+      <p className="text-sm text-secondary font-medium text-center">
+        Please review and check both boxes below before submitting your request.
+      </p>
+
+      {/* Pricing Acknowledgment Checkbox */}
+      <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+        <Checkbox
+          id="pricing-acknowledgment"
+          checked={pricingAcknowledged}
+          onCheckedChange={(checked) => onPricingAcknowledgedChange(checked as boolean)}
+          className="mt-0.5"
+        />
+        <Label
+          htmlFor="pricing-acknowledgment"
+          className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+        >
+          This is an estimated price. Final pricing is confirmed after an on-site
+          assessment and follow-up. No work is performed without your approval.
+        </Label>
       </div>
 
       {/* Agreement Checkbox */}
