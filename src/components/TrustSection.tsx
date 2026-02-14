@@ -1,21 +1,6 @@
-import { Shield, Clock, Award, Users, ThumbsUp, MessageCircle } from "lucide-react";
+import { Clock, ThumbsUp, MessageCircle } from "lucide-react";
 
 const trustPoints = [
-  {
-    icon: Users,
-    title: "Family-Owned",
-    description: "Work directly with the owners, not a rotating crew or call center",
-  },
-  {
-    icon: Shield,
-    title: "Licensed & Insured",
-    description: "Full liability coverage for complete peace of mind on every job",
-  },
-  {
-    icon: Award,
-    title: "24 Years Experience",
-    description: "Nearly three decades of reliable service to local property owners",
-  },
   {
     icon: Clock,
     title: "Reliable & Consistent",
@@ -51,7 +36,7 @@ const TrustSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto">
           {trustPoints.map((point, index) => (
             <div
               key={point.title}
