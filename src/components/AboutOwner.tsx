@@ -31,9 +31,7 @@ const AboutOwner = () => {
       <div className="container">
         <div className="max-w-3xl mx-auto">
           <div>
-            <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-foreground/20 text-primary-foreground text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
-              About Us
-            </span>
+            
             <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 sm:mb-6">
               A Family-Owned Business<br />
               <span className="text-secondary">You Can Trust</span>
