@@ -24,6 +24,11 @@ const EstimatePage = () => {
   // Form state
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Pre-select service from URL param
   useEffect(() => {
     const serviceParam = searchParams.get("service");
