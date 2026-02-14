@@ -104,7 +104,7 @@ const ServicesGrid = () => {
               </ul>
               
               <div className="flex items-center gap-2 pt-3 sm:pt-4 border-t border-primary-foreground/20">
-                <span className="text-sm font-medium text-secondary">Book This Service</span>
+                <span className="text-sm font-medium text-secondary">Build Your Service Plan</span>
                 <ArrowRight className="w-4 h-4 text-secondary" />
               </div>
             </Card>
