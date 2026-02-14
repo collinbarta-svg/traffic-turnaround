@@ -13,9 +13,15 @@ const HeroNew = () => {
       <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-2xl" />
 
       {/* Content */}
-      <div className="relative z-10 container pt-20 sm:pt-24 pb-12 sm:pb-16 flex justify-center">
+      <div className="relative z-10 container pt-8 sm:pt-12 pb-12 sm:pb-16 flex flex-col items-center">
+        {/* Brand name */}
+        <div className="mb-12 sm:mb-16 opacity-0 animate-fade-up">
+          <span className="font-heading text-xl sm:text-2xl font-bold text-primary-foreground tracking-tight">
+            JP <span className="text-secondary">Grounds & Snow</span>
+          </span>
+        </div>
+
         <div className="max-w-4xl text-center">
-          {/* Trust badges - horizontal scroll on mobile */}
           <div className="flex items-center mb-4 sm:mb-6 opacity-0 animate-fade-up">
             <a href="#about" className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-colors cursor-pointer">
               <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary" />
