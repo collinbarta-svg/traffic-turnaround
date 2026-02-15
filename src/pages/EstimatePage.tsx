@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { services, calculateServicePrice, calculateTotal, CONFIRMATION_MESSAGE } from "@/lib/services";
+import { services, calculateServicePrice, calculateTotal, CONFIRMATION_MESSAGE, hasCustomEstimateRequired } from "@/lib/services";
 import EstimateProgress from "@/components/estimate/EstimateProgress";
 import ServiceSelection from "@/components/estimate/ServiceSelection";
 import PropertyDetails from "@/components/estimate/PropertyDetails";
@@ -245,6 +245,7 @@ const EstimatePage = () => {
                 quarterAcres={quarterAcres}
                 onAddressChange={setAddress}
                 onQuarterAcresChange={setQuarterAcres}
+                onAddressValidated={() => {}}
               />
             )}
             {currentStep === 3 && (
@@ -315,10 +316,19 @@ const EstimatePage = () => {
                 <span className="text-sm text-muted-foreground">
                   {selectedServices.length} service{selectedServices.length > 1 ? "s" : ""} selected
                 </span>
-                <span className="font-heading font-bold text-foreground">
-                  Est. ${calculateTotal(selectedServices, quarterAcres)}
-                </span>
+                {hasCustomEstimateRequired(selectedServices, quarterAcres * 0.25) ? (
+                  <span className="text-sm font-medium text-accent">
+                    Custom quote needed
+                  </span>
+                ) : (
+                  <span className="font-heading font-bold text-foreground">
+                    Est. ${calculateTotal(selectedServices, quarterAcres)}
+                  </span>
+                )}
               </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                Estimated price based on public property data.
+              </p>
             </div>
           )}
         </div>

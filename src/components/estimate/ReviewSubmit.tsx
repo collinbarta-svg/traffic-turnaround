@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Check, Phone, Mail, MapPin, User, Clock, AlertCircle } from "lucide-react";
+import { Check, Phone, Mail, MapPin, User, Clock, AlertCircle, Info } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { services, calculateServicePrice, FULL_DISCLAIMER } from "@/lib/services";
+import { services, calculateServicePrice, FULL_DISCLAIMER, getEstimateTier, hasCustomEstimateRequired } from "@/lib/services";
 
 interface ReviewSubmitProps {
   selectedServices: string[];
@@ -55,7 +55,9 @@ const ReviewSubmit = ({
     0
   );
 
-  const acreDisplay = (quarterAcres * 0.25).toFixed(2);
+  const acres = quarterAcres * 0.25;
+  const acreDisplay = acres.toFixed(2);
+  const anyCustom = hasCustomEstimateRequired(selectedServices, acres);
 
   return (
     <div className="space-y-6">
@@ -87,40 +89,34 @@ const ReviewSubmit = ({
           </div>
         </div>
 
-        {/* Services Breakdown */}
+        {/* Services Breakdown with Tiers */}
         <div className="space-y-3">
           {selectedServiceDetails.map((service) => {
-            const price = calculateServicePrice(service, quarterAcres);
+            const tier = getEstimateTier(service.id, acres);
             return (
-              <div
-                key={service.id}
-                className="flex items-center justify-between"
-              >
+              <div key={service.id} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-secondary" />
                   <span className="text-foreground">{service.name}</span>
                 </div>
-                <span className="font-semibold text-foreground">${price}</span>
+                <span className={`text-sm font-medium ${tier.requiresCustom ? "text-accent" : "text-muted-foreground"}`}>
+                  {tier.requiresCustom ? tier.description : tier.label}
+                </span>
               </div>
             );
           })}
         </div>
 
-        {/* Total */}
+        {/* Estimate notice */}
         <div className="pt-4 border-t border-border">
-          <div className="flex items-center justify-between">
-            <span className="font-heading font-bold text-lg text-foreground">
-              Estimated Total
-            </span>
-            <span className="font-heading font-bold text-2xl text-secondary">
-              ${total}
-            </span>
-          </div>
-          {frequency === "weekly" && (
-            <p className="text-xs text-muted-foreground mt-1">
-              *Per service visit
+          <div className="flex items-start gap-2 p-3 bg-secondary/10 rounded-lg">
+            <Info className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
+            <p className="text-sm text-foreground">
+              {anyCustom
+                ? "One or more services require a manual quote. We'll provide detailed pricing during your on-site evaluation."
+                : "Estimated price based on public property data. Final pricing will be confirmed before service."}
             </p>
-          )}
+          </div>
         </div>
 
         {/* Notes if any */}
