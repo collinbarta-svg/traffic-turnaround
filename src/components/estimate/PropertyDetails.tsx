@@ -1,13 +1,16 @@
-import { MapPin } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { MapPin, Search, CheckCircle2, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { useAddressAutocomplete } from "@/hooks/use-address-autocomplete";
 
 interface PropertyDetailsProps {
   address: string;
   quarterAcres: number;
   onAddressChange: (address: string) => void;
   onQuarterAcresChange: (quarterAcres: number) => void;
+  onAddressValidated?: (validated: boolean) => void;
 }
 
 const PropertyDetails = ({
@@ -15,9 +18,16 @@ const PropertyDetails = ({
   quarterAcres,
   onAddressChange,
   onQuarterAcresChange,
+  onAddressValidated,
 }: PropertyDetailsProps) => {
+  const { predictions, isLoading, search, getDetails, clearPredictions } = useAddressAutocomplete();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [isValidated, setIsValidated] = useState(false);
+  const [inputValue, setInputValue] = useState(address);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
   const acreDisplay = (quarterAcres * 0.25).toFixed(2);
-  
+
   const sizeLabels = [
     { quarters: 1, label: "¼ acre", description: "Small lot" },
     { quarters: 2, label: "½ acre", description: "Average lot" },
@@ -26,6 +36,44 @@ const PropertyDetails = ({
     { quarters: 5, label: "1¼ acre", description: "Estate" },
     { quarters: 6, label: "1½ acre", description: "Estate+" },
   ];
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const handleInputChange = (value: string) => {
+    setInputValue(value);
+    setIsValidated(false);
+    onAddressValidated?.(false);
+    onAddressChange(value);
+    search(value);
+    setShowDropdown(true);
+  };
+
+  const handleSelectPrediction = async (placeId: string, description: string) => {
+    setInputValue(description);
+    setShowDropdown(false);
+    clearPredictions();
+
+    const details = await getDetails(placeId);
+    if (details) {
+      onAddressChange(details.formattedAddress);
+      setInputValue(details.formattedAddress);
+      setIsValidated(true);
+      onAddressValidated?.(true);
+    } else {
+      onAddressChange(description);
+      setIsValidated(false);
+      onAddressValidated?.(false);
+    }
+  };
 
   return (
     <div className="space-y-8">
@@ -38,22 +86,60 @@ const PropertyDetails = ({
         </p>
       </div>
 
-      {/* Address Input */}
+      {/* Address Input with Autocomplete */}
       <div className="space-y-2">
         <Label htmlFor="address" className="text-base font-medium">
           Property Address
         </Label>
-        <div className="relative">
-          <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-          <Input
-            id="address"
-            type="text"
-            placeholder="Enter your property address"
-            value={address}
-            onChange={(e) => onAddressChange(e.target.value)}
-            className="pl-11 h-12 text-base"
-          />
+        <div className="relative" ref={wrapperRef}>
+          <div className="relative">
+            {isLoading ? (
+              <Loader2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground animate-spin" />
+            ) : isValidated ? (
+              <CheckCircle2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary" />
+            ) : (
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            )}
+            <Input
+              id="address"
+              type="text"
+              placeholder="Start typing your address..."
+              value={inputValue}
+              onChange={(e) => handleInputChange(e.target.value)}
+              onFocus={() => predictions.length > 0 && setShowDropdown(true)}
+              className={`pl-11 h-12 text-base ${isValidated ? "border-secondary" : ""}`}
+              autoComplete="off"
+            />
+          </div>
+
+          {/* Predictions Dropdown */}
+          {showDropdown && predictions.length > 0 && (
+            <div className="absolute z-50 w-full mt-1 bg-card border border-border rounded-lg shadow-lg overflow-hidden">
+              {predictions.map((prediction) => (
+                <button
+                  key={prediction.place_id}
+                  type="button"
+                  onClick={() => handleSelectPrediction(prediction.place_id, prediction.description)}
+                  className="w-full text-left px-4 py-3 text-sm text-foreground hover:bg-muted/50 transition-colors flex items-center gap-3 border-b border-border last:border-b-0"
+                >
+                  <MapPin className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                  <span>{prediction.description}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
+        {isValidated && (
+          <p className="text-xs text-secondary flex items-center gap-1">
+            <CheckCircle2 className="w-3 h-3" />
+            Address verified via Google Maps
+          </p>
+        )}
+        {!isValidated && inputValue.length > 0 && (
+          <p className="text-xs text-muted-foreground">
+            Select an address from the dropdown to verify it
+          </p>
+        )}
       </div>
 
       {/* Property Size */}
