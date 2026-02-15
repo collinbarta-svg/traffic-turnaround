@@ -22,7 +22,7 @@ export function useAddressAutocomplete() {
   const search = useCallback((input: string) => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
 
-    if (input.length < 3) {
+    if (input.length < 1) {
       setPredictions([]);
       return;
     }
