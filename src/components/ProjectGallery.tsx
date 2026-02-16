@@ -8,6 +8,12 @@ import snowClearing from "@/assets/projects/snow-clearing.webp";
 import stonePath from "@/assets/projects/stone-path.webp";
 import stoneWalkway from "@/assets/projects/stone-walkway.webp";
 import landscapeFeature from "@/assets/projects/landscape-feature.webp";
+import mulchBed from "@/assets/projects/mulch-bed.jpg";
+import treeLandscaping from "@/assets/projects/tree-landscaping.jpg";
+import bobcatEquipment from "@/assets/projects/bobcat-equipment.jpg";
+import sodDelivery from "@/assets/projects/sod-delivery.jpg";
+import rockBed from "@/assets/projects/rock-bed.jpg";
+import flowerBed from "@/assets/projects/flower-bed.jpg";
 
 const projects = [
   {
@@ -36,7 +42,49 @@ const projects = [
     image: landscapeFeature,
     title: "Landscape Enhancement",
     category: "Outdoor Projects",
-    description: "Clean stone edging with white gravel bed, creating a low-maintenance, attractive border around mature evergreens.",
+    description: "Clean stone edging with white rock bed, creating a low-maintenance, attractive border around mature evergreens.",
+  },
+  {
+    id: 5,
+    image: mulchBed,
+    title: "Mulch Bed & Plantings",
+    category: "Landscaping",
+    description: "Fresh mulch bed with hostas and flowering plants, bordered with clean edging for a neat, maintained look.",
+  },
+  {
+    id: 6,
+    image: treeLandscaping,
+    title: "Tree Ring Landscaping",
+    category: "Landscaping",
+    description: "Lush fern and shrub planting around a mature tree with dark mulch bed and natural stone accents.",
+  },
+  {
+    id: 7,
+    image: bobcatEquipment,
+    title: "Equipment on Site",
+    category: "Custom Projects",
+    description: "Compact track loader with tiller attachment ready for ground preparation and landscape grading work.",
+  },
+  {
+    id: 8,
+    image: sodDelivery,
+    title: "Sod Delivery",
+    category: "Custom Projects",
+    description: "Flatbed delivery of fresh sod rolls to a residential property for a full lawn installation project.",
+  },
+  {
+    id: 9,
+    image: rockBed,
+    title: "Rock Bed & Brick Edging",
+    category: "Outdoor Projects",
+    description: "White rock bed with brick border edging, solar path lights, and hydrangea plantings around a front porch.",
+  },
+  {
+    id: 10,
+    image: flowerBed,
+    title: "Flower Bed & Stone Wall",
+    category: "Landscaping",
+    description: "Tiered stone retaining wall with vibrant purple petunias, rock accents, and solar lighting along the walkway.",
   },
 ];
 
