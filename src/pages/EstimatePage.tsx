@@ -157,7 +157,7 @@ const EstimatePage = () => {
               <span className="font-heading font-bold text-secondary-foreground text-sm">MO</span>
             </div>
             <span className="font-heading font-semibold text-foreground hidden sm:block">
-              Mason's Outdoor Property Service
+              Mason Outdoor Service LLC
             </span>
             </Link>
           </div>
@@ -201,7 +201,7 @@ const EstimatePage = () => {
               <span className="font-heading font-bold text-secondary-foreground text-sm">MO</span>
             </div>
             <span className="font-heading font-semibold text-foreground hidden sm:block">
-              Mason's Outdoor Property Service
+              Mason Outdoor Service LLC
             </span>
           </Link>
           <a

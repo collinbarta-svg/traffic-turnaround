@@ -61,7 +61,7 @@ const AboutOwner = () => {
                   <span className="font-heading text-xl sm:text-2xl font-bold text-secondary-foreground">MO</span>
                 </div>
                 <div>
-                  <div className="font-heading font-bold text-primary-foreground text-sm sm:text-base">Mason's Outdoor Property Service</div>
+                  <div className="font-heading font-bold text-primary-foreground text-sm sm:text-base">Mason Outdoor Service LLC</div>
                   <div className="text-xs sm:text-sm text-primary-foreground/70">Family-Owned & Operated</div>
                 </div>
               </div>
