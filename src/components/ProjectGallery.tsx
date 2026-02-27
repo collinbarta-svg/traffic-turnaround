@@ -10,8 +10,6 @@ import stoneWalkway from "@/assets/projects/stone-walkway.webp";
 import landscapeFeature from "@/assets/projects/landscape-feature.webp";
 import mulchBed from "@/assets/projects/mulch-bed.jpg";
 import treeLandscaping from "@/assets/projects/tree-landscaping.jpg";
-import bobcatEquipment from "@/assets/projects/bobcat-equipment.jpg";
-import sodDelivery from "@/assets/projects/sod-delivery.jpg";
 import rockBed from "@/assets/projects/rock-bed.jpg";
 import flowerBed from "@/assets/projects/flower-bed.jpg";
 
@@ -60,27 +58,13 @@ const projects = [
   },
   {
     id: 7,
-    image: bobcatEquipment,
-    title: "Equipment on Site",
-    category: "Custom Projects",
-    description: "Compact track loader with tiller attachment ready for ground preparation and landscape grading work.",
-  },
-  {
-    id: 8,
-    image: sodDelivery,
-    title: "Sod Delivery",
-    category: "Custom Projects",
-    description: "Flatbed delivery of fresh sod rolls to a residential property for a full lawn installation project.",
-  },
-  {
-    id: 9,
     image: rockBed,
     title: "Rock Bed & Brick Edging",
     category: "Outdoor Projects",
     description: "White rock bed with brick border edging, solar path lights, and hydrangea plantings around a front porch.",
   },
   {
-    id: 10,
+    id: 8,
     image: flowerBed,
     title: "Flower Bed & Stone Wall",
     category: "Landscaping",
