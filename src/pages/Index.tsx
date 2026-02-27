@@ -1,5 +1,6 @@
 import HeroNew from "@/components/HeroNew";
 import ServicesGrid from "@/components/ServicesGrid";
+import SodShowcase from "@/components/SodShowcase";
 import ProjectGallery from "@/components/ProjectGallery";
 import AboutOwner from "@/components/AboutOwner";
 import TrustSection from "@/components/TrustSection";
@@ -12,6 +13,7 @@ const Index = () => {
       
       <HeroNew />
       <ServicesGrid />
+      <SodShowcase />
       <ProjectGallery />
       <AboutOwner />
       <TrustSection />
