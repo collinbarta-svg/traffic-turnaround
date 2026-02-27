@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Phone, Mail, MapPin, User, Clock, AlertCircle, Info } from "lucide-react";
+import { Check, Phone, Mail, MapPin, User, Clock, AlertCircle, Info, Droplets } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -128,6 +128,21 @@ const ReviewSubmit = ({
           </div>
         )}
       </div>
+
+      {/* Lawn Watering Notice */}
+      {selectedServices.some(id => ["lawn-mowing", "fertilizer-weed-control", "dethatching", "aerating"].includes(id)) && (
+        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+          <div className="flex items-start gap-3">
+            <Droplets className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="font-heading font-semibold text-foreground text-sm">Lawn Watering Reminder</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                For best results, lawns should be regularly watered at least once a week. Proper watering helps maintain a healthy, green lawn and improves the effectiveness of all lawn care services.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Contact Form */}
       <div className="space-y-4">
