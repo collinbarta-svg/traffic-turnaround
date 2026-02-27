@@ -1,5 +1,6 @@
 import { Check, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees } from "lucide-react";
 import { services } from "@/lib/services";
+import { useMemo } from "react";
 
 interface ServiceSelectionProps {
   selectedServices: string[];
@@ -12,22 +13,32 @@ const iconMap: Record<string, React.ElementType> = {
   shovel: Droplets,
   spray: Sprout,
   snowflake: Snowflake,
+  trees: Trees,
 };
 
 const ServiceSelection = ({ selectedServices, onToggleService }: ServiceSelectionProps) => {
+  // Sort: selected services first (in selection order), then unselected
+  const sortedServices = useMemo(() => {
+    const selected = selectedServices
+      .map(id => services.find(s => s.id === id))
+      .filter(Boolean) as typeof services;
+    const unselected = services.filter(s => !selectedServices.includes(s.id));
+    return [...selected, ...unselected];
+  }, [selectedServices]);
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       <div className="text-center">
-        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-2">
+        <h2 className="font-heading text-xl sm:text-2xl font-bold text-foreground mb-1">
           Select Your Services
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           Choose all the services you're interested in
         </p>
       </div>
 
-      <div className="grid gap-3 sm:gap-4">
-        {services.map((service) => {
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
+        {sortedServices.map((service) => {
           const isSelected = selectedServices.includes(service.id);
           const Icon = iconMap[service.icon] || TreeDeciduous;
 
@@ -36,66 +47,62 @@ const ServiceSelection = ({ selectedServices, onToggleService }: ServiceSelectio
               key={service.id}
               type="button"
               onClick={() => onToggleService(service.id)}
-              className={`w-full p-4 sm:p-5 rounded-xl border-2 text-left transition-all duration-200 ${
+              className={`relative p-3 sm:p-4 rounded-xl border-2 text-left transition-all duration-200 ${
                 isSelected
                   ? "border-secondary bg-secondary/5 shadow-md"
                   : "border-border bg-card hover:border-secondary/50 hover:bg-muted/30"
               }`}
             >
-              <div className="flex items-start gap-4">
-                <div
-                  className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
-                    isSelected
-                      ? "bg-secondary text-secondary-foreground"
-                      : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  <Icon className="w-6 h-6" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-heading font-semibold text-foreground">
-                      {service.name}
-                    </h3>
-                    <div
-                      className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${
-                        isSelected
-                          ? "border-secondary bg-secondary"
-                          : "border-muted-foreground/30"
-                      }`}
-                    >
-                      {isSelected && <Check className="w-4 h-4 text-secondary-foreground" />}
-                    </div>
+              {isSelected && (
+                <span className="absolute top-1.5 right-1.5 text-[10px] font-semibold text-secondary bg-secondary/10 px-1.5 py-0.5 rounded-full">
+                  Selected
+                </span>
+              )}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <div
+                    className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
+                      isSelected
+                        ? "bg-secondary text-secondary-foreground"
+                        : "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <div
+                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ml-auto ${
+                      isSelected
+                        ? "border-secondary bg-secondary"
+                        : "border-muted-foreground/30"
+                    }`}
+                  >
+                    {isSelected && <Check className="w-3 h-3 text-secondary-foreground" />}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-heading font-semibold text-foreground text-sm sm:text-base leading-tight">
+                    {service.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2 hidden sm:block">
                     {service.description}
                   </p>
-                  <div className="flex items-center gap-2 mt-2">
-                    <span className="text-sm font-semibold text-foreground">
-                      From ${service.basePrice}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {service.isPerVisit ? "per visit" : "starting (¼ acre)"}
-                    </span>
+                  <div className="mt-1">
+                    {service.isCustom ? (
+                      <span className="text-xs font-medium text-accent">Custom quote</span>
+                    ) : (
+                      <span className="text-xs font-semibold text-foreground">
+                        From ${service.basePrice}
+                        <span className="font-normal text-muted-foreground ml-1">
+                          {service.isPerVisit ? "/visit" : ""}
+                        </span>
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
             </button>
           );
         })}
-      </div>
-
-      {/* Add Brush Cleanup notice */}
-      <div className="p-4 bg-muted/50 rounded-lg border border-border">
-        <div className="flex items-start gap-3">
-          <Trees className="w-5 h-5 text-secondary mt-0.5" />
-          <div>
-            <p className="font-medium text-foreground text-sm">Need Brush Cleanup?</p>
-            <p className="text-xs text-muted-foreground mt-1">
-              Brush cleanup requires a custom quote. Continue with your estimate and mention it in the notes.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

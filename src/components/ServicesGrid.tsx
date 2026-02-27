@@ -42,7 +42,7 @@ const services = [
   {
     icon: Trees,
     title: "Brush Cleanup",
-    slug: null,
+    slug: "brush-cleanup",
     description: "Professional brush and debris removal for your property. Contact us for a custom quote based on your specific needs.",
     highlights: ["Brush removal", "Debris hauling", "Custom pricing"],
   },

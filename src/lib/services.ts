@@ -57,6 +57,16 @@ export const services: Service[] = [
     features: ["Driveway plowing", "Sidewalk shoveling", "Front steps clearing"],
     icon: "snowflake",
   },
+  {
+    id: "brush-cleanup",
+    name: "Brush Cleanup",
+    description: "Professional brush and debris removal — custom quote required",
+    basePrice: 0,
+    additionalQuarterAcrePrice: 0,
+    isCustom: true,
+    features: ["Brush removal", "Debris hauling", "Custom pricing"],
+    icon: "trees",
+  },
 ];
 
 export const DISCLAIMER_TEXT = "Pricing shown is a preliminary estimate based on public property data.";
