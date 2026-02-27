@@ -21,11 +21,11 @@ const FooterNew = () => {
             </p>
             <div className="space-y-2 sm:space-y-3">
               <a
-                href="tel:612-298-5590"
+                href="tel:612-461-4022"
                 className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-primary-foreground/80 hover:text-secondary transition-colors"
               >
                 <Phone className="w-4 sm:w-5 h-4 sm:h-5" />
-                612-298-5590
+                612-461-4022
               </a>
               <a
                 href="mailto:info@jpgroundsandsnow.com"

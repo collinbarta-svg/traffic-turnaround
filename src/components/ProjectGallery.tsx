@@ -148,8 +148,8 @@ const ProjectGallery = () => {
             </p>
             <p className="text-xs sm:text-sm text-primary-foreground/70">
               Interested in a custom outdoor project? Call{" "}
-              <a href="tel:612-298-5590" className="text-secondary hover:underline font-medium">
-                612-298-5590
+              <a href="tel:612-461-4022" className="text-secondary hover:underline font-medium">
+                612-461-4022
               </a>{" "}
               to discuss your ideas.
             </p>
