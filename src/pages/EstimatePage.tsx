@@ -154,11 +154,11 @@ const EstimatePage = () => {
           <div className="container flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
-                <span className="font-heading font-bold text-secondary-foreground text-sm">JP</span>
-              </div>
-              <span className="font-heading font-semibold text-foreground hidden sm:block">
-                JP Grounds & Snow
-              </span>
+              <span className="font-heading font-bold text-secondary-foreground text-sm">MO</span>
+            </div>
+            <span className="font-heading font-semibold text-foreground hidden sm:block">
+              Mason's Outdoor Property Service
+            </span>
             </Link>
           </div>
         </header>
@@ -198,10 +198,10 @@ const EstimatePage = () => {
         <div className="container flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
-              <span className="font-heading font-bold text-secondary-foreground text-sm">JP</span>
+              <span className="font-heading font-bold text-secondary-foreground text-sm">MO</span>
             </div>
             <span className="font-heading font-semibold text-foreground hidden sm:block">
-              JP Grounds & Snow
+              Mason's Outdoor Property Service
             </span>
           </Link>
           <a

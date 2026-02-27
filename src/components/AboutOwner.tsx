@@ -58,10 +58,10 @@ const AboutOwner = () => {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="w-14 sm:w-16 h-14 sm:h-16 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="font-heading text-xl sm:text-2xl font-bold text-secondary-foreground">JP</span>
+                  <span className="font-heading text-xl sm:text-2xl font-bold text-secondary-foreground">MO</span>
                 </div>
                 <div>
-                  <div className="font-heading font-bold text-primary-foreground text-sm sm:text-base">JP Grounds & Snow</div>
+                  <div className="font-heading font-bold text-primary-foreground text-sm sm:text-base">Mason's Outdoor Property Service</div>
                   <div className="text-xs sm:text-sm text-primary-foreground/70">Family-Owned & Operated</div>
                 </div>
               </div>

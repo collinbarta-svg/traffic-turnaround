@@ -48,10 +48,10 @@ const About = () => {
             </p>
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                <span className="font-heading text-2xl font-bold text-primary-foreground">JP</span>
+                <span className="font-heading text-2xl font-bold text-primary-foreground">MO</span>
               </div>
               <div>
-                <div className="font-heading font-bold text-foreground">JP Grounds & Snow</div>
+                <div className="font-heading font-bold text-foreground">Mason's Outdoor Property Service</div>
                 <div className="text-sm text-muted-foreground">Family-Owned & Operated</div>
               </div>
             </div>
