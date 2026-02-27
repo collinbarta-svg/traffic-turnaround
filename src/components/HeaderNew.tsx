@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const HeaderNew = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,11 +34,7 @@ const HeaderNew = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-              <span className="font-heading font-bold text-secondary-foreground text-lg">
-                MO
-              </span>
-            </div>
+            <img src={logo} alt="Mason Outdoor Service LLC" className="w-10 h-10 rounded-lg object-cover" />
             <div className="hidden sm:block">
               <div className={`font-heading font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
                 Mason Outdoor Service LLC

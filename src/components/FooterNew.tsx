@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const FooterNew = () => {
   return (
@@ -8,11 +9,7 @@ const FooterNew = () => {
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-              <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-                <span className="font-heading font-bold text-secondary-foreground text-base sm:text-lg">
-                  MO
-                </span>
-              </div>
+              <img src={logo} alt="Mason Outdoor Service LLC" className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg object-cover flex-shrink-0" />
               <div>
                 <div className="font-heading font-bold text-base sm:text-lg">Mason Outdoor Service LLC</div>
                 <div className="text-xs sm:text-sm text-primary-foreground/70">Family-Owned & Locally Operated</div>
