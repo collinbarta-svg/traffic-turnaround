@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "Sarah M.",
     location: "St. Michael, MN",
-    text: "JP Grounds & Snow has been plowing our driveway for 3 winters now. Always on time, even during the worst storms. Couldn't ask for better service!",
+    text: "Mason's Outdoor Property Service has been plowing our driveway for 3 winters now. Always on time, even during the worst storms. Couldn't ask for better service!",
     rating: 5,
   },
   {
