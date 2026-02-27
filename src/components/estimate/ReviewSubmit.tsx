@@ -135,9 +135,9 @@ const ReviewSubmit = ({
           <div className="flex items-start gap-3">
             <Droplets className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
             <div>
-              <p className="font-heading font-semibold text-foreground text-sm">Lawn Watering Reminder</p>
+            <p className="font-heading font-semibold text-foreground text-sm">Mowing Frequency</p>
               <p className="text-sm text-muted-foreground mt-1">
-                For best results, lawns should be regularly watered at least once a week. Proper watering helps maintain a healthy, green lawn and improves the effectiveness of all lawn care services.
+                Lawns that are regularly watered should be mowed at least once a week to maintain a healthy, clean appearance.
               </p>
             </div>
           </div>
