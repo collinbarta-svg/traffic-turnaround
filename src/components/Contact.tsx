@@ -26,7 +26,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <a
-                href="tel:612-298-5590"
+                href="tel:612-461-4022"
                 className="flex items-center gap-4 p-4 bg-primary rounded-xl text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 <div className="w-12 h-12 bg-primary-foreground/20 rounded-lg flex items-center justify-center">
@@ -34,7 +34,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm opacity-80">Call Now</div>
-                  <div className="text-xl font-heading font-bold">612-298-5590</div>
+                  <div className="text-xl font-heading font-bold">612-461-4022</div>
                 </div>
               </a>
 
@@ -73,7 +73,7 @@ const Contact = () => {
             </div>
 
             <Button size="lg" className="w-full" asChild>
-              <a href="tel:612-298-5590">
+              <a href="tel:612-461-4022">
                 <Phone className="mr-2 w-5 h-5" />
                 Call for Free Estimate
               </a>

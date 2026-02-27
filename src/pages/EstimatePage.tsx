@@ -179,9 +179,9 @@ const EstimatePage = () => {
                 <Link to="/">Return Home</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="tel:612-298-5590">
+                <a href="tel:612-461-4022">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call 612-298-5590
+                  Call 612-461-4022
                 </a>
               </Button>
             </div>
@@ -205,11 +205,11 @@ const EstimatePage = () => {
             </span>
           </Link>
           <a
-            href="tel:612-298-5590"
+            href="tel:612-461-4022"
             className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span className="hidden sm:inline">612-298-5590</span>
+            <span className="hidden sm:inline">612-461-4022</span>
           </a>
         </div>
       </header>

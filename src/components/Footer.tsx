@@ -31,11 +31,11 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold mb-4">Contact</h4>
             <a
-              href="tel:612-298-5590"
+              href="tel:612-461-4022"
               className="inline-flex items-center gap-2 text-secondary font-semibold mb-2"
             >
               <Phone className="w-4 h-4" />
-              612-298-5590
+              612-461-4022
             </a>
             <p className="text-sm text-background/70">
               Saint Michael, Minnesota<br />

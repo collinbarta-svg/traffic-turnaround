@@ -65,9 +65,9 @@ const AboutOwner = () => {
                 </div>
               </div>
               <Button variant="outline" size="lg" className="w-full sm:w-auto bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20" asChild>
-                <a href="tel:612-298-5590">
+                <a href="tel:612-461-4022">
                   <Phone className="w-4 h-4 mr-2" />
-                  612-298-5590
+                  612-461-4022
                 </a>
               </Button>
             </div>

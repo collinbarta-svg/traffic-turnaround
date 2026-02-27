@@ -39,9 +39,9 @@ const Hero = () => {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20" asChild>
-              <a href="tel:612-298-5590">
+              <a href="tel:612-461-4022">
                 <Phone className="mr-2 w-5 h-5" />
-                612-298-5590
+                612-461-4022
               </a>
             </Button>
           </div>

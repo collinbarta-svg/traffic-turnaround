@@ -63,13 +63,13 @@ const HeaderNew = () => {
           {/* CTA & Phone */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:612-298-5590"
+              href="tel:612-461-4022"
               className={`flex items-center gap-2 text-sm font-medium ${
                 isScrolled ? "text-foreground" : "text-primary-foreground"
               }`}
             >
               <Phone className="w-4 h-4" />
-              612-298-5590
+              612-461-4022
             </a>
             <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground" asChild>
               <a href="/estimate">Get Started</a>
@@ -102,11 +102,11 @@ const HeaderNew = () => {
                 </a>
               ))}
               <a
-                href="tel:612-298-5590"
+                href="tel:612-461-4022"
                 className="flex items-center gap-2 text-foreground font-medium py-2"
               >
                 <Phone className="w-4 h-4" />
-                612-298-5590
+                612-461-4022
               </a>
               <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground mt-2" asChild>
                 <a href="/estimate">Get Started</a>

@@ -34,11 +34,11 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:612-298-5590"
+            href="tel:612-461-4022"
             className="flex items-center gap-2 text-sm font-semibold text-primary"
           >
             <Phone className="w-4 h-4" />
-            612-298-5590
+            612-461-4022
           </a>
           <Button asChild>
             <a href="#contact">Free Estimate</a>
@@ -70,11 +70,11 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="tel:612-298-5590"
+              href="tel:612-461-4022"
               className="flex items-center gap-2 text-base font-semibold text-primary"
             >
               <Phone className="w-5 h-5" />
-              612-298-5590
+              612-461-4022
             </a>
             <Button asChild className="w-full">
               <a href="#contact">Free Estimate</a>
