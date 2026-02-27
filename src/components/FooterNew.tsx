@@ -14,7 +14,7 @@ const FooterNew = () => {
                 </span>
               </div>
               <div>
-                <div className="font-heading font-bold text-base sm:text-lg">Mason's Outdoor Property Service</div>
+                <div className="font-heading font-bold text-base sm:text-lg">Mason Outdoor Service LLC</div>
                 <div className="text-xs sm:text-sm text-primary-foreground/70">Family-Owned & Locally Operated</div>
               </div>
             </div>
@@ -128,7 +128,7 @@ const FooterNew = () => {
         <div className="border-t border-primary-foreground/20 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-xs sm:text-sm text-primary-foreground/60 text-center md:text-left">
-              © {new Date().getFullYear()} Mason's Outdoor Property Service. All rights reserved.
+              © {new Date().getFullYear()} Mason Outdoor Service LLC. All rights reserved.
             </p>
             <p className="text-xs sm:text-sm text-primary-foreground/60 text-center md:text-right">
               Licensed & Insured | Family-Owned Since {new Date().getFullYear() - 24}

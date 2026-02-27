@@ -17,7 +17,7 @@ const HeroNew = () => {
         {/* Brand name */}
         <div className="mb-12 sm:mb-16 opacity-0 animate-fade-up">
           <span className="font-heading text-xl sm:text-2xl font-bold text-primary-foreground tracking-tight">
-            Mason's <span className="text-secondary">Outdoor Property Service</span>
+            Mason <span className="text-secondary">Outdoor Service LLC</span>
           </span>
         </div>
 

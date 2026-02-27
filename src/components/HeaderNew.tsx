@@ -40,7 +40,7 @@ const HeaderNew = () => {
             </div>
             <div className="hidden sm:block">
               <div className={`font-heading font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-                Mason's Outdoor Property Service
+                Mason Outdoor Service LLC
               </div>
               <div className={`text-xs ${isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/70'}`}>
                 Family-Owned Since {new Date().getFullYear() - 24}

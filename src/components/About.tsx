@@ -51,7 +51,7 @@ const About = () => {
                 <span className="font-heading text-2xl font-bold text-primary-foreground">MO</span>
               </div>
               <div>
-                <div className="font-heading font-bold text-foreground">Mason's Outdoor Property Service</div>
+                <div className="font-heading font-bold text-foreground">Mason Outdoor Service LLC</div>
                 <div className="text-sm text-muted-foreground">Family-Owned & Operated</div>
               </div>
             </div>
