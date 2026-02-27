@@ -67,6 +67,16 @@ export const services: Service[] = [
     features: ["Brush removal", "Debris hauling", "Custom pricing"],
     icon: "trees",
   },
+  {
+    id: "sod-installation",
+    name: "Sod Installation",
+    description: "Full sod installation including ground prep, grading, and fresh sod",
+    basePrice: 0,
+    additionalQuarterAcrePrice: 0,
+    isCustom: true,
+    features: ["Ground preparation", "Grading & tilling", "Sod delivery & install"],
+    icon: "shovel",
+  },
 ];
 
 export const DISCLAIMER_TEXT = "Pricing shown is a preliminary estimate based on public property data.";

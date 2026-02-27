@@ -46,6 +46,13 @@ const services = [
     description: "Professional brush and debris removal for your property. Contact us for a custom quote based on your specific needs.",
     highlights: ["Brush removal", "Debris hauling", "Custom pricing"],
   },
+  {
+    icon: Droplets,
+    title: "Sod Installation",
+    slug: "sod-installation",
+    description: "Complete sod installation — ground prep, grading, sod delivery, and professional install for a brand new lawn.",
+    highlights: ["Ground preparation", "Grading & tilling", "Sod install"],
+  },
 ];
 
 const ServicesGrid = () => {
