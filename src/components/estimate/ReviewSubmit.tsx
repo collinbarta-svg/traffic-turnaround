@@ -100,7 +100,7 @@ const ReviewSubmit = ({
                   <span className="text-foreground">{service.name}</span>
                 </div>
                 <span className={`text-sm font-medium ${tier.requiresCustom ? "text-accent" : "text-muted-foreground"}`}>
-                  {tier.requiresCustom ? tier.description : tier.label}
+                  {tier.requiresCustom ? "Call for estimate" : tier.label}
                 </span>
               </div>
             );
