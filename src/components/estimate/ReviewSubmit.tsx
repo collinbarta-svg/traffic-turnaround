@@ -113,7 +113,7 @@ const ReviewSubmit = ({
             <Info className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
             <p className="text-sm text-foreground">
               {anyCustom
-                ? "One or more services require a manual quote. We'll provide detailed pricing during your on-site evaluation."
+                ? "One or more services require a phone estimate. Call us at 612-461-4022 or we'll follow up after submission."
                 : "Estimated price based on public property data. Final pricing will be confirmed before service."}
             </p>
           </div>
