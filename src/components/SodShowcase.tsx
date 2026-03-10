@@ -38,16 +38,16 @@ const steps = [
 
 const SodShowcase = () => {
   return (
-    <section className="py-12 sm:py-20 md:py-28 bg-background">
+    <section className="py-12 sm:py-20 md:py-28 hero-gradient text-primary-foreground">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/10 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
+          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-foreground/20 text-primary-foreground text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             Featured Project
           </span>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-3 sm:mb-4">
             Full Sod Installation
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground px-2">
+          <p className="text-base sm:text-lg text-primary-foreground/80 px-2">
             From delivery to a finished lawn — see the complete process of how we transform a yard with professional sod installation.
           </p>
         </div>
@@ -61,7 +61,7 @@ const SodShowcase = () => {
                 {item.step}
               </div>
 
-              <div className="rounded-xl overflow-hidden border border-border bg-card h-full flex flex-col">
+              <div className="rounded-xl overflow-hidden bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 h-full flex flex-col">
                 {/* Image */}
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -76,11 +76,11 @@ const SodShowcase = () => {
                 <div className="p-4 flex-1 flex flex-col">
                   <div className="flex items-center gap-2 mb-1.5">
                     <item.icon className="w-4 h-4 text-secondary flex-shrink-0" />
-                    <h3 className="font-heading font-semibold text-foreground text-sm sm:text-base">
+                    <h3 className="font-heading font-semibold text-primary-foreground text-sm sm:text-base">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-primary-foreground/70 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ const SodShowcase = () => {
 
         {/* CTA */}
         <div className="text-center mt-8 sm:mt-12">
-          <p className="text-muted-foreground mb-4 text-sm sm:text-base">
+          <p className="text-primary-foreground/80 mb-4 text-sm sm:text-base">
             Need a new lawn? We handle everything from ground prep to finished sod.
           </p>
           <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full sm:w-auto" asChild>

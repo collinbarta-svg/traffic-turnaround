@@ -16,16 +16,16 @@ const seasons = [
 
 const SeasonalServices = () => {
   return (
-    <section className="py-12 sm:py-20 md:py-28 bg-background">
+    <section className="py-12 sm:py-20 md:py-28 hero-gradient text-primary-foreground">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/10 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
+          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-foreground/20 text-primary-foreground text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             Seasonal Care
           </span>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-3 sm:mb-4">
             Services by Season
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground px-2">
+          <p className="text-base sm:text-lg text-primary-foreground/80 px-2">
             We offer year-round property care tailored to Minnesota's seasons.
           </p>
         </div>
@@ -34,19 +34,19 @@ const SeasonalServices = () => {
           {seasons.map((season) => (
             <div
               key={season.title}
-              className="p-5 sm:p-6 rounded-xl border border-border bg-card"
+              className="p-5 sm:p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
                   <season.icon className="w-5 h-5 text-secondary" />
                 </div>
-                <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground">
+                <h3 className="font-heading text-lg sm:text-xl font-semibold text-primary-foreground">
                   {season.title}
                 </h3>
               </div>
               <ul className="space-y-2">
                 {season.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <li key={item} className="flex items-center gap-2 text-sm text-primary-foreground/70">
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
                     {item}
                   </li>
@@ -58,16 +58,16 @@ const SeasonalServices = () => {
 
         {/* Full Cleanup Explanation */}
         <div className="max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="p-5 sm:p-6 rounded-xl border border-border bg-card">
-            <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+          <div className="p-5 sm:p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
+            <h3 className="font-heading text-lg font-semibold text-primary-foreground mb-3">
               What's Included in a Full Cleanup?
             </h3>
-            <p className="text-sm text-muted-foreground mb-3">
+            <p className="text-sm text-primary-foreground/70 mb-3">
               A full cleanup covers everything needed to get your yard back in shape:
             </p>
             <ul className="grid grid-cols-2 gap-2">
               {["Debris removal", "Brush cleanup", "Leaf removal", "Dethatching", "General yard cleanup"].map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <li key={item} className="flex items-center gap-2 text-sm text-primary-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
                   {item}
                 </li>
@@ -78,11 +78,11 @@ const SeasonalServices = () => {
 
         {/* Dethatching Explanation */}
         <div className="max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="p-5 sm:p-6 rounded-xl border border-border bg-card">
-            <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+          <div className="p-5 sm:p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
+            <h3 className="font-heading text-lg font-semibold text-primary-foreground mb-2">
               What Is Dethatching?
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-primary-foreground/70">
               Dethatching removes the layer of dead grass buildup in your lawn, helping improve water, air, and nutrient flow to the soil. It's one of the best things you can do to keep your lawn healthy and green.
             </p>
           </div>
@@ -96,7 +96,7 @@ const SeasonalServices = () => {
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
+          <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 w-full sm:w-auto" asChild>
             <a href="tel:612-461-4022">
               <Phone className="w-4 h-4 mr-2" />
               Call for Project Estimate
