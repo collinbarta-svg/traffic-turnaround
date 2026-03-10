@@ -240,7 +240,7 @@ const EstimatePage = () => {
                 onToggleService={toggleService}
               />
             )}
-            {currentStep === 2 && (
+            {currentStep === 2 && needsFullFlow && (
               <AddOnsNotes
                 frequency={frequency}
                 notes={notes}
@@ -248,7 +248,7 @@ const EstimatePage = () => {
                 onNotesChange={setNotes}
               />
             )}
-            {currentStep === 3 && (
+            {currentStep === getReviewStep() && (
               <ReviewSubmit
                 selectedServices={selectedServices}
                 quarterAcres={quarterAcres}
