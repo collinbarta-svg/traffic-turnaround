@@ -301,8 +301,8 @@ const EstimatePage = () => {
             )}
           </div>
 
-          {/* Live Estimate Preview (Step 1-3) */}
-          {currentStep < 4 && selectedServices.length > 0 && (
+          {/* Live Estimate Preview */}
+          {currentStep < totalSteps && selectedServices.length > 0 && (
             <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">
