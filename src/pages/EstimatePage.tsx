@@ -10,7 +10,7 @@ import ServiceSelection from "@/components/estimate/ServiceSelection";
 import AddOnsNotes from "@/components/estimate/AddOnsNotes";
 import ReviewSubmit from "@/components/estimate/ReviewSubmit";
 
-const TOTAL_STEPS = 4;
+const TOTAL_STEPS = 3;
 
 const EstimatePage = () => {
   const navigate = useNavigate();
