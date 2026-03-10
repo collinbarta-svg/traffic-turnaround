@@ -65,10 +65,8 @@ const EstimatePage = () => {
       case 1:
         return selectedServices.length > 0;
       case 2:
-        return address.trim().length > 0;
-      case 3:
         return true; // Optional step
-      case 4:
+      case 3:
         return (
           agreed &&
           pricingAcknowledged &&
