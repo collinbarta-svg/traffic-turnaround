@@ -318,7 +318,7 @@ const EstimatePage = () => {
                 </span>
                 {hasCustomEstimateRequired(selectedServices, quarterAcres * 0.25) ? (
                   <span className="text-sm font-medium text-accent">
-                    Custom quote needed
+                    Call for estimate
                   </span>
                 ) : (
                   <span className="font-heading font-bold text-foreground">
