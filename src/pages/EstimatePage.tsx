@@ -237,15 +237,6 @@ const EstimatePage = () => {
               />
             )}
             {currentStep === 2 && (
-              <PropertyDetails
-                address={address}
-                quarterAcres={quarterAcres}
-                onAddressChange={setAddress}
-                onQuarterAcresChange={setQuarterAcres}
-                onAddressValidated={() => {}}
-              />
-            )}
-            {currentStep === 3 && (
               <AddOnsNotes
                 frequency={frequency}
                 notes={notes}
@@ -253,7 +244,7 @@ const EstimatePage = () => {
                 onNotesChange={setNotes}
               />
             )}
-            {currentStep === 4 && (
+            {currentStep === 3 && (
               <ReviewSubmit
                 selectedServices={selectedServices}
                 quarterAcres={quarterAcres}
