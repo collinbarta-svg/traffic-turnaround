@@ -219,7 +219,7 @@ const EstimatePage = () => {
         <div className="max-w-2xl mx-auto">
           {/* Progress */}
           <div className="mb-8">
-            <EstimateProgress currentStep={currentStep} totalSteps={TOTAL_STEPS} />
+            <EstimateProgress currentStep={currentStep} totalSteps={totalSteps} />
           </div>
 
           {/* Pre-selected service confirmation */}
