@@ -135,9 +135,9 @@ const ReviewSubmit = ({
           <div className="flex items-start gap-3">
             <Droplets className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
             <div>
-            <p className="font-heading font-semibold text-foreground text-sm">Mowing Frequency</p>
+            <p className="font-heading font-semibold text-foreground text-sm">Weekly Service Schedule</p>
               <p className="text-sm text-muted-foreground mt-1">
-                Lawns that are regularly watered should be mowed at least once a week to maintain a healthy, clean appearance.
+                Lawns that are regularly maintained are typically serviced on a weekly schedule. Our routes run weekly to keep lawns looking their best.
               </p>
             </div>
           </div>

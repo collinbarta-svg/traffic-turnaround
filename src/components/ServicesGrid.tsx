@@ -1,4 +1,4 @@
-import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees, Check } from "lucide-react";
+import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees, Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -8,57 +8,63 @@ const services = [
     icon: TreeDeciduous,
     title: "Lawn Mowing",
     slug: "lawn-mowing",
-    description: "Professional mowing with attention to detail—clean edges, proper trimming, and debris cleared. Same team every visit.",
+    description: "Mowing, string trimming, edging, and debris cleanup. Same team every visit.",
     highlights: ["Mowing & edging", "String trimming", "Debris cleanup"],
   },
   {
     icon: Leaf,
     title: "Dethatching",
     slug: "dethatching",
-    description: "Remove harmful thatch buildup that chokes your lawn. Complete waste removal and disposal included.",
-    highlights: ["Thatch removal", "Waste hauled away", "Proper disposal"],
+    description: "Removes dead grass buildup to improve water, air, and nutrient flow to the soil.",
+    highlights: ["Thatch removal", "Waste hauled away", "Healthier lawn"],
   },
   {
     icon: Droplets,
     title: "Aerating",
     slug: "aerating",
-    description: "Core aeration to improve soil health, water absorption, and root growth for a stronger lawn.",
+    description: "Core aeration for better drainage, healthier roots, and stronger lawn growth.",
     highlights: ["Core aeration", "Better drainage", "Healthier roots"],
   },
   {
     icon: Sprout,
     title: "Fertilizer & Weed Control",
     slug: "fertilizer-weed-control",
-    description: "Four seasonal treatments designed for Minnesota lawns. Balanced nutrition and targeted weed prevention.",
-    highlights: ["4 treatments/season", "Weed prevention", "Lawn nutrition"],
+    description: "Seasonal treatments for a healthy, weed-free lawn all year long.",
+    highlights: ["Seasonal treatments", "Weed prevention", "Lawn nutrition"],
   },
   {
     icon: Snowflake,
     title: "Snow Plowing",
     slug: "snow-plowing",
-    description: "Reliable snow removal with hand-cleared edges, walkways, and steps. Salt & sand applied as needed for safety.",
+    description: "Driveway plowing, sidewalk shoveling, and steps cleared. Salt & sand as needed.",
     highlights: ["Driveway plowing", "Hand shoveling", "Salt & sand"],
   },
   {
     icon: Trees,
-    title: "Brush Cleanup",
-    slug: "brush-cleanup",
-    description: "Professional brush and debris removal for your property. Contact us for a custom quote based on your specific needs.",
-    highlights: ["Brush removal", "Debris hauling", "Custom pricing"],
+    title: "Brush & Yard Cleanup",
+    slug: "brush-yard-cleanup",
+    description: "Removal of brush, branches, leaves, sticks, and general yard debris. Ideal for seasonal cleanup.",
+    highlights: ["Brush removal", "Leaf & debris cleanup", "Seasonal cleanup"],
+    isCallOnly: true,
   },
   {
     icon: Droplets,
     title: "Sod Installation",
     slug: "sod-installation",
-    description: "Complete sod installation — ground prep, grading, sod delivery, and professional install for a brand new lawn.",
+    description: "Ground prep, grading, sod delivery, and professional install for a brand new lawn.",
     highlights: ["Ground preparation", "Grading & tilling", "Sod install"],
+    isCallOnly: true,
   },
 ];
 
 const ServicesGrid = () => {
   const navigate = useNavigate();
 
-  const handleServiceClick = (slug: string | null) => {
+  const handleServiceClick = (slug: string | null, isCallOnly?: boolean) => {
+    if (isCallOnly) {
+      window.location.href = "tel:612-461-4022";
+      return;
+    }
     if (slug) {
       navigate(`/estimate?service=${slug}`);
     } else {
@@ -77,8 +83,8 @@ const ServicesGrid = () => {
             Year-Round Property Care
           </h2>
           <p className="text-base sm:text-lg text-primary-foreground/80 px-2">
-            From spring lawn care through winter snow removal, we provide consistent, 
-            quality service with careful attention to detail on every property.
+            From spring cleanup through winter snow removal, we provide consistent, 
+            quality service on a reliable weekly schedule.
           </p>
         </div>
 
@@ -88,7 +94,7 @@ const ServicesGrid = () => {
               key={service.title}
               className="group p-4 sm:p-6 transition-all duration-300 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20 cursor-pointer hover:bg-primary-foreground/15"
               style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => handleServiceClick(service.slug)}
+              onClick={() => handleServiceClick(service.slug, service.isCallOnly)}
             >
               <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">
                 <service.icon className="w-5 sm:w-6 h-5 sm:h-6 text-secondary" />
@@ -111,19 +117,34 @@ const ServicesGrid = () => {
               </ul>
               
               <div className="flex items-center gap-2 pt-3 sm:pt-4 border-t border-primary-foreground/20">
-                <span className="text-sm font-medium text-secondary">Build Your Service Plan</span>
-                <ArrowRight className="w-4 h-4 text-secondary" />
+                {service.isCallOnly ? (
+                  <>
+                    <Phone className="w-4 h-4 text-secondary" />
+                    <span className="text-sm font-medium text-secondary">Call for Estimate</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-sm font-medium text-secondary">Book Service</span>
+                    <ArrowRight className="w-4 h-4 text-secondary" />
+                  </>
+                )}
               </div>
             </Card>
           ))}
         </div>
 
-
-        <div className="text-center mt-8 sm:mt-12">
+        {/* CTA Buttons */}
+        <div className="text-center mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
           <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full sm:w-auto" asChild>
             <a href="/estimate">
-              Get Started
+              Book Lawn Service
               <ArrowRight className="w-4 h-4 ml-2" />
+            </a>
+          </Button>
+          <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 w-full sm:w-auto" asChild>
+            <a href="tel:612-461-4022">
+              <Phone className="w-4 h-4 mr-2" />
+              Call for Project Estimate
             </a>
           </Button>
         </div>

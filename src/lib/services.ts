@@ -14,16 +14,16 @@ export const services: Service[] = [
   {
     id: "lawn-mowing",
     name: "Lawn Mowing",
-    description: "Complete lawn care including mowing, string trimming, and blowing",
+    description: "Mowing, string trimming, and debris cleanup",
     basePrice: 75,
     additionalQuarterAcrePrice: 25,
-    features: ["Professional mowing", "String trimming", "Debris blowing"],
+    features: ["Professional mowing", "String trimming", "Debris cleanup"],
     icon: "grass",
   },
   {
     id: "dethatching",
     name: "Dethatching",
-    description: "Remove thatch buildup to promote healthy lawn growth",
+    description: "Remove dead grass buildup to improve lawn health",
     basePrice: 165,
     additionalQuarterAcrePrice: 25,
     features: ["Thatch removal", "Waste haul-away", "Proper disposal"],
@@ -32,49 +32,49 @@ export const services: Service[] = [
   {
     id: "aerating",
     name: "Aerating",
-    description: "Core aeration to improve soil health and root growth",
+    description: "Core aeration for healthier soil and root growth",
     basePrice: 175,
     additionalQuarterAcrePrice: 25,
-    features: ["Core aeration", "Improved drainage", "Better nutrient absorption"],
+    features: ["Core aeration", "Improved drainage", "Healthier roots"],
     icon: "shovel",
   },
   {
     id: "fertilizer-weed-control",
     name: "Fertilizer & Weed Control",
-    description: "Four seasonal treatments for a healthy, weed-free lawn",
+    description: "Seasonal treatments for a healthy, weed-free lawn",
     basePrice: 150,
     additionalQuarterAcrePrice: 25,
-    features: ["Four treatments per season", "Weed prevention", "Lawn nutrition"],
+    features: ["Seasonal treatments", "Weed prevention", "Lawn nutrition"],
     icon: "spray",
   },
   {
     id: "snow-plowing",
     name: "Snow Plowing",
-    description: "Reliable snow removal to keep your property safe and accessible",
+    description: "Driveway plowing, sidewalk shoveling, and steps cleared",
     basePrice: 75,
     additionalQuarterAcrePrice: 0,
     isPerVisit: true,
-    features: ["Driveway plowing", "Sidewalk shoveling", "Front steps clearing"],
+    features: ["Driveway plowing", "Sidewalk shoveling", "Steps clearing"],
     icon: "snowflake",
   },
   {
-    id: "brush-cleanup",
-    name: "Brush Cleanup",
-    description: "Professional brush and debris removal — custom quote required",
+    id: "brush-yard-cleanup",
+    name: "Brush & Yard Cleanup",
+    description: "Removal of brush, branches, leaves, sticks, and yard debris",
     basePrice: 0,
     additionalQuarterAcrePrice: 0,
     isCustom: true,
-    features: ["Brush removal", "Debris hauling", "Custom pricing"],
+    features: ["Brush removal", "Leaf & debris cleanup", "Seasonal cleanup"],
     icon: "trees",
   },
   {
     id: "sod-installation",
     name: "Sod Installation",
-    description: "Full sod installation including ground prep, grading, and fresh sod",
+    description: "Ground prep, grading, and fresh sod installation",
     basePrice: 0,
     additionalQuarterAcrePrice: 0,
     isCustom: true,
-    features: ["Ground preparation", "Grading & tilling", "Sod delivery & install"],
+    features: ["Ground preparation", "Grading & tilling", "Sod install"],
     icon: "shovel",
   },
 ];
@@ -100,23 +100,27 @@ export function getEstimateTier(serviceId: string, acres: number): EstimateTier 
       if (acres <= 0.25) return { label: "Tier 1", description: "Small lot estimate", requiresCustom: false };
       if (acres <= 0.5) return { label: "Tier 2", description: "Standard lot estimate", requiresCustom: false };
       if (acres <= 1) return { label: "Tier 3", description: "Large lot estimate", requiresCustom: false };
-      return { label: "Custom", description: "Custom estimate required", requiresCustom: true };
+      return { label: "Custom", description: "Call for estimate", requiresCustom: true };
 
     case "aerating":
       if (acres <= 0.25) return { label: "Tier 1", description: "Small lot estimate", requiresCustom: false };
       if (acres <= 0.5) return { label: "Tier 2", description: "Standard lot estimate", requiresCustom: false };
-      return { label: "Custom", description: "Custom estimate required", requiresCustom: true };
+      return { label: "Custom", description: "Call for estimate", requiresCustom: true };
 
     case "snow-plowing":
-      if (acres > 0.5) return { label: "Review", description: "Flagged for manual review", requiresCustom: true };
+      if (acres > 0.5) return { label: "Review", description: "Call for estimate", requiresCustom: true };
       return { label: "Standard", description: "Standard estimate", requiresCustom: false };
+
+    case "brush-yard-cleanup":
+    case "sod-installation":
+      return { label: "Custom", description: "Call for estimate", requiresCustom: true };
 
     default:
       // dethatching, fertilizer-weed-control
       if (acres <= 0.25) return { label: "Tier 1", description: "Small lot estimate", requiresCustom: false };
       if (acres <= 0.5) return { label: "Tier 2", description: "Standard lot estimate", requiresCustom: false };
       if (acres <= 1) return { label: "Tier 3", description: "Large lot estimate", requiresCustom: false };
-      return { label: "Custom", description: "Custom estimate required", requiresCustom: true };
+      return { label: "Custom", description: "Call for estimate", requiresCustom: true };
   }
 }
 

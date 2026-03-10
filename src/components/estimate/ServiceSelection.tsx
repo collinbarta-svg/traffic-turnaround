@@ -1,4 +1,4 @@
-import { Check, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees } from "lucide-react";
+import { Check, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees, Phone } from "lucide-react";
 import { services } from "@/lib/services";
 import { useMemo } from "react";
 
@@ -88,7 +88,10 @@ const ServiceSelection = ({ selectedServices, onToggleService }: ServiceSelectio
                   </p>
                   <div className="mt-1">
                     {service.isCustom ? (
-                      <span className="text-xs font-medium text-accent">Custom quote</span>
+                      <span className="text-xs font-medium text-accent flex items-center gap-1">
+                        <Phone className="w-3 h-3" />
+                        Call for estimate
+                      </span>
                     ) : (
                       <span className="text-xs font-semibold text-foreground">
                         From ${service.basePrice}
