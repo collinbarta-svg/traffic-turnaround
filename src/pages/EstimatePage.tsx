@@ -41,7 +41,7 @@ const EstimatePage = () => {
   }, [searchParams]);
   const [quarterAcres, setQuarterAcres] = useState(2);
   const [address, setAddress] = useState("");
-  const [frequency, setFrequency] = useState("one-time");
+  const [frequency, setFrequency] = useState("weekly");
   const [notes, setNotes] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [pricingAcknowledged, setPricingAcknowledged] = useState(false);
@@ -318,7 +318,7 @@ const EstimatePage = () => {
                 </span>
                 {hasCustomEstimateRequired(selectedServices, quarterAcres * 0.25) ? (
                   <span className="text-sm font-medium text-accent">
-                    Custom quote needed
+                    Call for estimate
                   </span>
                 ) : (
                   <span className="font-heading font-bold text-foreground">

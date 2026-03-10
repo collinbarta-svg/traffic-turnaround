@@ -100,7 +100,7 @@ const ReviewSubmit = ({
                   <span className="text-foreground">{service.name}</span>
                 </div>
                 <span className={`text-sm font-medium ${tier.requiresCustom ? "text-accent" : "text-muted-foreground"}`}>
-                  {tier.requiresCustom ? tier.description : tier.label}
+                  {tier.requiresCustom ? "Call for estimate" : tier.label}
                 </span>
               </div>
             );
@@ -113,7 +113,7 @@ const ReviewSubmit = ({
             <Info className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
             <p className="text-sm text-foreground">
               {anyCustom
-                ? "One or more services require a manual quote. We'll provide detailed pricing during your on-site evaluation."
+                ? "One or more services require a phone estimate. Call us at 612-461-4022 or we'll follow up after submission."
                 : "Estimated price based on public property data. Final pricing will be confirmed before service."}
             </p>
           </div>
@@ -135,9 +135,9 @@ const ReviewSubmit = ({
           <div className="flex items-start gap-3">
             <Droplets className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
             <div>
-            <p className="font-heading font-semibold text-foreground text-sm">Mowing Frequency</p>
+            <p className="font-heading font-semibold text-foreground text-sm">Weekly Service Schedule</p>
               <p className="text-sm text-muted-foreground mt-1">
-                Lawns that are regularly watered should be mowed at least once a week to maintain a healthy, clean appearance.
+                Lawns that are regularly maintained are typically serviced on a weekly schedule. Our routes run weekly to keep lawns looking their best.
               </p>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Info } from "lucide-react";
 
 interface AddOnsNotesProps {
   frequency: string;
@@ -10,10 +11,8 @@ interface AddOnsNotesProps {
 }
 
 const frequencyOptions = [
+  { value: "weekly", label: "Weekly Service", description: "Recommended for maintained lawns" },
   { value: "one-time", label: "One-Time Service", description: "Single visit" },
-  { value: "weekly", label: "Weekly", description: "Best for lawn care" },
-  { value: "bi-weekly", label: "Bi-Weekly", description: "Every 2 weeks" },
-  { value: "monthly", label: "Monthly", description: "Light maintenance" },
   { value: "seasonal", label: "Seasonal", description: "Per season contract" },
 ];
 
@@ -61,22 +60,38 @@ const AddOnsNotes = ({
             </label>
           ))}
         </RadioGroup>
+
+        {/* Scheduling note */}
+        <div className="flex items-start gap-2 p-3 bg-secondary/10 rounded-lg">
+          <Info className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
+          <p className="text-sm text-foreground">
+            Our lawn maintenance routes run on a weekly schedule to keep lawns looking their best. Lawns that are regularly maintained are typically serviced weekly.
+          </p>
+        </div>
       </div>
 
       {/* Special Notes */}
       <div className="space-y-2">
         <Label htmlFor="notes" className="text-base font-medium">
-          Special Requests or Notes
+          Notes & Special Instructions
         </Label>
         <Textarea
           id="notes"
-          placeholder="Tell us anything else we should know about your property or service needs. For example: 'Gate code is 1234', 'Please avoid flower beds', 'Need brush cleanup quote', etc."
+          placeholder={"Include any helpful details such as:\n• Gate access codes or entry instructions\n• Lawn conditions or problem areas\n• Areas needing extra attention\n• Pet waste status\n• Any other special requests"}
           value={notes}
           onChange={(e) => onNotesChange(e.target.value)}
-          className="min-h-[120px] text-base resize-none"
+          className="min-h-[140px] text-base resize-none"
         />
         <p className="text-xs text-muted-foreground">
-          Optional — but helpful for providing an accurate quote
+          Optional — but helpful for providing accurate service
+        </p>
+      </div>
+
+      {/* Waste Policy */}
+      <div className="flex items-start gap-2 p-3 bg-muted/50 rounded-lg border border-border">
+        <Info className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
+        <p className="text-sm text-muted-foreground">
+          <span className="font-medium text-foreground">Pet Waste Policy:</span> Lawns containing animal waste must be cleaned prior to service. Lawns with excessive animal waste may not be serviced and may incur a $50 fee.
         </p>
       </div>
     </div>

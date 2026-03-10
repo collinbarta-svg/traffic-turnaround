@@ -16,8 +16,8 @@ const FooterNew = () => {
               </div>
             </div>
             <p className="text-sm sm:text-base text-primary-foreground/80 max-w-sm mb-4 sm:mb-6">
-              Family-owned property maintenance services proudly based in St. Michael, MN.
-              Licensed, insured, and committed to consistent, quality results for over 24 years.
+              Family-owned property maintenance proudly based in St. Michael, MN.
+              Licensed, insured, and committed to quality results for over 24 years.
             </p>
             <div className="space-y-2 sm:space-y-3">
               <a
@@ -46,50 +46,32 @@ const FooterNew = () => {
             <h4 className="font-heading font-semibold text-base sm:text-lg mb-3 sm:mb-4">Quick Links</h4>
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
-                <a
-                  href="#about"
-                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
-                >
+                <a href="#about" className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="#services"
-                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
-                >
+                <a href="#services" className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a
-                  href="/estimate"
-                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
-                >
-                  Get Started
+                <a href="/estimate" className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors">
+                  Book Service
                 </a>
               </li>
               <li>
-                <a
-                  href="#projects"
-                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
-                >
+                <a href="#projects" className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors">
                   Our Work
                 </a>
               </li>
               <li>
-                <a
-                  href="#areas"
-                  className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors"
-                >
+                <a href="#areas" className="text-sm sm:text-base text-primary-foreground/70 hover:text-secondary transition-colors">
                   Service Areas
                 </a>
               </li>
               <li>
-                <a
-                  href="/admin"
-                  className="text-xs sm:text-sm text-primary-foreground/50 hover:text-secondary transition-colors"
-                >
+                <a href="/admin" className="text-xs sm:text-sm text-primary-foreground/50 hover:text-secondary transition-colors">
                   Admin
                 </a>
               </li>
@@ -100,24 +82,13 @@ const FooterNew = () => {
           <div>
             <h4 className="font-heading font-semibold text-base sm:text-lg mb-3 sm:mb-4">Services</h4>
             <ul className="space-y-1.5 sm:space-y-2">
-              <li>
-                <span className="text-sm sm:text-base text-primary-foreground/70">Lawn Mowing</span>
-              </li>
-              <li>
-                <span className="text-sm sm:text-base text-primary-foreground/70">Dethatching</span>
-              </li>
-              <li>
-                <span className="text-sm sm:text-base text-primary-foreground/70">Aerating</span>
-              </li>
-              <li>
-                <span className="text-sm sm:text-base text-primary-foreground/70">Fertilizer & Weed Control</span>
-              </li>
-              <li>
-                <span className="text-sm sm:text-base text-primary-foreground/70">Snow Plowing</span>
-              </li>
-              <li>
-                <span className="text-sm sm:text-base text-primary-foreground/70">Brush Cleanup</span>
-              </li>
+              <li><span className="text-sm sm:text-base text-primary-foreground/70">Lawn Mowing</span></li>
+              <li><span className="text-sm sm:text-base text-primary-foreground/70">Dethatching</span></li>
+              <li><span className="text-sm sm:text-base text-primary-foreground/70">Aerating</span></li>
+              <li><span className="text-sm sm:text-base text-primary-foreground/70">Fertilizer & Weed Control</span></li>
+              <li><span className="text-sm sm:text-base text-primary-foreground/70">Snow Plowing</span></li>
+              <li><span className="text-sm sm:text-base text-primary-foreground/70">Brush & Yard Cleanup</span></li>
+              <li><span className="text-sm sm:text-base text-primary-foreground/70">Sod Installation</span></li>
             </ul>
           </div>
         </div>

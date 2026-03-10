@@ -37,9 +37,9 @@ const HeroNew = () => {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-6 sm:mb-8 opacity-0 animate-fade-up stagger-2 leading-relaxed">
-            We're a family-owned, licensed company based in St. Michael with 24 years 
-            of hands-on experience. When you call, you're talking directly to the 
-            people who do the work.
+            Family-owned, licensed, and based in St. Michael with 24 years 
+            of experience. We service lawns on a reliable weekly route schedule 
+            so your property always looks its best.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 opacity-0 animate-fade-up stagger-3">
@@ -49,7 +49,7 @@ const HeroNew = () => {
               asChild
             >
               <a href="/estimate">
-                Get Started
+                Book Lawn Service
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
@@ -61,7 +61,7 @@ const HeroNew = () => {
             >
               <a href="tel:612-461-4022">
                 <Phone className="w-5 h-5 mr-2" />
-                612-461-4022
+                Call for Estimate
               </a>
             </Button>
           </div>
@@ -82,9 +82,9 @@ const HeroNew = () => {
             </div>
             <div>
               <div className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">
-                Direct
+                Weekly
               </div>
-              <div className="text-xs sm:text-sm text-primary-foreground/70">Communication</div>
+              <div className="text-xs sm:text-sm text-primary-foreground/70">Route Schedule</div>
             </div>
           </div>
         </div>
