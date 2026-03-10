@@ -7,11 +7,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { services, calculateServicePrice, calculateTotal, CONFIRMATION_MESSAGE, hasCustomEstimateRequired } from "@/lib/services";
 import EstimateProgress from "@/components/estimate/EstimateProgress";
 import ServiceSelection from "@/components/estimate/ServiceSelection";
-import PropertyDetails from "@/components/estimate/PropertyDetails";
 import AddOnsNotes from "@/components/estimate/AddOnsNotes";
 import ReviewSubmit from "@/components/estimate/ReviewSubmit";
 
-const TOTAL_STEPS = 4;
+const TOTAL_STEPS = 3;
 
 const EstimatePage = () => {
   const navigate = useNavigate();
@@ -66,10 +65,8 @@ const EstimatePage = () => {
       case 1:
         return selectedServices.length > 0;
       case 2:
-        return address.trim().length > 0;
-      case 3:
         return true; // Optional step
-      case 4:
+      case 3:
         return (
           agreed &&
           pricingAcknowledged &&
@@ -240,15 +237,6 @@ const EstimatePage = () => {
               />
             )}
             {currentStep === 2 && (
-              <PropertyDetails
-                address={address}
-                quarterAcres={quarterAcres}
-                onAddressChange={setAddress}
-                onQuarterAcresChange={setQuarterAcres}
-                onAddressValidated={() => {}}
-              />
-            )}
-            {currentStep === 3 && (
               <AddOnsNotes
                 frequency={frequency}
                 notes={notes}
@@ -256,7 +244,7 @@ const EstimatePage = () => {
                 onNotesChange={setNotes}
               />
             )}
-            {currentStep === 4 && (
+            {currentStep === 3 && (
               <ReviewSubmit
                 selectedServices={selectedServices}
                 quarterAcres={quarterAcres}
