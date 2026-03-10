@@ -278,7 +278,7 @@ const EstimatePage = () => {
               Back
             </Button>
 
-            {currentStep < TOTAL_STEPS ? (
+            {currentStep < totalSteps ? (
               <Button
                 size="lg"
                 onClick={handleNext}
