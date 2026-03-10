@@ -53,6 +53,13 @@ const EstimatePage = () => {
     timeframe: "flexible",
   });
 
+  // Determine if step 2 (frequency/notes) is needed
+  const needsFullFlow = selectedServices.some(id => FULL_FLOW_SERVICES.includes(id));
+  const totalSteps = needsFullFlow ? 3 : 2;
+
+  // Map current step to logical step
+  const getReviewStep = () => needsFullFlow ? 3 : 2;
+
   const toggleService = (serviceId: string) => {
     setSelectedServices((prev) =>
       prev.includes(serviceId)
@@ -62,26 +69,22 @@ const EstimatePage = () => {
   };
 
   const canProceed = () => {
-    switch (currentStep) {
-      case 1:
-        return selectedServices.length > 0;
-      case 2:
-        return true; // Optional step
-      case 3:
-        return (
-          agreed &&
-          pricingAcknowledged &&
-          contactInfo.name.trim() &&
-          contactInfo.email.trim() &&
-          contactInfo.phone.trim()
-        );
-      default:
-        return false;
+    if (currentStep === 1) return selectedServices.length > 0;
+    if (currentStep === 2 && needsFullFlow) return true; // frequency/notes step is optional
+    if (currentStep === getReviewStep()) {
+      return (
+        agreed &&
+        pricingAcknowledged &&
+        contactInfo.name.trim() &&
+        contactInfo.email.trim() &&
+        contactInfo.phone.trim()
+      );
     }
+    return false;
   };
 
   const handleNext = () => {
-    if (currentStep < TOTAL_STEPS && canProceed()) {
+    if (currentStep < totalSteps && canProceed()) {
       setCurrentStep((prev) => prev + 1);
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
