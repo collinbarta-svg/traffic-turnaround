@@ -7,7 +7,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { services, calculateServicePrice, calculateTotal, CONFIRMATION_MESSAGE, hasCustomEstimateRequired } from "@/lib/services";
 import EstimateProgress from "@/components/estimate/EstimateProgress";
 import ServiceSelection from "@/components/estimate/ServiceSelection";
-import PropertyDetails from "@/components/estimate/PropertyDetails";
 import AddOnsNotes from "@/components/estimate/AddOnsNotes";
 import ReviewSubmit from "@/components/estimate/ReviewSubmit";
 
