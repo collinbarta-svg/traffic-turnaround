@@ -34,7 +34,7 @@ const HeaderNew = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <img src={logo} alt="Mason Outdoor Service LLC" className="w-10 h-10 rounded-lg object-cover" />
+            <img src={logo} alt="Mason Outdoor Service LLC" className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg object-cover" />
             <div className="hidden sm:block">
               <div className={`font-heading font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
                 Mason Outdoor Service LLC
