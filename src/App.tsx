@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import EstimatePage from "./pages/EstimatePage";
+import SodEstimatePage from "./pages/SodEstimatePage";
 import AdminDashboard from "./pages/AdminDashboard";
 import InvoicePage from "./pages/InvoicePage";
 import NotFound from "./pages/NotFound";
@@ -22,6 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/estimate" element={<EstimatePage />} />
+          <Route path="/sod-estimate" element={<SodEstimatePage />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/invoice/:id" element={<InvoicePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

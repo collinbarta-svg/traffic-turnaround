@@ -95,7 +95,7 @@ const SodShowcase = () => {
             Need a new lawn? We handle everything from ground prep to finished sod.
           </p>
           <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full sm:w-auto" asChild>
-            <a href="/estimate">
+            <a href="/sod-estimate">
               Get a Sod Estimate
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
