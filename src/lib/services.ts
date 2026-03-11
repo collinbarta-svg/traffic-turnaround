@@ -67,16 +67,6 @@ export const services: Service[] = [
     features: ["Brush removal", "Leaf & debris cleanup", "Seasonal cleanup"],
     icon: "trees",
   },
-  {
-    id: "sod-installation",
-    name: "Sod Installation",
-    description: "Ground prep, grading, and fresh sod installation",
-    basePrice: 0,
-    additionalQuarterAcrePrice: 0,
-    isCustom: true,
-    features: ["Ground preparation", "Grading & tilling", "Sod install"],
-    icon: "shovel",
-  },
 ];
 
 export const DISCLAIMER_TEXT = "Pricing shown is a preliminary estimate based on public property data.";
@@ -112,7 +102,6 @@ export function getEstimateTier(serviceId: string, acres: number): EstimateTier 
       return { label: "Standard", description: "Standard estimate", requiresCustom: false };
 
     case "brush-yard-cleanup":
-    case "sod-installation":
       return { label: "Custom", description: "Call for estimate", requiresCustom: true };
 
     default:
