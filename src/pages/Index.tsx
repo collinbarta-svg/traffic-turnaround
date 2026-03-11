@@ -1,4 +1,3 @@
-import HeaderNew from "@/components/HeaderNew";
 import HeroNew from "@/components/HeroNew";
 import ServicesGrid from "@/components/ServicesGrid";
 import SeasonalServices from "@/components/SeasonalServices";
@@ -13,7 +12,7 @@ import FooterNew from "@/components/FooterNew";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <HeaderNew />
+      
       <HeroNew />
       <ServicesGrid />
       <SeasonalServices />
