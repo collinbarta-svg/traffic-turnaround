@@ -24,17 +24,17 @@ const HeaderNew = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-visible ${
         isScrolled
           ? "bg-card/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="container overflow-visible">
+        <div className="flex items-center justify-between h-16 md:h-20 overflow-visible">
           {/* Logo - overflows header for polished effect */}
-          <a href="/" className="flex items-center gap-3 relative -my-4">
-            <img src={logo} alt="Mason Outdoor Service LLC" className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover shadow-lg ring-2 ring-background/50 relative z-10" />
+          <a href="/" className="flex items-center gap-3 relative">
+            <img src={logo} alt="Mason Outdoor Service LLC" className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover shadow-lg ring-2 ring-background/50 relative z-[60] translate-y-4" />
             <div className="hidden sm:block">
               <div className={`font-heading font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
                 Mason Outdoor Service LLC
