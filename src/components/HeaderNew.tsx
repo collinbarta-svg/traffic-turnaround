@@ -31,10 +31,10 @@ const HeaderNew = () => {
       }`}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <img src={logo} alt="Mason Outdoor Service LLC" className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover" />
+            <img src={logo} alt="Mason Outdoor Service LLC" className="w-28 h-28 sm:w-32 sm:h-32 rounded-lg object-cover" />
             <div className="hidden sm:block">
               <div className={`font-heading font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
                 Mason Outdoor Service LLC
