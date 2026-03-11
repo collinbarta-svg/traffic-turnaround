@@ -10,8 +10,8 @@ import ServiceSelection from "@/components/estimate/ServiceSelection";
 import AddOnsNotes from "@/components/estimate/AddOnsNotes";
 import ReviewSubmit from "@/components/estimate/ReviewSubmit";
 
-// Services that get the full flow (frequency + notes step)
-const FULL_FLOW_SERVICES = ["lawn-mowing", "snow-plowing", "fertilizer-weed-control"];
+// Services that get the full flow (scheduling + notes step)
+const SCHEDULING_SERVICES = ["lawn-mowing", "snow-plowing"];
 
 const EstimatePage = () => {
   const navigate = useNavigate();
