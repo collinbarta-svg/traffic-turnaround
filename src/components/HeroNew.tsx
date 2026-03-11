@@ -49,7 +49,7 @@ const HeroNew = () => {
               asChild
             >
               <a href="/estimate">
-                Book Lawn Service
+                Book Service
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
