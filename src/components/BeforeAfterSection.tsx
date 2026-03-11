@@ -115,16 +115,16 @@ const BeforeAfterSlider = ({
 
 const BeforeAfterSection = () => {
   return (
-    <section className="py-12 sm:py-20 md:py-28 bg-background">
+    <section className="py-12 sm:py-20 md:py-28" style={{ background: "var(--hero-gradient)" }}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/10 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
+          <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary/20 text-secondary text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             Recent Work
           </span>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             See the Difference
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground px-2">
+          <p className="text-base sm:text-lg text-white/60 px-2">
             Drag the slider to compare before and after — real results from real properties we service.
           </p>
         </div>
@@ -138,10 +138,10 @@ const BeforeAfterSection = () => {
                 title={item.title}
               />
               <div className="px-1">
-                <h3 className="font-heading font-bold text-foreground text-base sm:text-lg">
+                <h3 className="font-heading font-bold text-white text-base sm:text-lg">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mt-1">
+                <p className="text-sm text-white/50 mt-1">
                   {item.description}
                 </p>
               </div>
