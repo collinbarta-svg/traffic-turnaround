@@ -47,14 +47,6 @@ const services = [
     highlights: ["Brush removal", "Leaf & debris cleanup", "Seasonal cleanup"],
     isCallOnly: true,
   },
-  {
-    icon: Droplets,
-    title: "Sod Installation",
-    slug: "sod-installation",
-    description: "Ground prep, grading, sod delivery, and professional install for a brand new lawn.",
-    highlights: ["Ground preparation", "Grading & tilling", "Sod install"],
-    isCallOnly: true,
-  },
 ];
 
 const ServicesGrid = () => {
