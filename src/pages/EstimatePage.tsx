@@ -10,8 +10,8 @@ import ServiceSelection from "@/components/estimate/ServiceSelection";
 import AddOnsNotes from "@/components/estimate/AddOnsNotes";
 import ReviewSubmit from "@/components/estimate/ReviewSubmit";
 
-// Services that get the full flow (frequency + notes step)
-const FULL_FLOW_SERVICES = ["lawn-mowing", "snow-plowing", "fertilizer-weed-control"];
+// Services that get the full flow (scheduling + notes step)
+const SCHEDULING_SERVICES = ["lawn-mowing", "snow-plowing"];
 
 const EstimatePage = () => {
   const navigate = useNavigate();
@@ -53,8 +53,9 @@ const EstimatePage = () => {
     timeframe: "flexible",
   });
 
-  // Determine if step 2 (frequency/notes) is needed
-  const needsFullFlow = selectedServices.some(id => FULL_FLOW_SERVICES.includes(id));
+  // Determine if step 2 (scheduling) is needed — only for lawn/snow services
+  const needsFullFlow = selectedServices.some(id => SCHEDULING_SERVICES.includes(id));
+  const isProjectServicesOnly = !needsFullFlow;
   const totalSteps = needsFullFlow ? 3 : 2;
 
   // Map current step to logical step
@@ -261,6 +262,7 @@ const EstimatePage = () => {
                 onAgreedChange={setAgreed}
                 pricingAcknowledged={pricingAcknowledged}
                 onPricingAcknowledgedChange={setPricingAcknowledged}
+                isProjectService={isProjectServicesOnly}
               />
             )}
           </div>

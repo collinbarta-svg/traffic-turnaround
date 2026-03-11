@@ -24,6 +24,7 @@ interface ReviewSubmitProps {
   onAgreedChange: (agreed: boolean) => void;
   pricingAcknowledged: boolean;
   onPricingAcknowledgedChange: (val: boolean) => void;
+  isProjectService?: boolean;
 }
 
 const timeframeOptions = [
@@ -45,6 +46,7 @@ const ReviewSubmit = ({
   onAgreedChange,
   pricingAcknowledged,
   onPricingAcknowledgedChange,
+  isProjectService = false,
 }: ReviewSubmitProps) => {
   const selectedServiceDetails = services.filter((s) =>
     selectedServices.includes(s.id)
@@ -63,12 +65,24 @@ const ReviewSubmit = ({
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-2">
-          Review & Submit
+          {isProjectService ? "Request an Estimate" : "Review & Submit"}
         </h2>
         <p className="text-muted-foreground">
-          Confirm your details and get your estimate
+          {isProjectService
+            ? "Submit your info and we'll get back to you with pricing"
+            : "Confirm your details and get your estimate"}
         </p>
       </div>
+
+      {/* Project service messaging */}
+      {isProjectService && (
+        <div className="flex items-start gap-3 p-4 bg-secondary/10 rounded-xl border border-secondary/20">
+          <Info className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+          <p className="text-sm text-foreground leading-relaxed">
+            Many landscaping services require a quick review of the property before pricing. Submit your information and we will contact you with an estimate.
+          </p>
+        </div>
+      )}
 
       {/* Estimate Summary Card */}
       <div className="bg-card border border-border rounded-xl p-4 sm:p-6 space-y-4">
