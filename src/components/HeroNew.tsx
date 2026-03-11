@@ -17,7 +17,7 @@ const HeroNew = () => {
       <div className="relative z-10 container pt-8 sm:pt-12 pb-12 sm:pb-16 flex flex-col items-center">
         {/* Brand name */}
         <div className="mb-12 sm:mb-16 opacity-0 animate-fade-up">
-          <img src={logo} alt="Mason Outdoor Service LLC" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover" />
+          <img src={logo} alt="Mason Outdoor Service LLC" className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover" />
         </div>
 
         <div className="max-w-4xl text-center">
