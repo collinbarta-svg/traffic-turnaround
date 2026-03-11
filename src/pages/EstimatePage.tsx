@@ -262,6 +262,7 @@ const EstimatePage = () => {
                 onAgreedChange={setAgreed}
                 pricingAcknowledged={pricingAcknowledged}
                 onPricingAcknowledgedChange={setPricingAcknowledged}
+                isProjectService={isProjectServicesOnly}
               />
             )}
           </div>

@@ -11,8 +11,8 @@ interface AddOnsNotesProps {
 }
 
 const frequencyOptions = [
-  { value: "weekly", label: "Weekly Service", description: "Recommended for maintained lawns" },
-  { value: "one-time", label: "One-Time Service", description: "Single visit" },
+  { value: "weekly", label: "Weekly Service", description: "Recommended for best results" },
+  { value: "bi-weekly", label: "Bi-Weekly Service", description: "Every other week" },
   { value: "seasonal", label: "Seasonal", description: "Per season contract" },
 ];
 
