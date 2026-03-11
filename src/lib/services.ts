@@ -102,7 +102,6 @@ export function getEstimateTier(serviceId: string, acres: number): EstimateTier 
       return { label: "Standard", description: "Standard estimate", requiresCustom: false };
 
     case "brush-yard-cleanup":
-    case "sod-installation":
       return { label: "Custom", description: "Call for estimate", requiresCustom: true };
 
     default:
