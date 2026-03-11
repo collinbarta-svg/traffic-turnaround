@@ -24,6 +24,7 @@ interface ReviewSubmitProps {
   onAgreedChange: (agreed: boolean) => void;
   pricingAcknowledged: boolean;
   onPricingAcknowledgedChange: (val: boolean) => void;
+  isProjectService?: boolean;
 }
 
 const timeframeOptions = [
