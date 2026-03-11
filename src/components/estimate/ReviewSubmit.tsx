@@ -46,6 +46,7 @@ const ReviewSubmit = ({
   onAgreedChange,
   pricingAcknowledged,
   onPricingAcknowledgedChange,
+  isProjectService = false,
 }: ReviewSubmitProps) => {
   const selectedServiceDetails = services.filter((s) =>
     selectedServices.includes(s.id)
