@@ -53,8 +53,9 @@ const EstimatePage = () => {
     timeframe: "flexible",
   });
 
-  // Determine if step 2 (frequency/notes) is needed
-  const needsFullFlow = selectedServices.some(id => FULL_FLOW_SERVICES.includes(id));
+  // Determine if step 2 (scheduling) is needed — only for lawn/snow services
+  const needsFullFlow = selectedServices.some(id => SCHEDULING_SERVICES.includes(id));
+  const isProjectServicesOnly = !needsFullFlow;
   const totalSteps = needsFullFlow ? 3 : 2;
 
   // Map current step to logical step
