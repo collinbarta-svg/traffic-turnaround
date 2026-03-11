@@ -129,7 +129,7 @@ const ServicesGrid = () => {
         <div className="text-center mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
           <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full sm:w-auto" asChild>
             <a href="/estimate">
-              Book Lawn Service
+              Book Service
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </Button>
