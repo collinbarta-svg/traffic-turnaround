@@ -1,51 +1,105 @@
-import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees, Check, Phone } from "lucide-react";
+import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees, Check, Phone, Flower2, Scissors, TreePine, Shovel, Sun, Paintbrush } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
 const services = [
   {
-    icon: TreeDeciduous,
-    title: "Lawn Mowing",
-    slug: "lawn-mowing",
-    description: "Mowing, string trimming, edging, and debris cleanup. Same team every visit.",
-    highlights: ["Mowing & edging", "String trimming", "Debris cleanup"],
-  },
-  {
     icon: Leaf,
-    title: "Dethatching",
-    slug: "dethatching",
-    description: "Removes dead grass buildup to improve water, air, and nutrient flow to the soil.",
-    highlights: ["Thatch removal", "Waste hauled away", "Healthier lawn"],
+    title: "Spring Yard Clean Up",
+    slug: "brush-yard-cleanup",
+    description: "Removes winter debris such as leaves, twigs, pine cones, fallen branches, and litter. Includes cleaning garden beds and cutting back perennials for healthy spring growth.",
+    highlights: ["Debris removal", "Garden bed cleaning", "Perennial care"],
   },
   {
-    icon: Droplets,
-    title: "Aerating",
-    slug: "aerating",
-    description: "Core aeration for better drainage, healthier roots, and stronger lawn growth.",
-    highlights: ["Core aeration", "Better drainage", "Healthier roots"],
+    icon: TreeDeciduous,
+    title: "Weekly Lawn Mowing",
+    slug: "lawn-mowing",
+    description: "Promotes a thicker, healthier lawn by encouraging consistent growth. Controls weeds, improves nutrient recycling, prevents thatch buildup, and boosts curb appeal.",
+    highlights: ["Mowing & trimming", "Weed control", "Improved curb appeal"],
   },
   {
     icon: Sprout,
     title: "Fertilizer & Weed Control",
     slug: "fertilizer-weed-control",
-    description: "Seasonal treatments for a healthy, weed-free lawn all year long.",
-    highlights: ["Seasonal treatments", "Weed prevention", "Lawn nutrition"],
+    description: "Provides essential nutrients like nitrogen, phosphorus, and potassium for faster growth, deeper roots, and a thicker, greener lawn with improved drought resistance.",
+    highlights: ["Essential nutrients", "Deeper roots", "Weed suppression"],
   },
   {
-    icon: Snowflake,
-    title: "Snow Plowing",
-    slug: "snow-plowing",
-    description: "Driveway plowing, sidewalk shoveling, and steps cleared. Salt & sand as needed.",
-    highlights: ["Driveway plowing", "Hand shoveling", "Salt & sand"],
+    icon: Leaf,
+    title: "Lawn Dethatching",
+    slug: "dethatching",
+    description: "Removes compacted organic matter so water, oxygen, and nutrients reach the soil. Promotes deeper root growth, prevents disease, and improves fertilizer efficiency.",
+    highlights: ["Thatch removal", "Better air circulation", "Healthier lawn"],
+  },
+  {
+    icon: Droplets,
+    title: "Lawn Core Plug Aeration",
+    slug: "aerating",
+    description: "Relieves soil compaction, allowing air, water, and nutrients to penetrate deeper. Encourages stronger grass, improves fertilizer efficiency, and builds drought-resistant lawns.",
+    highlights: ["Core aeration", "Reduced compaction", "Deeper roots"],
+  },
+  {
+    icon: Sprout,
+    title: "Lawn Overseeding",
+    slug: null,
+    description: "Thickens your lawn and fills bare patches for a lush, vibrant appearance. Enhances resistance to disease, pests, and drought while naturally suppressing weeds.",
+    highlights: ["Fills bare patches", "Disease resistance", "Weed suppression"],
+    isCallOnly: true,
   },
   {
     icon: Trees,
-    title: "Brush & Yard Cleanup",
-    slug: "brush-yard-cleanup",
-    description: "Removal of brush, branches, leaves, sticks, and general yard debris. Ideal for seasonal cleanup.",
-    highlights: ["Brush removal", "Leaf & debris cleanup", "Seasonal cleanup"],
+    title: "Rock Bed Landscape Clean Up",
+    slug: null,
+    description: "Removes debris, weeds, and organic matter to restore a clean, organized look. Improves curb appeal, drainage, weed prevention, and moisture retention for plants.",
+    highlights: ["Weed removal", "Improved drainage", "Better curb appeal"],
     isCallOnly: true,
+  },
+  {
+    icon: Paintbrush,
+    title: "Colored Mulch Installation",
+    slug: null,
+    description: "Enhances landscapes with vibrant, long-lasting colors. Suppresses weeds, retains soil moisture, reduces watering needs, and regulates soil temperature to protect roots.",
+    highlights: ["Vibrant colors", "Weed suppression", "Moisture retention"],
+    isCallOnly: true,
+  },
+  {
+    icon: Flower2,
+    title: "Landscape Gardening",
+    slug: null,
+    description: "Increases property value by an estimated 12–20%. Improves mental well-being by reducing stress and creating a relaxing outdoor environment.",
+    highlights: ["Increased value", "Stress reduction", "Beautiful design"],
+    isCallOnly: true,
+  },
+  {
+    icon: Scissors,
+    title: "Plant & Shrub Pruning",
+    slug: null,
+    description: "Removes diseased, dead, or damaged branches to prevent pest infestations. Encourages flower and fruit production, improves air circulation and light penetration.",
+    highlights: ["Disease prevention", "Better growth", "Shape maintenance"],
+    isCallOnly: true,
+  },
+  {
+    icon: TreePine,
+    title: "Tree Trimming",
+    slug: null,
+    description: "Promotes tree longevity by removing dead, diseased, or decaying branches. Improves airflow and sunlight through the canopy, reducing fungal risks.",
+    highlights: ["Tree health", "Canopy care", "Disease prevention"],
+    isCallOnly: true,
+  },
+  {
+    icon: Leaf,
+    title: "Fall Clean Up",
+    slug: "brush-yard-cleanup",
+    description: "Removes fallen leaves and debris that can suffocate your lawn. Eliminates pest habitats, reduces thatch buildup, prevents slippery walkways, and prepares for spring.",
+    highlights: ["Leaf removal", "Pest prevention", "Spring prep"],
+  },
+  {
+    icon: Snowflake,
+    title: "Snow Plowing & Ice Control",
+    slug: "snow-plowing",
+    description: "Keeps sidewalks, driveways, and parking lots safe during winter. Prevents slips and falls, reduces ice buildup, and ensures safe property access.",
+    highlights: ["Driveway plowing", "Ice control", "Safe access"],
   },
 ];
 
@@ -53,15 +107,11 @@ const ServicesGrid = () => {
   const navigate = useNavigate();
 
   const handleServiceClick = (slug: string | null, isCallOnly?: boolean) => {
-    if (isCallOnly) {
+    if (isCallOnly || !slug) {
       window.location.href = "tel:612-461-4022";
       return;
     }
-    if (slug) {
-      navigate(`/estimate?service=${slug}`);
-    } else {
-      navigate('/estimate');
-    }
+    navigate(`/estimate?service=${slug}`);
   };
 
   return (
@@ -85,7 +135,7 @@ const ServicesGrid = () => {
             <Card
               key={service.title}
               className="group p-4 sm:p-6 transition-all duration-300 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20 cursor-pointer hover:bg-primary-foreground/15"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.05}s` }}
               onClick={() => handleServiceClick(service.slug, service.isCallOnly)}
             >
               <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">
@@ -109,7 +159,7 @@ const ServicesGrid = () => {
               </ul>
               
               <div className="flex items-center gap-2 pt-3 sm:pt-4 border-t border-primary-foreground/20">
-                {service.isCallOnly ? (
+                {service.isCallOnly || !service.slug ? (
                   <>
                     <Phone className="w-4 h-4 text-secondary" />
                     <span className="text-sm font-medium text-secondary">Call for Estimate</span>
