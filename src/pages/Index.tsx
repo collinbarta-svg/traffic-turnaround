@@ -17,7 +17,7 @@ const Index = () => {
       <ServicesGrid />
       <SeasonalServices />
       <SodShowcase />
-      <BeforeAfterSection />
+      
       <ProjectGallery />
       <AboutOwner />
       <TrustSection />
