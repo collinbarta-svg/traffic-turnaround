@@ -8,63 +8,71 @@ import snowClearing from "@/assets/projects/snow-clearing.webp";
 import stonePath from "@/assets/projects/stone-path.webp";
 import stoneWalkway from "@/assets/projects/stone-walkway.webp";
 import landscapeFeature from "@/assets/projects/landscape-feature.webp";
-import mulchBed from "@/assets/projects/mulch-bed.jpg";
-import treeLandscaping from "@/assets/projects/tree-landscaping.jpg";
 import rockBed from "@/assets/projects/rock-bed.jpg";
 import flowerBed from "@/assets/projects/flower-bed.jpg";
+import stonePathPool from "@/assets/projects/stone-path-pool.jpg";
+import mulchHostas from "@/assets/projects/mulch-hostas.jpg";
+import mowedLawnSunset from "@/assets/projects/mowed-lawn-sunset.jpg";
 
 const projects = [
   {
     id: 1,
+    image: stonePathPool,
+    title: "Poolside Stone Path & Garden",
+    category: "Outdoor Projects",
+    description: "Natural flagstone walkway with dark mulch beds, perennial plantings, and decorative garden trellises alongside a pool area.",
+  },
+  {
+    id: 2,
+    image: mulchHostas,
+    title: "Mulch Bed & Hosta Planting",
+    category: "Landscaping",
+    description: "Curved mulch bed with lush hostas, rock accents, and clean steel edging for a polished, low-maintenance look.",
+  },
+  {
+    id: 3,
+    image: mowedLawnSunset,
+    title: "Large Property Mowing",
+    category: "Lawn Care",
+    description: "Freshly mowed large acreage lawn at sunset, showcasing clean striping and professional-grade maintenance.",
+  },
+  {
+    id: 4,
     image: snowClearing,
     title: "Winter Property Care",
     category: "Snow Services",
     description: "Thorough snow clearing with attention to driveways, walkways, and safety—captured during an evening plowing session.",
   },
   {
-    id: 2,
+    id: 5,
     image: stonePath,
     title: "Natural Stone Pathway",
     category: "Outdoor Projects",
     description: "Custom flagstone pathway with mulch borders, winding through lush garden landscaping.",
   },
   {
-    id: 3,
+    id: 6,
     image: stoneWalkway,
     title: "Stone Walkway & Garden Bed",
     category: "Outdoor Projects",
     description: "Decorative stone walkway with curved edges, complemented by hostas and flowering plants.",
   },
   {
-    id: 4,
+    id: 7,
     image: landscapeFeature,
     title: "Landscape Enhancement",
     category: "Outdoor Projects",
     description: "Clean stone edging with white rock bed, creating a low-maintenance, attractive border around mature evergreens.",
   },
   {
-    id: 5,
-    image: mulchBed,
-    title: "Mulch Bed & Plantings",
-    category: "Landscaping",
-    description: "Fresh mulch bed with hostas and flowering plants, bordered with clean edging for a neat, maintained look.",
-  },
-  {
-    id: 6,
-    image: treeLandscaping,
-    title: "Tree Ring Landscaping",
-    category: "Landscaping",
-    description: "Lush fern and shrub planting around a mature tree with dark mulch bed and natural stone accents.",
-  },
-  {
-    id: 7,
+    id: 8,
     image: rockBed,
     title: "Rock Bed & Brick Edging",
     category: "Outdoor Projects",
     description: "White rock bed with brick border edging, solar path lights, and hydrangea plantings around a front porch.",
   },
   {
-    id: 8,
+    id: 9,
     image: flowerBed,
     title: "Flower Bed & Stone Wall",
     category: "Landscaping",
@@ -91,7 +99,7 @@ const ProjectGallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-8 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 mb-8 sm:mb-12">
           {projects.map((project) => (
             <Card
               key={project.id}
