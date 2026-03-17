@@ -15,6 +15,7 @@ import mulchHostas from "@/assets/projects/mulch-hostas.jpg";
 
 import mulchWalkway from "@/assets/projects/mulch-walkway.jpg";
 import gravelLandscaping from "@/assets/projects/gravel-landscaping.jpg";
+import frontPorchLandscaping from "@/assets/projects/front-porch-landscaping.jpg";
 
 const projects = [
   {
