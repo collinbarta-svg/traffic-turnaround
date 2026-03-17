@@ -56,7 +56,7 @@ const BeforeAfterSlider = ({
       <img
         src={after}
         alt={`${title} - After`}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain"
       />
 
       {/* Before image (clipped) */}
