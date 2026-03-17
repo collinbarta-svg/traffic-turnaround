@@ -32,13 +32,6 @@ const projects = [
     description: "Curved mulch bed with lush hostas, rock accents, and clean steel edging for a polished, low-maintenance look.",
   },
   {
-    id: 3,
-    image: mowedLawnSunset,
-    title: "Large Property Mowing",
-    category: "Lawn Care",
-    description: "Freshly mowed large acreage lawn at sunset, showcasing clean striping and professional-grade maintenance.",
-  },
-  {
     id: 4,
     image: snowClearing,
     title: "Winter Property Care",
