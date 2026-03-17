@@ -12,7 +12,7 @@ import rockBed from "@/assets/projects/rock-bed.jpg";
 import flowerBed from "@/assets/projects/flower-bed.jpg";
 import stonePathPool from "@/assets/projects/stone-path-pool.jpg";
 import mulchHostas from "@/assets/projects/mulch-hostas.jpg";
-import mowedLawnSunset from "@/assets/projects/mowed-lawn-sunset.jpg";
+
 import mulchWalkway from "@/assets/projects/mulch-walkway.jpg";
 import gravelLandscaping from "@/assets/projects/gravel-landscaping.jpg";
 
