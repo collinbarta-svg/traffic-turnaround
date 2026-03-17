@@ -1,11 +1,5 @@
 import { useState, useRef, useCallback } from "react";
 
-import overgrownBefore from "@/assets/before-after/overgrown-before.jpg";
-import overgrownAfter from "@/assets/before-after/overgrown-after.jpg";
-import springBefore from "@/assets/before-after/spring-before.jpg";
-import springAfter from "@/assets/before-after/spring-after.jpg";
-import mowingBefore from "@/assets/before-after/mowing-before.jpg";
-import mowingAfter from "@/assets/before-after/mowing-after.jpg";
 import leafBefore from "@/assets/before-after/leaf-before.jpg";
 import leafAfter from "@/assets/before-after/leaf-after.jpg";
 
@@ -15,24 +9,6 @@ const comparisons = [
     description: "Yard covered in fallen leaves cleared to a clean, tidy lawn ready for winter.",
     before: leafBefore,
     after: leafAfter,
-  },
-  {
-    title: "Overgrown Yard Cleanup",
-    description: "From neglected to pristine — complete debris removal, mowing, and edging.",
-    before: overgrownBefore,
-    after: overgrownAfter,
-  },
-  {
-    title: "Spring Cleanup",
-    description: "Dead grass, branches, and winter debris cleared for a fresh start.",
-    before: springBefore,
-    after: springAfter,
-  },
-  {
-    title: "Lawn Mowing Transformation",
-    description: "Regular professional mowing with crisp stripes and clean edges.",
-    before: mowingBefore,
-    after: mowingAfter,
   },
 ];
 
@@ -137,7 +113,7 @@ const BeforeAfterSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-7xl mx-auto">
+        <div className="max-w-lg mx-auto">
           {comparisons.map((item) => (
             <div key={item.title} className="space-y-3">
               <BeforeAfterSlider
