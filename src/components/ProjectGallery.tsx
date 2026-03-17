@@ -16,6 +16,7 @@ import mulchHostas from "@/assets/projects/mulch-hostas.jpg";
 import mulchWalkway from "@/assets/projects/mulch-walkway.jpg";
 import gravelLandscaping from "@/assets/projects/gravel-landscaping.jpg";
 import frontPorchLandscaping from "@/assets/projects/front-porch-landscaping.jpg";
+import lawnMowingStripes from "@/assets/projects/lawn-mowing-stripes.jpg";
 
 const projects = [
   {
@@ -94,6 +95,13 @@ const projects = [
     title: "Front Porch Rock Bed & Lighting",
     category: "Landscaping",
     description: "White rock bed with brick edging, solar path lights, and colorful plantings around a stone-pillared front porch.",
+  },
+  {
+    id: 13,
+    image: lawnMowingStripes,
+    title: "Professional Lawn Striping",
+    category: "Lawn Care",
+    description: "Beautifully striped large lawn with professional mowing patterns and crisp, clean lines.",
   },
 ];
 
