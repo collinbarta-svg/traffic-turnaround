@@ -89,16 +89,6 @@ const HeroNew = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator - hide on mobile */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in stagger-5 hidden sm:block">
-        <a href="#how-it-works" className="flex flex-col items-center gap-2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors">
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
-          <div className="w-6 h-10 border-2 border-current rounded-full flex items-start justify-center pt-2">
-            <div className="w-1 h-2 bg-current rounded-full animate-bounce" />
-          </div>
-        </a>
-      </div>
     </section>
   );
 };
