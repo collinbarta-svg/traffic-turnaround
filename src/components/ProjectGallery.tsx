@@ -88,6 +88,13 @@ const projects = [
     category: "Landscaping",
     description: "Clean gravel bed with flowering shrubs, decorative pots, and low-maintenance ground cover.",
   },
+  {
+    id: 12,
+    image: frontPorchLandscaping,
+    title: "Front Porch Rock Bed & Lighting",
+    category: "Landscaping",
+    description: "White rock bed with brick edging, solar path lights, and colorful plantings around a stone-pillared front porch.",
+  },
 ];
 
 const ProjectGallery = () => {
