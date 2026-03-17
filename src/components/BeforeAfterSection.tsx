@@ -113,7 +113,7 @@ const BeforeAfterSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-7xl mx-auto">
+        <div className="max-w-lg mx-auto">
           {comparisons.map((item) => (
             <div key={item.title} className="space-y-3">
               <BeforeAfterSlider
