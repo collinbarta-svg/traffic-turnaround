@@ -96,6 +96,13 @@ const projects = [
     category: "Landscaping",
     description: "White rock bed with brick edging, solar path lights, and colorful plantings around a stone-pillared front porch.",
   },
+  {
+    id: 13,
+    image: lawnMowingStripes,
+    title: "Professional Lawn Striping",
+    category: "Lawn Care",
+    description: "Beautifully striped large lawn with professional mowing patterns and crisp, clean lines.",
+  },
 ];
 
 const ProjectGallery = () => {
