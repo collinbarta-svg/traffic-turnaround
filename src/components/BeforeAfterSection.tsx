@@ -67,7 +67,7 @@ const BeforeAfterSlider = ({
         <img
           src={before}
           alt={`${title} - Before`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain"
           style={{ width: containerRef.current?.offsetWidth || "100%", maxWidth: "none" }}
         />
       </div>
