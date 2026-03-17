@@ -44,7 +44,7 @@ const BeforeAfterSlider = ({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[3/4] rounded-xl overflow-hidden cursor-col-resize select-none bg-black/20"
+      className="relative aspect-square rounded-xl overflow-hidden cursor-col-resize select-none bg-black/20"
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
