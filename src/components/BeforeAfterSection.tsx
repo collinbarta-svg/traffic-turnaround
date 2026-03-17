@@ -44,7 +44,7 @@ const BeforeAfterSlider = ({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[4/3] rounded-xl overflow-hidden cursor-col-resize select-none"
+      className="relative aspect-[3/4] rounded-xl overflow-hidden cursor-col-resize select-none bg-black/20"
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
@@ -56,7 +56,7 @@ const BeforeAfterSlider = ({
       <img
         src={after}
         alt={`${title} - After`}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain"
       />
 
       {/* Before image (clipped) */}
@@ -67,7 +67,7 @@ const BeforeAfterSlider = ({
         <img
           src={before}
           alt={`${title} - Before`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain"
           style={{ width: containerRef.current?.offsetWidth || "100%", maxWidth: "none" }}
         />
       </div>
