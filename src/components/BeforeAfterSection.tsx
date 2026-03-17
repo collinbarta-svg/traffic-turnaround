@@ -6,8 +6,16 @@ import springBefore from "@/assets/before-after/spring-before.jpg";
 import springAfter from "@/assets/before-after/spring-after.jpg";
 import mowingBefore from "@/assets/before-after/mowing-before.jpg";
 import mowingAfter from "@/assets/before-after/mowing-after.jpg";
+import leafBefore from "@/assets/before-after/leaf-before.jpg";
+import leafAfter from "@/assets/before-after/leaf-after.jpg";
 
 const comparisons = [
+  {
+    title: "Fall Leaf Cleanup",
+    description: "Yard covered in fallen leaves cleared to a clean, tidy lawn ready for winter.",
+    before: leafBefore,
+    after: leafAfter,
+  },
   {
     title: "Overgrown Yard Cleanup",
     description: "From neglected to pristine — complete debris removal, mowing, and edging.",
@@ -129,7 +137,7 @@ const BeforeAfterSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-7xl mx-auto">
           {comparisons.map((item) => (
             <div key={item.title} className="space-y-3">
               <BeforeAfterSlider
