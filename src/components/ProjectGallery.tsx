@@ -80,6 +80,20 @@ const projects = [
     category: "Landscaping",
     description: "Tiered stone retaining wall with vibrant purple petunias, rock accents, and solar lighting along the walkway.",
   },
+  {
+    id: 10,
+    image: mulchWalkway,
+    title: "Mulch Bed & Walkway",
+    category: "Landscaping",
+    description: "Fresh cedar mulch beds with flowering plants along a walkway and front porch area.",
+  },
+  {
+    id: 11,
+    image: gravelLandscaping,
+    title: "Gravel & Shrub Landscaping",
+    category: "Landscaping",
+    description: "Clean gravel bed with flowering shrubs, decorative pots, and low-maintenance ground cover.",
+  },
 ];
 
 const ProjectGallery = () => {

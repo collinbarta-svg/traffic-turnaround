@@ -6,8 +6,16 @@ import springBefore from "@/assets/before-after/spring-before.jpg";
 import springAfter from "@/assets/before-after/spring-after.jpg";
 import mowingBefore from "@/assets/before-after/mowing-before.jpg";
 import mowingAfter from "@/assets/before-after/mowing-after.jpg";
+import leafBefore from "@/assets/before-after/leaf-before.jpg";
+import leafAfter from "@/assets/before-after/leaf-after.jpg";
 
 const comparisons = [
+  {
+    title: "Fall Leaf Cleanup",
+    description: "Yard covered in fallen leaves cleared to a clean, tidy lawn ready for winter.",
+    before: leafBefore,
+    after: leafAfter,
+  },
   {
     title: "Overgrown Yard Cleanup",
     description: "From neglected to pristine — complete debris removal, mowing, and edging.",
