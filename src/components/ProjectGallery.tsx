@@ -15,6 +15,7 @@ import mulchHostas from "@/assets/projects/mulch-hostas.jpg";
 
 import mulchWalkway from "@/assets/projects/mulch-walkway.jpg";
 import gravelLandscaping from "@/assets/projects/gravel-landscaping.jpg";
+import frontPorchLandscaping from "@/assets/projects/front-porch-landscaping.jpg";
 
 const projects = [
   {
@@ -86,6 +87,13 @@ const projects = [
     title: "Gravel & Shrub Landscaping",
     category: "Landscaping",
     description: "Clean gravel bed with flowering shrubs, decorative pots, and low-maintenance ground cover.",
+  },
+  {
+    id: 12,
+    image: frontPorchLandscaping,
+    title: "Front Porch Rock Bed & Lighting",
+    category: "Landscaping",
+    description: "White rock bed with brick edging, solar path lights, and colorful plantings around a stone-pillared front porch.",
   },
 ];
 
