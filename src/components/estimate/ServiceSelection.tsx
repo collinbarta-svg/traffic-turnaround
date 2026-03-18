@@ -64,7 +64,7 @@ const ServiceSelection = ({ selectedServices, onToggleService, quarterAcres, onQ
             value={[quarterAcres]}
             onValueChange={(value) => onQuarterAcresChange(value[0])}
             min={1}
-            max={4}
+            max={10}
             step={1}
             className="w-full"
           />
