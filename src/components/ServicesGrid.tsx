@@ -1,4 +1,4 @@
-import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Scissors, Phone, Flower2, Shovel } from "lucide-react";
+import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Phone, Flower2, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,12 @@ const services = [
     description: "Professional weekly lawn mowing services designed to keep your lawn clean, healthy, and well-maintained.",
     highlights: ["Clean cut", "Weekly service", "Well-maintained lawn"],
     slug: "lawn-mowing",
+    pricing: [
+      { size: "¼ Acre Lot", price: "$65" },
+      { size: "½ Acre Lot", price: "$90" },
+      { size: "¾ Acre Lot", price: "$115" },
+      { size: "1 Acre Lot", price: "$140" },
+    ],
   },
   {
     icon: Leaf,
@@ -17,6 +23,12 @@ const services = [
     description: "Removal of winter debris including leaves, twigs, branches, and garden bed clean up with perennial care.",
     highlights: ["Debris removal", "Garden bed cleaning", "Perennial care"],
     slug: "brush-yard-cleanup",
+    pricing: [
+      { size: "¼ Acre", price: "$275" },
+      { size: "½ Acre", price: "$315" },
+      { size: "¾ Acre", price: "$355" },
+      { size: "1 Acre", price: "$395" },
+    ],
   },
   {
     icon: Leaf,
@@ -24,6 +36,12 @@ const services = [
     description: "Full leaf and debris removal to prevent lawn damage and prepare your yard for winter.",
     highlights: ["Leaf removal", "Lawn protection", "Winter prep"],
     slug: "brush-yard-cleanup",
+    pricing: [
+      { size: "¼ Acre", price: "$300" },
+      { size: "½ Acre", price: "$340" },
+      { size: "¾ Acre", price: "$380" },
+      { size: "1 Acre", price: "$420" },
+    ],
   },
   {
     icon: Sprout,
@@ -31,6 +49,12 @@ const services = [
     description: "Application of essential nutrients to promote thicker, greener grass while reducing weed growth.",
     highlights: ["Essential nutrients", "Weed reduction", "Greener grass"],
     slug: "fertilizer-weed-control",
+    pricing: [
+      { size: "¼ Acre", price: "$155" },
+      { size: "½ Acre", price: "$185" },
+      { size: "¾ Acre", price: "$215" },
+      { size: "1 Acre", price: "$260" },
+    ],
   },
   {
     icon: Leaf,
@@ -38,6 +62,12 @@ const services = [
     description: "Removal of built-up organic matter to improve water, oxygen, and nutrient absorption.",
     highlights: ["Thatch removal", "Better absorption", "Healthier lawn"],
     slug: "dethatching",
+    pricing: [
+      { size: "¼ Acre", price: "$220", note: "incl. $20 disposal" },
+      { size: "½ Acre", price: "$285", note: "incl. $40 disposal" },
+      { size: "¾ Acre", price: "$370", note: "incl. $60 disposal" },
+      { size: "1 Acre", price: "$475", note: "incl. $80 disposal" },
+    ],
   },
   {
     icon: Droplets,
@@ -45,6 +75,12 @@ const services = [
     description: "Core plug aeration to relieve soil compaction and promote deeper root growth.",
     highlights: ["Core aeration", "Reduced compaction", "Deeper roots"],
     slug: "aerating",
+    pricing: [
+      { size: "¼ Acre", price: "$220" },
+      { size: "½ Acre", price: "$245" },
+      { size: "¾ Acre", price: "$260" },
+      { size: "1 Acre", price: "$300" },
+    ],
   },
   {
     icon: Sprout,
@@ -53,6 +89,12 @@ const services = [
     highlights: ["Fills thin areas", "Turf density", "Healthier lawn"],
     slug: null,
     isCallOnly: true,
+    pricing: [
+      { size: "¼ Acre", price: "$295.43" },
+      { size: "½ Acre", price: "$500.87" },
+      { size: "¾ Acre", price: "$701.31" },
+      { size: "1 Acre", price: "$941.75" },
+    ],
   },
   {
     icon: Snowflake,
@@ -60,6 +102,7 @@ const services = [
     description: "Snow removal for driveways and walkways to maintain safe access during winter.",
     highlights: ["Driveway plowing", "Ice control", "Safe access"],
     slug: "snow-plowing",
+    pricingNote: "Starting at $75 per visit for most residential driveways. Commercial parking lots priced by project size.",
   },
   {
     icon: Flower2,
@@ -68,6 +111,7 @@ const services = [
     highlights: ["Landscaping & pruning", "Tree trimming", "Mulch & rock beds"],
     slug: null,
     isCallOnly: true,
+    pricingNote: "Pricing is based on project size. Customers must request a quote.",
   },
 ];
 
@@ -87,14 +131,14 @@ const ServicesGrid = () => {
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-foreground/20 text-primary-foreground text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
-            Our Services
+            Services & Pricing
           </span>
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-3 sm:mb-4">
             Year-Round Property Care
           </h2>
           <p className="text-base sm:text-lg text-primary-foreground/80 px-2">
             From spring cleanup through winter snow removal, we provide consistent, 
-            quality service on a reliable weekly schedule.
+            quality service on a reliable weekly schedule. Transparent pricing — no hidden fees.
           </p>
         </div>
 
@@ -102,7 +146,7 @@ const ServicesGrid = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group p-4 sm:p-6 transition-all duration-300 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20 cursor-pointer hover:bg-primary-foreground/15"
+              className="group p-4 sm:p-6 transition-all duration-300 bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20 cursor-pointer hover:bg-primary-foreground/15 flex flex-col"
               style={{ animationDelay: `${index * 0.05}s` }}
               onClick={() => handleServiceClick(service.slug, service.isCallOnly)}
             >
@@ -113,20 +157,36 @@ const ServicesGrid = () => {
               <h3 className="font-heading text-lg sm:text-xl font-semibold text-primary-foreground mb-1.5 sm:mb-2">
                 {service.title}
               </h3>
-              <p className="text-primary-foreground/70 mb-3 sm:mb-4 text-xs sm:text-sm">
+              <p className="text-primary-foreground/70 mb-3 text-xs sm:text-sm">
                 {service.description}
               </p>
+
+              {/* Pricing */}
+              {'pricing' in service && service.pricing && (
+                <div className="mb-3 sm:mb-4 bg-primary-foreground/5 rounded-lg p-3 border border-primary-foreground/10">
+                  <ul className="space-y-1.5">
+                    {service.pricing.map((tier) => (
+                      <li key={tier.size} className="flex items-baseline justify-between text-xs sm:text-sm">
+                        <span className="text-primary-foreground/60">{tier.size}</span>
+                        <div className="text-right">
+                          <span className="font-semibold text-secondary">{tier.price}</span>
+                          {'note' in tier && tier.note && (
+                            <p className="text-[9px] text-primary-foreground/50">{tier.note}</p>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {'pricingNote' in service && service.pricingNote && (
+                <div className="mb-3 sm:mb-4 bg-primary-foreground/5 rounded-lg p-3 border border-primary-foreground/10">
+                  <p className="text-xs text-primary-foreground/60">{service.pricingNote}</p>
+                </div>
+              )}
               
-              <ul className="space-y-1 sm:space-y-1.5 mb-3 sm:mb-4">
-                {service.highlights.map((highlight) => (
-                  <li key={highlight} className="flex items-center gap-2 text-xs sm:text-sm text-primary-foreground/70">
-                    <span className="w-1.5 h-1.5 bg-secondary rounded-full flex-shrink-0" />
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="flex items-center gap-2 pt-3 sm:pt-4 border-t border-primary-foreground/20">
+              <div className="flex items-center gap-2 pt-3 sm:pt-4 border-t border-primary-foreground/20 mt-auto">
                 {service.isCallOnly || !service.slug ? (
                   <>
                     <Phone className="w-4 h-4 text-secondary" />
