@@ -20,10 +20,12 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const sizeLabels = [
-  { quarters: 1, label: "¼ acre" },
-  { quarters: 2, label: "½ acre" },
-  { quarters: 3, label: "¾ acre" },
-  { quarters: 4, label: "1 acre" },
+  { quarters: 1, label: "¼ ac" },
+  { quarters: 2, label: "½ ac" },
+  { quarters: 4, label: "1 ac" },
+  { quarters: 6, label: "1½ ac" },
+  { quarters: 8, label: "2 ac" },
+  { quarters: 10, label: "2½ ac" },
 ];
 
 const ServiceSelection = ({ selectedServices, onToggleService, quarterAcres, onQuarterAcresChange }: ServiceSelectionProps) => {
