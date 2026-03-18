@@ -20,10 +20,12 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const sizeLabels = [
-  { quarters: 1, label: "¼ acre" },
-  { quarters: 2, label: "½ acre" },
-  { quarters: 3, label: "¾ acre" },
-  { quarters: 4, label: "1 acre" },
+  { quarters: 1, label: "¼ ac" },
+  { quarters: 2, label: "½ ac" },
+  { quarters: 4, label: "1 ac" },
+  { quarters: 6, label: "1½ ac" },
+  { quarters: 8, label: "2 ac" },
+  { quarters: 10, label: "2½ ac" },
 ];
 
 const ServiceSelection = ({ selectedServices, onToggleService, quarterAcres, onQuarterAcresChange }: ServiceSelectionProps) => {
@@ -62,13 +64,13 @@ const ServiceSelection = ({ selectedServices, onToggleService, quarterAcres, onQ
             value={[quarterAcres]}
             onValueChange={(value) => onQuarterAcresChange(value[0])}
             min={1}
-            max={4}
+            max={10}
             step={1}
             className="w-full"
           />
         </div>
 
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
           {sizeLabels.map((size) => (
             <button
               key={size.quarters}
