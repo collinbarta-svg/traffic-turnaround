@@ -1,105 +1,73 @@
-import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Trees, Check, Phone, Flower2, Scissors, TreePine, Shovel, Sun, Paintbrush } from "lucide-react";
+import { ArrowRight, Snowflake, TreeDeciduous, Leaf, Sprout, Droplets, Scissors, Phone, Flower2, Shovel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
 const services = [
   {
-    icon: Leaf,
-    title: "Spring Yard Clean Up",
-    slug: "brush-yard-cleanup",
-    description: "Removes winter debris such as leaves, twigs, pine cones, fallen branches, and litter. Includes cleaning garden beds and cutting back perennials for healthy spring growth.",
-    highlights: ["Debris removal", "Garden bed cleaning", "Perennial care"],
+    icon: TreeDeciduous,
+    title: "Lawn Mowing",
+    description: "Professional weekly lawn mowing services designed to keep your lawn clean, healthy, and well-maintained.",
+    highlights: ["Clean cut", "Weekly service", "Well-maintained lawn"],
+    slug: "lawn-mowing",
   },
   {
-    icon: TreeDeciduous,
-    title: "Weekly Lawn Mowing",
-    slug: "lawn-mowing",
-    description: "Promotes a thicker, healthier lawn by encouraging consistent growth. Controls weeds, improves nutrient recycling, prevents thatch buildup, and boosts curb appeal.",
-    highlights: ["Mowing & trimming", "Weed control", "Improved curb appeal"],
+    icon: Leaf,
+    title: "Spring Clean Up",
+    description: "Removal of winter debris including leaves, twigs, branches, and garden bed clean up with perennial care.",
+    highlights: ["Debris removal", "Garden bed cleaning", "Perennial care"],
+    slug: "brush-yard-cleanup",
+  },
+  {
+    icon: Leaf,
+    title: "Fall / Leaf Clean Up",
+    description: "Full leaf and debris removal to prevent lawn damage and prepare your yard for winter.",
+    highlights: ["Leaf removal", "Lawn protection", "Winter prep"],
+    slug: "brush-yard-cleanup",
   },
   {
     icon: Sprout,
-    title: "Fertilizer & Weed Control",
+    title: "Lawn Fertilizing & Weed Control",
+    description: "Application of essential nutrients to promote thicker, greener grass while reducing weed growth.",
+    highlights: ["Essential nutrients", "Weed reduction", "Greener grass"],
     slug: "fertilizer-weed-control",
-    description: "Provides essential nutrients like nitrogen, phosphorus, and potassium for faster growth, deeper roots, and a thicker, greener lawn with improved drought resistance.",
-    highlights: ["Essential nutrients", "Deeper roots", "Weed suppression"],
   },
   {
     icon: Leaf,
     title: "Lawn Dethatching",
+    description: "Removal of built-up organic matter to improve water, oxygen, and nutrient absorption.",
+    highlights: ["Thatch removal", "Better absorption", "Healthier lawn"],
     slug: "dethatching",
-    description: "Removes compacted organic matter so water, oxygen, and nutrients reach the soil. Promotes deeper root growth, prevents disease, and improves fertilizer efficiency.",
-    highlights: ["Thatch removal", "Better air circulation", "Healthier lawn"],
   },
   {
     icon: Droplets,
-    title: "Lawn Core Plug Aeration",
-    slug: "aerating",
-    description: "Relieves soil compaction, allowing air, water, and nutrients to penetrate deeper. Encourages stronger grass, improves fertilizer efficiency, and builds drought-resistant lawns.",
+    title: "Lawn Aeration",
+    description: "Core plug aeration to relieve soil compaction and promote deeper root growth.",
     highlights: ["Core aeration", "Reduced compaction", "Deeper roots"],
+    slug: "aerating",
   },
   {
     icon: Sprout,
     title: "Lawn Overseeding",
+    description: "Filling in thin areas and improving turf density for a fuller, healthier lawn.",
+    highlights: ["Fills thin areas", "Turf density", "Healthier lawn"],
     slug: null,
-    description: "Thickens your lawn and fills bare patches for a lush, vibrant appearance. Enhances resistance to disease, pests, and drought while naturally suppressing weeds.",
-    highlights: ["Fills bare patches", "Disease resistance", "Weed suppression"],
     isCallOnly: true,
-  },
-  {
-    icon: Trees,
-    title: "Rock Bed Landscape Clean Up",
-    slug: null,
-    description: "Removes debris, weeds, and organic matter to restore a clean, organized look. Improves curb appeal, drainage, weed prevention, and moisture retention for plants.",
-    highlights: ["Weed removal", "Improved drainage", "Better curb appeal"],
-    isCallOnly: true,
-  },
-  {
-    icon: Paintbrush,
-    title: "Colored Mulch Installation",
-    slug: null,
-    description: "Enhances landscapes with vibrant, long-lasting colors. Suppresses weeds, retains soil moisture, reduces watering needs, and regulates soil temperature to protect roots.",
-    highlights: ["Vibrant colors", "Weed suppression", "Moisture retention"],
-    isCallOnly: true,
-  },
-  {
-    icon: Flower2,
-    title: "Landscape Gardening",
-    slug: null,
-    description: "Increases property value by an estimated 12–20%. Improves mental well-being by reducing stress and creating a relaxing outdoor environment.",
-    highlights: ["Increased value", "Stress reduction", "Beautiful design"],
-    isCallOnly: true,
-  },
-  {
-    icon: Scissors,
-    title: "Plant & Shrub Pruning",
-    slug: null,
-    description: "Removes diseased, dead, or damaged branches to prevent pest infestations. Encourages flower and fruit production, improves air circulation and light penetration.",
-    highlights: ["Disease prevention", "Better growth", "Shape maintenance"],
-    isCallOnly: true,
-  },
-  {
-    icon: TreePine,
-    title: "Tree Trimming",
-    slug: null,
-    description: "Promotes tree longevity by removing dead, diseased, or decaying branches. Improves airflow and sunlight through the canopy, reducing fungal risks.",
-    highlights: ["Tree health", "Canopy care", "Disease prevention"],
-    isCallOnly: true,
-  },
-  {
-    icon: Leaf,
-    title: "Fall Clean Up",
-    slug: "brush-yard-cleanup",
-    description: "Removes fallen leaves and debris that can suffocate your lawn. Eliminates pest habitats, reduces thatch buildup, prevents slippery walkways, and prepares for spring.",
-    highlights: ["Leaf removal", "Pest prevention", "Spring prep"],
   },
   {
     icon: Snowflake,
     title: "Snow Plowing & Ice Control",
-    slug: "snow-plowing",
-    description: "Keeps sidewalks, driveways, and parking lots safe during winter. Prevents slips and falls, reduces ice buildup, and ensures safe property access.",
+    description: "Snow removal for driveways and walkways to maintain safe access during winter.",
     highlights: ["Driveway plowing", "Ice control", "Safe access"],
+    slug: "snow-plowing",
+  },
+  {
+    icon: Flower2,
+    title: "Custom Landscaping Services",
+    description: "Landscape gardening, plant & shrub pruning, tree trimming, rock bed clean up, and mulch installation. All custom services are estimated based on project size.",
+    highlights: ["Landscaping & pruning", "Tree trimming", "Mulch & rock beds"],
+    slug: null,
+    isCallOnly: true,
   },
 ];
 
@@ -152,7 +120,7 @@ const ServicesGrid = () => {
               <ul className="space-y-1 sm:space-y-1.5 mb-3 sm:mb-4">
                 {service.highlights.map((highlight) => (
                   <li key={highlight} className="flex items-center gap-2 text-xs sm:text-sm text-primary-foreground/70">
-                    <Check className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-secondary flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-secondary rounded-full flex-shrink-0" />
                     {highlight}
                   </li>
                 ))}
