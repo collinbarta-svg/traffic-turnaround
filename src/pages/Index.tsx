@@ -1,5 +1,6 @@
 import HeroNew from "@/components/HeroNew";
 import ServicesGrid from "@/components/ServicesGrid";
+import MiscServices from "@/components/MiscServices";
 import SodShowcase from "@/components/SodShowcase";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import ProjectGallery from "@/components/ProjectGallery";
