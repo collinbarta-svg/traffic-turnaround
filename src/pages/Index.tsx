@@ -14,7 +14,7 @@ const Index = () => {
       
       <HeroNew />
       <ServicesGrid />
-      <PricingSection />
+      
       <SodShowcase />
       <BeforeAfterSection />
       <ProjectGallery />
