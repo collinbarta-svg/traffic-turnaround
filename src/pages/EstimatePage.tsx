@@ -239,6 +239,8 @@ const EstimatePage = () => {
               <ServiceSelection
                 selectedServices={selectedServices}
                 onToggleService={toggleService}
+                quarterAcres={quarterAcres}
+                onQuarterAcresChange={setQuarterAcres}
               />
             )}
             {currentStep === 2 && needsFullFlow && (
