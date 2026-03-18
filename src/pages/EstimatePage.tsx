@@ -71,7 +71,7 @@ const EstimatePage = () => {
 
   const canProceed = () => {
     if (currentStep === 1) return selectedServices.length > 0;
-    if (currentStep === 2 && needsFullFlow) return true; // frequency/notes step is optional
+    if (currentStep === 2 && needsFullFlow) return true;
     if (currentStep === getReviewStep()) {
       return (
         agreed &&
@@ -151,36 +151,36 @@ const EstimatePage = () => {
   // Success screen
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-background">
-        <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+      <div className="min-h-screen hero-gradient text-primary-foreground">
+        <header className="sticky top-0 z-50 bg-primary-foreground/5 backdrop-blur-md border-b border-primary-foreground/10">
           <div className="container flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
-              <span className="font-heading font-bold text-secondary-foreground text-sm">MO</span>
-            </div>
-            <span className="font-heading font-semibold text-foreground hidden sm:block">
-              Mason Outdoor Service LLC
-            </span>
+                <span className="font-heading font-bold text-secondary-foreground text-sm">MO</span>
+              </div>
+              <span className="font-heading font-semibold text-primary-foreground hidden sm:block">
+                Mason Outdoor Service LLC
+              </span>
             </Link>
           </div>
         </header>
 
         <main className="container py-12 sm:py-20">
           <div className="max-w-lg mx-auto text-center">
-            <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <Check className="w-10 h-10 text-secondary" />
             </div>
-            <h1 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            <h1 className="font-heading text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
               Request Received!
             </h1>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-primary-foreground/70 mb-8">
               {CONFIRMATION_MESSAGE}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
+              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground" asChild>
                 <Link to="/">Return Home</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20" asChild>
                 <a href="tel:612-461-4022">
                   <Phone className="w-4 h-4 mr-2" />
                   Call 612-461-4022
@@ -194,21 +194,21 @@ const EstimatePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen hero-gradient text-primary-foreground">
       {/* Minimal Header */}
-      <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+      <header className="sticky top-0 z-50 bg-primary-foreground/5 backdrop-blur-md border-b border-primary-foreground/10">
         <div className="container flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
               <span className="font-heading font-bold text-secondary-foreground text-sm">MO</span>
             </div>
-            <span className="font-heading font-semibold text-foreground hidden sm:block">
+            <span className="font-heading font-semibold text-primary-foreground hidden sm:block">
               Mason Outdoor Service LLC
             </span>
           </Link>
           <a
             href="tel:612-461-4022"
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2 text-sm font-medium text-primary-foreground/60 hover:text-primary-foreground transition-colors"
           >
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">612-461-4022</span>
@@ -225,8 +225,8 @@ const EstimatePage = () => {
 
           {/* Pre-selected service confirmation */}
           {currentStep === 1 && selectedServices.length > 0 && searchParams.get("service") && (
-            <div className="mb-4 p-3 bg-secondary/10 rounded-lg border border-secondary/20">
-              <p className="text-sm text-foreground">
+            <div className="mb-4 p-3 bg-secondary/15 rounded-lg border border-secondary/25">
+              <p className="text-sm text-primary-foreground">
                 <span className="font-medium">Selected service: </span>
                 {services.filter(s => selectedServices.includes(s.id)).map(s => s.name).join(", ")}
               </p>
@@ -268,13 +268,13 @@ const EstimatePage = () => {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex items-center justify-between gap-4 pt-4 border-t border-border">
+          <div className="flex items-center justify-between gap-4 pt-4 border-t border-primary-foreground/15">
             <Button
               variant="outline"
               size="lg"
               onClick={handleBack}
               disabled={currentStep === 1}
-              className="flex-1 sm:flex-none"
+              className="flex-1 sm:flex-none bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 disabled:opacity-30"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
@@ -305,22 +305,22 @@ const EstimatePage = () => {
 
           {/* Live Estimate Preview */}
           {currentStep < totalSteps && selectedServices.length > 0 && (
-            <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
+            <div className="mt-6 p-4 bg-primary-foreground/5 rounded-lg border border-primary-foreground/10">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm text-primary-foreground/60">
                   {selectedServices.length} service{selectedServices.length > 1 ? "s" : ""} selected
                 </span>
                 {hasCustomEstimateRequired(selectedServices, quarterAcres * 0.25) ? (
-                  <span className="text-sm font-medium text-accent">
+                  <span className="text-sm font-medium text-secondary">
                     Call for estimate
                   </span>
                 ) : (
-                  <span className="font-heading font-bold text-foreground">
+                  <span className="font-heading font-bold text-primary-foreground">
                     Est. ${calculateTotal(selectedServices, quarterAcres)}
                   </span>
                 )}
               </div>
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-primary-foreground/50 mt-1">
                 Estimated price based on public property data.
               </p>
             </div>

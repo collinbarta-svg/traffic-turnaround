@@ -64,10 +64,10 @@ const ReviewSubmit = ({
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-2">
+        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-primary-foreground mb-2">
           {isProjectService ? "Request an Estimate" : "Review & Submit"}
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-primary-foreground/60">
           {isProjectService
             ? "Submit your info and we'll get back to you with pricing"
             : "Confirm your details and get your estimate"}
@@ -76,28 +76,28 @@ const ReviewSubmit = ({
 
       {/* Project service messaging */}
       {isProjectService && (
-        <div className="flex items-start gap-3 p-4 bg-secondary/10 rounded-xl border border-secondary/20">
+        <div className="flex items-start gap-3 p-4 bg-secondary/15 rounded-xl border border-secondary/25">
           <Info className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-          <p className="text-sm text-foreground leading-relaxed">
+          <p className="text-sm text-primary-foreground/80 leading-relaxed">
             Many landscaping services require a quick review of the property before pricing. Submit your information and we will contact you with an estimate.
           </p>
         </div>
       )}
 
       {/* Estimate Summary Card */}
-      <div className="bg-card border border-border rounded-xl p-4 sm:p-6 space-y-4">
-        <h3 className="font-heading font-semibold text-lg text-foreground">
+      <div className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-4 sm:p-6 space-y-4">
+        <h3 className="font-heading font-semibold text-lg text-primary-foreground">
           Your Estimate Summary
         </h3>
 
         {/* Property Info */}
-        <div className="flex items-start gap-3 pb-4 border-b border-border">
+        <div className="flex items-start gap-3 pb-4 border-b border-primary-foreground/10">
           <MapPin className="w-5 h-5 text-secondary mt-0.5" />
           <div>
-            <p className="font-medium text-foreground">
+            <p className="font-medium text-primary-foreground">
               {address || "Address not provided"}
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-primary-foreground/50">
               {acreDisplay} acres • {frequency.replace("-", " ")}
             </p>
           </div>
@@ -111,9 +111,9 @@ const ReviewSubmit = ({
               <div key={service.id} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-secondary" />
-                  <span className="text-foreground">{service.name}</span>
+                  <span className="text-primary-foreground">{service.name}</span>
                 </div>
-                <span className={`text-sm font-medium ${tier.requiresCustom ? "text-accent" : "text-muted-foreground"}`}>
+                <span className={`text-sm font-medium ${tier.requiresCustom ? "text-secondary" : "text-primary-foreground/50"}`}>
                   {tier.requiresCustom ? "Call for estimate" : tier.label}
                 </span>
               </div>
@@ -122,10 +122,10 @@ const ReviewSubmit = ({
         </div>
 
         {/* Estimate notice */}
-        <div className="pt-4 border-t border-border">
-          <div className="flex items-start gap-2 p-3 bg-secondary/10 rounded-lg">
+        <div className="pt-4 border-t border-primary-foreground/10">
+          <div className="flex items-start gap-2 p-3 bg-secondary/15 rounded-lg">
             <Info className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-            <p className="text-sm text-foreground">
+            <p className="text-sm text-primary-foreground/80">
               {anyCustom
                 ? "One or more services require a phone estimate. Call us at 612-461-4022 or we'll follow up after submission."
                 : "Estimated price based on public property data. Final pricing will be confirmed before service."}
@@ -135,9 +135,9 @@ const ReviewSubmit = ({
 
         {/* Notes if any */}
         {notes && (
-          <div className="pt-4 border-t border-border">
-            <p className="text-sm text-muted-foreground">
-              <span className="font-medium">Notes:</span> {notes}
+          <div className="pt-4 border-t border-primary-foreground/10">
+            <p className="text-sm text-primary-foreground/50">
+              <span className="font-medium text-primary-foreground/70">Notes:</span> {notes}
             </p>
           </div>
         )}
@@ -145,12 +145,12 @@ const ReviewSubmit = ({
 
       {/* Lawn Watering Notice */}
       {selectedServices.some(id => ["lawn-mowing", "fertilizer-weed-control", "dethatching", "aerating"].includes(id)) && (
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-4 sm:p-5">
           <div className="flex items-start gap-3">
             <Droplets className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
             <div>
-            <p className="font-heading font-semibold text-foreground text-sm">Weekly Service Schedule</p>
-              <p className="text-sm text-muted-foreground mt-1">
+              <p className="font-heading font-semibold text-primary-foreground text-sm">Weekly Service Schedule</p>
+              <p className="text-sm text-primary-foreground/50 mt-1">
                 Lawns that are regularly maintained are typically serviced on a weekly schedule. Our routes run weekly to keep lawns looking their best.
               </p>
             </div>
@@ -160,15 +160,15 @@ const ReviewSubmit = ({
 
       {/* Contact Form */}
       <div className="space-y-4">
-        <h3 className="font-heading font-semibold text-lg text-foreground">
+        <h3 className="font-heading font-semibold text-lg text-primary-foreground">
           Your Contact Information
         </h3>
 
         <div className="grid gap-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Full Name *</Label>
+            <Label htmlFor="name" className="text-primary-foreground">Full Name *</Label>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-foreground/40" />
               <Input
                 id="name"
                 type="text"
@@ -177,7 +177,7 @@ const ReviewSubmit = ({
                 onChange={(e) =>
                   onContactInfoChange({ ...contactInfo, name: e.target.value })
                 }
-                className="pl-10 h-11"
+                className="pl-10 h-11 bg-primary-foreground/5 border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/30"
                 required
               />
             </div>
@@ -185,9 +185,9 @@ const ReviewSubmit = ({
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number *</Label>
+              <Label htmlFor="phone" className="text-primary-foreground">Phone Number *</Label>
               <div className="relative">
-                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-foreground/40" />
                 <Input
                   id="phone"
                   type="tel"
@@ -196,16 +196,16 @@ const ReviewSubmit = ({
                   onChange={(e) =>
                     onContactInfoChange({ ...contactInfo, phone: e.target.value })
                   }
-                  className="pl-10 h-11"
+                  className="pl-10 h-11 bg-primary-foreground/5 border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/30"
                   required
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email Address *</Label>
+              <Label htmlFor="email" className="text-primary-foreground">Email Address *</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-foreground/40" />
                 <Input
                   id="email"
                   type="email"
@@ -214,7 +214,7 @@ const ReviewSubmit = ({
                   onChange={(e) =>
                     onContactInfoChange({ ...contactInfo, email: e.target.value })
                   }
-                  className="pl-10 h-11"
+                  className="pl-10 h-11 bg-primary-foreground/5 border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/30"
                   required
                 />
               </div>
@@ -223,7 +223,7 @@ const ReviewSubmit = ({
 
           {/* Preferred Contact Method */}
           <div className="space-y-2">
-            <Label>Preferred Contact Method</Label>
+            <Label className="text-primary-foreground">Preferred Contact Method</Label>
             <RadioGroup
               value={contactInfo.preferredContact}
               onValueChange={(value) =>
@@ -232,23 +232,23 @@ const ReviewSubmit = ({
               className="flex gap-4"
             >
               <label className="flex items-center gap-2 cursor-pointer">
-                <RadioGroupItem value="phone" />
-                <span className="text-sm">Phone</span>
+                <RadioGroupItem value="phone" className="border-primary-foreground/30 text-secondary" />
+                <span className="text-sm text-primary-foreground">Phone</span>
               </label>
               <label className="flex items-center gap-2 cursor-pointer">
-                <RadioGroupItem value="email" />
-                <span className="text-sm">Email</span>
+                <RadioGroupItem value="email" className="border-primary-foreground/30 text-secondary" />
+                <span className="text-sm text-primary-foreground">Email</span>
               </label>
               <label className="flex items-center gap-2 cursor-pointer">
-                <RadioGroupItem value="text" />
-                <span className="text-sm">Text</span>
+                <RadioGroupItem value="text" className="border-primary-foreground/30 text-secondary" />
+                <span className="text-sm text-primary-foreground">Text</span>
               </label>
             </RadioGroup>
           </div>
 
           {/* Timeframe */}
           <div className="space-y-2">
-            <Label>When do you need service?</Label>
+            <Label className="text-primary-foreground">When do you need service?</Label>
             <div className="grid grid-cols-2 gap-2">
               {timeframeOptions.map((option) => (
                 <button
@@ -262,8 +262,8 @@ const ReviewSubmit = ({
                   }
                   className={`p-3 rounded-lg border-2 text-sm text-left transition-all ${
                     contactInfo.timeframe === option.value
-                      ? "border-secondary bg-secondary/10"
-                      : "border-border hover:border-secondary/50"
+                      ? "border-secondary bg-secondary/15 text-primary-foreground"
+                      : "border-primary-foreground/15 hover:border-secondary/50 text-primary-foreground/70"
                   }`}
                 >
                   {option.label}
@@ -280,16 +280,16 @@ const ReviewSubmit = ({
       </p>
 
       {/* Pricing Acknowledgment Checkbox */}
-      <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+      <div className="flex items-start gap-3 p-4 bg-primary-foreground/5 rounded-lg border border-primary-foreground/10">
         <Checkbox
           id="pricing-acknowledgment"
           checked={pricingAcknowledged}
           onCheckedChange={(checked) => onPricingAcknowledgedChange(checked as boolean)}
-          className="mt-0.5"
+          className="mt-0.5 border-primary-foreground/30"
         />
         <Label
           htmlFor="pricing-acknowledgment"
-          className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+          className="text-sm text-primary-foreground/60 leading-relaxed cursor-pointer"
         >
           This is an estimated price. Final pricing is confirmed after an on-site
           assessment and follow-up. No work is performed without your approval.
@@ -297,16 +297,16 @@ const ReviewSubmit = ({
       </div>
 
       {/* Agreement Checkbox */}
-      <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+      <div className="flex items-start gap-3 p-4 bg-primary-foreground/5 rounded-lg border border-primary-foreground/10">
         <Checkbox
           id="agreement"
           checked={agreed}
           onCheckedChange={(checked) => onAgreedChange(checked as boolean)}
-          className="mt-0.5"
+          className="mt-0.5 border-primary-foreground/30"
         />
         <Label
           htmlFor="agreement"
-          className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+          className="text-sm text-primary-foreground/60 leading-relaxed cursor-pointer"
         >
           By submitting, you understand that all prices are estimates, do not
           include sales tax, and that final pricing will be determined after an

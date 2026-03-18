@@ -17,7 +17,7 @@ const EstimateProgress = ({ currentStep, totalSteps }: EstimateProgressProps) =>
     <div className="w-full">
       {/* Mobile: Simple text indicator */}
       <div className="sm:hidden text-center mb-4">
-        <span className="text-sm font-medium text-muted-foreground">
+        <span className="text-sm font-medium text-primary-foreground/60">
           Step {currentStep} of {totalSteps}
         </span>
       </div>
@@ -32,8 +32,8 @@ const EstimateProgress = ({ currentStep, totalSteps }: EstimateProgressProps) =>
                   step.number < currentStep
                     ? "bg-secondary text-secondary-foreground"
                     : step.number === currentStep
-                    ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
-                    : "bg-muted text-muted-foreground"
+                    ? "bg-primary-foreground/20 text-primary-foreground ring-4 ring-secondary/30"
+                    : "bg-primary-foreground/10 text-primary-foreground/40"
                 }`}
               >
                 {step.number < currentStep ? (
@@ -45,8 +45,8 @@ const EstimateProgress = ({ currentStep, totalSteps }: EstimateProgressProps) =>
               <span
                 className={`mt-2 text-xs font-medium ${
                   step.number <= currentStep
-                    ? "text-foreground"
-                    : "text-muted-foreground"
+                    ? "text-primary-foreground"
+                    : "text-primary-foreground/40"
                 }`}
               >
                 {step.label}
@@ -55,7 +55,7 @@ const EstimateProgress = ({ currentStep, totalSteps }: EstimateProgressProps) =>
             {index < steps.length - 1 && (
               <div
                 className={`w-16 lg:w-24 h-1 mx-2 rounded-full transition-all duration-300 ${
-                  step.number < currentStep ? "bg-secondary" : "bg-muted"
+                  step.number < currentStep ? "bg-secondary" : "bg-primary-foreground/10"
                 }`}
               />
             )}
