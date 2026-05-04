@@ -28,11 +28,11 @@ const FooterNew = () => {
                 612-461-4022
               </a>
               <a
-                href="mailto:info@jpgroundsandsnow.com"
+                href="mailto:masonoutdoorservicesllc@gmail.com"
                 className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-primary-foreground/80 hover:text-secondary transition-colors break-all"
               >
                 <Mail className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
-                info@jpgroundsandsnow.com
+                masonoutdoorservicesllc@gmail.com
               </a>
               <div className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-primary-foreground/80">
                 <MapPin className="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 flex-shrink-0" />
