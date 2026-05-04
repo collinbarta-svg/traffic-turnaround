@@ -221,31 +221,6 @@ const ReviewSubmit = ({
             </div>
           </div>
 
-          {/* Preferred Contact Method */}
-          <div className="space-y-2">
-            <Label className="text-primary-foreground">Preferred Contact Method</Label>
-            <RadioGroup
-              value={contactInfo.preferredContact}
-              onValueChange={(value) =>
-                onContactInfoChange({ ...contactInfo, preferredContact: value })
-              }
-              className="flex gap-4"
-            >
-              <label className="flex items-center gap-2 cursor-pointer">
-                <RadioGroupItem value="phone" className="border-primary-foreground/30 text-secondary" />
-                <span className="text-sm text-primary-foreground">Phone</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <RadioGroupItem value="email" className="border-primary-foreground/30 text-secondary" />
-                <span className="text-sm text-primary-foreground">Email</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <RadioGroupItem value="text" className="border-primary-foreground/30 text-secondary" />
-                <span className="text-sm text-primary-foreground">Text</span>
-              </label>
-            </RadioGroup>
-          </div>
-
           {/* Timeframe */}
           <div className="space-y-2">
             <Label className="text-primary-foreground">When do you need service?</Label>

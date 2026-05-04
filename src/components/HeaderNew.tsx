@@ -34,7 +34,7 @@ const HeaderNew = () => {
         <div className="flex items-center justify-between h-16 md:h-20 overflow-visible">
           {/* Logo - overflows header for polished effect */}
           <a href="/" className="flex items-center gap-3 relative">
-            <img src={logo} alt="Mason Outdoor Service LLC" className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover shadow-lg ring-2 ring-background/50 relative z-[60] translate-y-4" />
+            <img src={logo} alt="Mason Outdoor Service LLC" className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-xl object-cover shadow-lg ring-2 ring-background/50 relative z-[60] translate-y-6" />
             <div className="hidden sm:block">
               <div className={`font-heading font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
                 Mason Outdoor Service LLC

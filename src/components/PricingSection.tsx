@@ -60,10 +60,10 @@ const pricingData = [
   {
     title: "Lawn Overseeding",
     tiers: [
-      { size: "¼ Acre", price: "$295.43" },
-      { size: "½ Acre", price: "$500.87" },
-      { size: "¾ Acre", price: "$701.31" },
-      { size: "1 Acre", price: "$941.75" },
+      { size: "¼ Acre", price: "$295" },
+      { size: "½ Acre", price: "$501" },
+      { size: "¾ Acre", price: "$701" },
+      { size: "1 Acre", price: "$942" },
     ],
   },
 ];
