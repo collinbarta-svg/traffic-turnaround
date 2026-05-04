@@ -124,7 +124,6 @@ const EstimatePage = () => {
         services: {
           selected: serviceDetails,
           frequency,
-          preferredContact: contactInfo.preferredContact,
           timeframe: contactInfo.timeframe,
           notes,
         },
@@ -133,6 +132,24 @@ const EstimatePage = () => {
       });
 
       if (error) throw error;
+
+      // Notify business owner via email (non-blocking)
+      supabase.functions
+        .invoke("notify-service-request", {
+          body: {
+            name: contactInfo.name,
+            email: contactInfo.email,
+            phone: contactInfo.phone,
+            address,
+            propertySizeAcres: quarterAcres * 0.25,
+            services: serviceDetails,
+            frequency,
+            timeframe: contactInfo.timeframe,
+            notes,
+            estimatedTotal,
+          },
+        })
+        .catch((err) => console.error("Owner notification failed:", err));
 
       setIsSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
