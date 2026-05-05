@@ -106,7 +106,7 @@ const InvoiceList = ({ invoices, isLoading, onRefresh }: InvoiceListProps) => {
 
             <div className="flex items-center gap-3">
               <span className="text-lg font-semibold">
-                ${Number(invoice.amount).toFixed(2)}
+                ${Math.round(Number(invoice.amount)).toLocaleString()}
               </span>
               
               <div className="flex items-center gap-1">

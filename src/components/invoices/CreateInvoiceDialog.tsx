@@ -230,7 +230,8 @@ const CreateInvoiceDialog = ({ open, onOpenChange, onSuccess }: CreateInvoiceDia
               <Input
                 id="amount"
                 type="number"
-                placeholder="75.00"
+                step="1"
+                placeholder="75"
                 className="pl-7"
                 value={formData.amount}
                 onChange={(e) => setFormData(prev => ({ ...prev, amount: e.target.value }))}
