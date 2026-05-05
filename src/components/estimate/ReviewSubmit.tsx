@@ -24,6 +24,8 @@ interface ReviewSubmitProps {
   onAgreedChange: (agreed: boolean) => void;
   pricingAcknowledged: boolean;
   onPricingAcknowledgedChange: (val: boolean) => void;
+  petWasteAcknowledged: boolean;
+  onPetWasteAcknowledgedChange: (val: boolean) => void;
   isProjectService?: boolean;
 }
 
@@ -46,6 +48,8 @@ const ReviewSubmit = ({
   onAgreedChange,
   pricingAcknowledged,
   onPricingAcknowledgedChange,
+  petWasteAcknowledged,
+  onPetWasteAcknowledgedChange,
   isProjectService = false,
 }: ReviewSubmitProps) => {
   const selectedServiceDetails = services.filter((s) =>
@@ -287,6 +291,21 @@ const ReviewSubmit = ({
           include sales tax, and that final pricing will be determined after an
           on-site evaluation. No work will be performed without your approval of
           the final estimate.
+        </Label>
+      </div>
+      {/* Pet Waste Policy Checkbox */}
+      <div className="flex items-start gap-3 p-4 bg-primary-foreground/5 rounded-lg border border-primary-foreground/10">
+        <Checkbox
+          id="pet-waste-acknowledgment"
+          checked={petWasteAcknowledged}
+          onCheckedChange={(checked) => onPetWasteAcknowledgedChange(checked as boolean)}
+          className="mt-0.5 border-primary-foreground/30"
+        />
+        <Label
+          htmlFor="pet-waste-acknowledgment"
+          className="text-sm text-primary-foreground/60 leading-relaxed cursor-pointer"
+        >
+          I understand that all animal waste must be picked up and removed from the property prior to service. Failure to do so will result in a <span className="font-semibold text-primary-foreground">$75 charge</span> and immediate cancellation of the job.
         </Label>
       </div>
     </div>

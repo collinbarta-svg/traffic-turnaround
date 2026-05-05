@@ -45,6 +45,7 @@ const EstimatePage = () => {
   const [notes, setNotes] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [pricingAcknowledged, setPricingAcknowledged] = useState(false);
+  const [petWasteAcknowledged, setPetWasteAcknowledged] = useState(false);
   const [contactInfo, setContactInfo] = useState({
     name: "",
     email: "",
@@ -76,6 +77,7 @@ const EstimatePage = () => {
       return (
         agreed &&
         pricingAcknowledged &&
+        petWasteAcknowledged &&
         contactInfo.name.trim() &&
         contactInfo.email.trim() &&
         contactInfo.phone.trim()
@@ -281,6 +283,8 @@ const EstimatePage = () => {
                 onAgreedChange={setAgreed}
                 pricingAcknowledged={pricingAcknowledged}
                 onPricingAcknowledgedChange={setPricingAcknowledged}
+                petWasteAcknowledged={petWasteAcknowledged}
+                onPetWasteAcknowledgedChange={setPetWasteAcknowledged}
                 isProjectService={isProjectServicesOnly}
               />
             )}
