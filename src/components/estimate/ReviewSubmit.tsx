@@ -24,6 +24,8 @@ interface ReviewSubmitProps {
   onAgreedChange: (agreed: boolean) => void;
   pricingAcknowledged: boolean;
   onPricingAcknowledgedChange: (val: boolean) => void;
+  petWasteAcknowledged: boolean;
+  onPetWasteAcknowledgedChange: (val: boolean) => void;
   isProjectService?: boolean;
 }
 
