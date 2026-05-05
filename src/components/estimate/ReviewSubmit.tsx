@@ -48,6 +48,8 @@ const ReviewSubmit = ({
   onAgreedChange,
   pricingAcknowledged,
   onPricingAcknowledgedChange,
+  petWasteAcknowledged,
+  onPetWasteAcknowledgedChange,
   isProjectService = false,
 }: ReviewSubmitProps) => {
   const selectedServiceDetails = services.filter((s) =>
