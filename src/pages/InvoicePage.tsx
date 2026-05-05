@@ -105,7 +105,7 @@ const InvoicePage = () => {
             <div>
               <h1 className="text-2xl font-bold text-green-600">Payment Complete!</h1>
               <p className="text-muted-foreground mt-2">
-                Thank you for your payment of ${Number(invoice.amount).toFixed(2)}
+                Thank you for your payment of ${Math.round(Number(invoice.amount)).toLocaleString()}
               </p>
             </div>
             <div className="bg-muted/50 rounded-lg p-4 text-sm">
@@ -169,7 +169,7 @@ const InvoicePage = () => {
             <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-4 text-center">
               <p className="text-sm text-muted-foreground mb-1">Total Due</p>
               <p className="text-4xl font-bold text-foreground">
-                ${Number(invoice.amount).toFixed(2)}
+                ${Math.round(Number(invoice.amount)).toLocaleString()}
               </p>
             </div>
           </div>
