@@ -305,7 +305,7 @@ const ReviewSubmit = ({
           htmlFor="pet-waste-acknowledgment"
           className="text-sm text-primary-foreground/60 leading-relaxed cursor-pointer"
         >
-          I understand that all animal waste must be picked up and removed from the property prior to service. Failure to do so will result in a <span className="font-semibold text-primary-foreground">$75 charge</span> and immediate cancellation of the job.
+          I understand that all animal waste must be picked up and removed from the property prior to service. Failure to do so will result in a <span className="font-semibold text-primary-foreground">$50 charge</span> and immediate cancellation of the job.
         </Label>
       </div>
     </div>

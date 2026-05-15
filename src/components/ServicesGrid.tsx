@@ -63,10 +63,10 @@ const services = [
     highlights: ["Thatch removal", "Better absorption", "Healthier lawn"],
     slug: "dethatching",
     pricing: [
-      { size: "¼ Acre", price: "$220", note: "incl. $20 disposal" },
-      { size: "½ Acre", price: "$285", note: "incl. $40 disposal" },
-      { size: "¾ Acre", price: "$370", note: "incl. $60 disposal" },
-      { size: "1 Acre", price: "$475", note: "incl. $80 disposal" },
+      { size: "¼ Acre", price: "$240" },
+      { size: "½ Acre", price: "$285" },
+      { size: "¾ Acre", price: "$320" },
+      { size: "1 Acre", price: "$380" },
     ],
   },
   {
@@ -91,9 +91,9 @@ const services = [
     isCallOnly: true,
     pricing: [
       { size: "¼ Acre", price: "$295" },
-      { size: "½ Acre", price: "$501" },
-      { size: "¾ Acre", price: "$701" },
-      { size: "1 Acre", price: "$942" },
+      { size: "½ Acre", price: "$500" },
+      { size: "¾ Acre", price: "$700" },
+      { size: "1 Acre", price: "$945" },
     ],
   },
   {
@@ -170,9 +170,6 @@ const ServicesGrid = () => {
                         <span className="text-primary-foreground/60">{tier.size}</span>
                         <div className="text-right">
                           <span className="font-semibold text-secondary">{tier.price}</span>
-                          {'note' in tier && tier.note && (
-                            <p className="text-[9px] text-primary-foreground/50">{tier.note}</p>
-                          )}
                         </div>
                       </li>
                     ))}

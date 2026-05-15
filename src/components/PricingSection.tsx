@@ -42,10 +42,10 @@ const pricingData = [
   {
     title: "Lawn Dethatching",
     tiers: [
-      { size: "¼ Acre", price: "$220", note: "includes $20 disposal fee" },
-      { size: "½ Acre", price: "$285", note: "includes $40 disposal fee" },
-      { size: "¾ Acre", price: "$370", note: "includes $60 disposal fee" },
-      { size: "1 Acre", price: "$475", note: "includes $80 disposal fee" },
+      { size: "¼ Acre", price: "$240" },
+      { size: "½ Acre", price: "$285" },
+      { size: "¾ Acre", price: "$320" },
+      { size: "1 Acre", price: "$380" },
     ],
   },
   {
@@ -61,9 +61,9 @@ const pricingData = [
     title: "Lawn Overseeding",
     tiers: [
       { size: "¼ Acre", price: "$295" },
-      { size: "½ Acre", price: "$501" },
-      { size: "¾ Acre", price: "$701" },
-      { size: "1 Acre", price: "$942" },
+      { size: "½ Acre", price: "$500" },
+      { size: "¾ Acre", price: "$700" },
+      { size: "1 Acre", price: "$945" },
     ],
   },
 ];
@@ -96,8 +96,8 @@ const PricingSection = () => {
                     <span className="text-muted-foreground">{tier.size}</span>
                     <div className="text-right">
                       <span className="font-semibold text-foreground">{tier.price}</span>
-                      {tier.note && (
-                        <p className="text-[10px] text-muted-foreground">{tier.note}</p>
+                      {'note' in tier && (tier as { note?: string }).note && (
+                        <p className="text-[10px] text-muted-foreground">{(tier as { note?: string }).note}</p>
                       )}
                     </div>
                   </li>
