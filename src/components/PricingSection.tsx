@@ -96,8 +96,8 @@ const PricingSection = () => {
                     <span className="text-muted-foreground">{tier.size}</span>
                     <div className="text-right">
                       <span className="font-semibold text-foreground">{tier.price}</span>
-                      {tier.note && (
-                        <p className="text-[10px] text-muted-foreground">{tier.note}</p>
+                      {'note' in tier && (tier as { note?: string }).note && (
+                        <p className="text-[10px] text-muted-foreground">{(tier as { note?: string }).note}</p>
                       )}
                     </div>
                   </li>
