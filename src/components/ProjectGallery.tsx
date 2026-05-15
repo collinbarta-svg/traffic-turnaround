@@ -85,9 +85,9 @@ const projects = [
   {
     id: 11,
     image: gravelLandscaping,
-    title: "Gravel & Shrub Landscaping",
+    title: "Stone & Shrub Landscaping",
     category: "Landscaping",
-    description: "Clean gravel bed with flowering shrubs, decorative pots, and low-maintenance ground cover.",
+    description: "Clean stone bed with flowering shrubs, decorative pots, and low-maintenance ground cover.",
   },
   {
     id: 12,
