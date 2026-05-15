@@ -170,9 +170,6 @@ const ServicesGrid = () => {
                         <span className="text-primary-foreground/60">{tier.size}</span>
                         <div className="text-right">
                           <span className="font-semibold text-secondary">{tier.price}</span>
-                          {'note' in tier && tier.note && (
-                            <p className="text-[9px] text-primary-foreground/50">{tier.note}</p>
-                          )}
                         </div>
                       </li>
                     ))}
