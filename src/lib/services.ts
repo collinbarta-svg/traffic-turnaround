@@ -70,7 +70,7 @@ export const services: Service[] = [
     name: "Lawn Overseeding",
     description: "Fill thin areas for a fuller, healthier lawn",
     basePrice: 295,
-    additionalQuarterAcrePrice: 205,
+    additionalQuarterAcrePrice: 217,
     isCustom: true,
     features: ["Fills thin areas", "Turf density", "Healthier lawn"],
     icon: "spray",
