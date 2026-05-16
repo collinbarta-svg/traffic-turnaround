@@ -32,13 +32,13 @@ const BeforeAfterSection = () => {
           </p>
 
           {/* Side by side images */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {/* Before */}
             <button
               className="relative rounded-xl overflow-hidden border border-primary-foreground/10 shadow-lg cursor-zoom-in text-left"
               onClick={() => setZoomImage({ src: leafBefore, alt: "Before - Fall leaf cleanup" })}
             >
-              <div className="aspect-[3/4]">
+              <div className="aspect-[4/3]">
                 <img
                   src={leafBefore}
                   alt="Before - Fall leaf cleanup"
@@ -55,7 +55,7 @@ const BeforeAfterSection = () => {
               className="relative rounded-xl overflow-hidden border border-secondary/20 shadow-lg ring-1 ring-secondary/10 cursor-zoom-in text-left"
               onClick={() => setZoomImage({ src: leafAfter, alt: "After - Fall leaf cleanup" })}
             >
-              <div className="aspect-[3/4]">
+              <div className="aspect-[4/3]">
                 <img
                   src={leafAfter}
                   alt="After - Fall leaf cleanup"
