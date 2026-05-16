@@ -1,7 +1,12 @@
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import leafBefore from "@/assets/before-after/leaf-before.jpg";
 import leafAfter from "@/assets/before-after/leaf-after.jpg";
 
 const BeforeAfterSection = () => {
+  const [zoomImage, setZoomImage] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <section className="py-12 sm:py-20 md:py-28" style={{ background: "var(--hero-gradient)" }}>
       <div className="container">
@@ -17,7 +22,7 @@ const BeforeAfterSection = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div>
           {/* Title */}
           <h3 className="font-heading text-lg sm:text-xl font-bold text-primary-foreground text-center mb-2">
             Fall Leaf Cleanup
@@ -27,10 +32,13 @@ const BeforeAfterSection = () => {
           </p>
 
           {/* Side by side images */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {/* Before */}
-            <div className="relative rounded-xl overflow-hidden border border-primary-foreground/10 shadow-lg">
-              <div className="aspect-[3/4]">
+            <button
+              className="relative rounded-xl overflow-hidden border border-primary-foreground/10 shadow-lg cursor-zoom-in text-left"
+              onClick={() => setZoomImage({ src: leafBefore, alt: "Before - Fall leaf cleanup" })}
+            >
+              <div className="aspect-[4/3]">
                 <img
                   src={leafBefore}
                   alt="Before - Fall leaf cleanup"
@@ -40,11 +48,14 @@ const BeforeAfterSection = () => {
               <div className="absolute top-3 left-3 px-3 py-1.5 bg-primary/80 backdrop-blur-sm rounded-lg text-xs sm:text-sm font-bold text-primary-foreground uppercase tracking-wider">
                 Before
               </div>
-            </div>
+            </button>
 
             {/* After */}
-            <div className="relative rounded-xl overflow-hidden border border-secondary/20 shadow-lg ring-1 ring-secondary/10">
-              <div className="aspect-[3/4]">
+            <button
+              className="relative rounded-xl overflow-hidden border border-secondary/20 shadow-lg ring-1 ring-secondary/10 cursor-zoom-in text-left"
+              onClick={() => setZoomImage({ src: leafAfter, alt: "After - Fall leaf cleanup" })}
+            >
+              <div className="aspect-[4/3]">
                 <img
                   src={leafAfter}
                   alt="After - Fall leaf cleanup"
@@ -54,9 +65,24 @@ const BeforeAfterSection = () => {
               <div className="absolute top-3 left-3 px-3 py-1.5 bg-secondary/80 backdrop-blur-sm rounded-lg text-xs sm:text-sm font-bold text-secondary-foreground uppercase tracking-wider">
                 After
               </div>
-            </div>
+            </button>
           </div>
         </div>
+
+        <Dialog open={!!zoomImage} onOpenChange={() => setZoomImage(null)}>
+          <DialogContent className="max-w-5xl p-0 overflow-hidden bg-black/90 border-none">
+            <VisuallyHidden>
+              <DialogTitle>{zoomImage?.alt}</DialogTitle>
+            </VisuallyHidden>
+            {zoomImage && (
+              <img
+                src={zoomImage.src}
+                alt={zoomImage.alt}
+                className="w-full h-auto max-h-[85vh] object-contain"
+              />
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
