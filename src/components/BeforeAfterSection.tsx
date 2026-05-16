@@ -35,16 +35,14 @@ const BeforeAfterSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {/* Before */}
             <button
-              className="relative rounded-xl overflow-hidden border border-primary-foreground/10 shadow-lg cursor-zoom-in text-left"
+              className="relative rounded-xl overflow-hidden border border-primary-foreground/10 shadow-lg cursor-zoom-in text-left bg-black/40"
               onClick={() => setZoomImage({ src: leafBefore, alt: "Before - Fall leaf cleanup" })}
             >
-              <div className="aspect-[4/3]">
-                <img
-                  src={leafBefore}
-                  alt="Before - Fall leaf cleanup"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img
+                src={leafBefore}
+                alt="Before - Fall leaf cleanup"
+                className="w-full h-auto object-contain"
+              />
               <div className="absolute top-3 left-3 px-3 py-1.5 bg-primary/80 backdrop-blur-sm rounded-lg text-xs sm:text-sm font-bold text-primary-foreground uppercase tracking-wider">
                 Before
               </div>
@@ -52,16 +50,14 @@ const BeforeAfterSection = () => {
 
             {/* After */}
             <button
-              className="relative rounded-xl overflow-hidden border border-secondary/20 shadow-lg ring-1 ring-secondary/10 cursor-zoom-in text-left"
+              className="relative rounded-xl overflow-hidden border border-secondary/20 shadow-lg ring-1 ring-secondary/10 cursor-zoom-in text-left bg-black/40"
               onClick={() => setZoomImage({ src: leafAfter, alt: "After - Fall leaf cleanup" })}
             >
-              <div className="aspect-[4/3]">
-                <img
-                  src={leafAfter}
-                  alt="After - Fall leaf cleanup"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img
+                src={leafAfter}
+                alt="After - Fall leaf cleanup"
+                className="w-full h-auto object-contain"
+              />
               <div className="absolute top-3 left-3 px-3 py-1.5 bg-secondary/80 backdrop-blur-sm rounded-lg text-xs sm:text-sm font-bold text-secondary-foreground uppercase tracking-wider">
                 After
               </div>
