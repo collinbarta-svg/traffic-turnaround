@@ -61,6 +61,34 @@ serve(async (req) => {
 
     console.log("Service request saved:", insertedRequest.id);
 
+    // Send confirmation + owner alert emails (non-blocking — never fail the request on email errors)
+    try {
+      const notifyUrl = `${supabaseUrl}/functions/v1/notify-service-request`;
+      const notifyResponse = await fetch(notifyUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${supabaseServiceKey}`,
+        },
+        body: JSON.stringify({
+          name: body.name,
+          email: body.email,
+          phone: body.phone,
+          address: body.address,
+          propertySizeAcres: body.propertySizeAcres,
+          services: body.services.map((s) => ({
+            id: s.id,
+            name: s.name,
+            price: s.estimatedPrice,
+          })),
+          estimatedTotal: body.estimatedTotal,
+        }),
+      });
+      console.log("Notification function status:", notifyResponse.status);
+    } catch (notifyError) {
+      console.error("Email notification failed (non-blocking):", notifyError);
+    }
+
     // If a Zapier webhook URL is provided, send notification
     if (body.zapierWebhookUrl) {
       try {
