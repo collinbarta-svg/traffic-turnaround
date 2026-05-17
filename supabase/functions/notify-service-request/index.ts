@@ -47,7 +47,7 @@ const handler = async (req: Request): Promise<Response> => {
       .join("");
 
     const emailResponse = await resend.emails.send({
-      from: "Mason Outdoor Service <onboarding@resend.dev>",
+      from: "Mason Outdoor Service <bookings@masonoutdoorservice.com>",
       to: [OWNER_EMAIL],
       reply_to: body.email,
       subject: `New Service Request — ${body.name}`,
@@ -89,7 +89,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Customer confirmation email
     try {
       const customerResponse = await resend.emails.send({
-        from: "Mason Outdoor Service <onboarding@resend.dev>",
+        from: "Mason Outdoor Service <bookings@masonoutdoorservice.com>",
         to: [body.email],
         reply_to: OWNER_EMAIL,
         subject: "We received your service request — Mason Outdoor Service",
