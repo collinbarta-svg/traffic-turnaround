@@ -3,9 +3,11 @@ import { Card } from "@/components/ui/card";
 
 const primaryAreas = [
   "St. Michael",
-  "Albertville", 
+  "Albertville",
   "Hanover",
   "Otsego",
+  "Plymouth",
+  "Maple Grove",
 ];
 
 const benefits = [
