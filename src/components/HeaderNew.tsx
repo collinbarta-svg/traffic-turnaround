@@ -115,6 +115,19 @@ const HeaderNew = () => {
           </div>
         )}
       </div>
+
+      {/* Mobile Sticky Call Bar */}
+      <div className="md:hidden fixed left-0 right-0 z-40 top-16 bg-secondary border-b border-border/50">
+        <div className="container">
+          <a
+            href="tel:612-461-4022"
+            className="flex items-center justify-center gap-2 py-2 text-sm font-semibold text-secondary-foreground"
+          >
+            <Phone className="w-4 h-4" />
+            Call Now: 612-461-4022
+          </a>
+        </div>
+      </div>
     </header>
   );
 };
