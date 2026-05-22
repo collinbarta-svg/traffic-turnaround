@@ -121,10 +121,11 @@ const HeaderNew = () => {
         <div className="container">
           <a
             href="tel:612-461-4022"
-            className="flex items-center justify-center gap-2 py-2 text-sm font-semibold text-secondary-foreground"
+            className="flex items-center justify-center gap-1.5 py-2.5 text-secondary-foreground"
           >
-            <Phone className="w-4 h-4" />
-            Call Now: 612-461-4022
+            <Phone className="w-4 h-4 shrink-0" />
+            <span className="text-sm font-normal">Tap To Call</span>
+            <span className="text-base font-bold">(612) 461-4022</span>
           </a>
         </div>
       </div>
