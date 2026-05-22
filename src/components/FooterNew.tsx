@@ -70,11 +70,6 @@ const FooterNew = () => {
                   Service Areas
                 </a>
               </li>
-              <li>
-                <a href="/admin" className="text-xs sm:text-sm text-primary-foreground/50 hover:text-secondary transition-colors">
-                  Admin
-                </a>
-              </li>
             </ul>
           </div>
 
