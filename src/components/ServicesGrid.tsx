@@ -59,7 +59,7 @@ const services = [
   {
     icon: Leaf,
     title: "Lawn Dethatching",
-    description: "Removal of built-up organic matter to improve water, oxygen, and nutrient absorption.",
+    description: "Removal of built-up organic matter to improve water, oxygen, and nutrient absorption. Includes waste haul-away and disposal.",
     highlights: ["Thatch removal", "Better absorption", "Healthier lawn"],
     slug: "dethatching",
     pricing: [
