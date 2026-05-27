@@ -33,7 +33,7 @@ const services = [
   {
     icon: Leaf,
     title: "Fall / Leaf Clean Up",
-    description: "Full leaf and debris removal to prevent lawn damage and prepare your yard for winter.",
+    description: "Full leaf and debris removal to prevent lawn damage and prepare your yard for winter. Includes waste haul-away and disposal.",
     highlights: ["Leaf removal", "Lawn protection", "Winter prep"],
     slug: "brush-yard-cleanup",
     pricing: [
