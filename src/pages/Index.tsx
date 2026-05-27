@@ -13,9 +13,10 @@ import FooterNew from "@/components/FooterNew";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      
+      <PromoBanner />
       <HeroNew />
       <ServicesGrid />
+
       <MiscServices />
       <SodShowcase />
       <BeforeAfterSection />
