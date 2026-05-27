@@ -20,7 +20,7 @@ const services = [
   {
     icon: Leaf,
     title: "Spring Clean Up",
-    description: "Removal of winter debris including leaves, twigs, branches, and garden bed clean up with perennial care.",
+    description: "Removal of winter debris including leaves, twigs, branches, and garden bed clean up with perennial care. Includes waste haul-away and disposal.",
     highlights: ["Debris removal", "Garden bed cleaning", "Perennial care"],
     slug: "brush-yard-cleanup",
     pricing: [
