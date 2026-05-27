@@ -1,4 +1,5 @@
 import HeroNew from "@/components/HeroNew";
+import PromoBanner from "@/components/PromoBanner";
 import ServicesGrid from "@/components/ServicesGrid";
 import MiscServices from "@/components/MiscServices";
 import SodShowcase from "@/components/SodShowcase";
