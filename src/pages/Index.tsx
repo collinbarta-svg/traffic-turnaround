@@ -1,4 +1,5 @@
 import HeroNew from "@/components/HeroNew";
+import PromoBanner from "@/components/PromoBanner";
 import ServicesGrid from "@/components/ServicesGrid";
 import MiscServices from "@/components/MiscServices";
 import SodShowcase from "@/components/SodShowcase";
@@ -12,9 +13,10 @@ import FooterNew from "@/components/FooterNew";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      
+      <PromoBanner />
       <HeroNew />
       <ServicesGrid />
+
       <MiscServices />
       <SodShowcase />
       <BeforeAfterSection />

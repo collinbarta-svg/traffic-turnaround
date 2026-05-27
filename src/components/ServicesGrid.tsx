@@ -20,7 +20,7 @@ const services = [
   {
     icon: Leaf,
     title: "Spring Clean Up",
-    description: "Removal of winter debris including leaves, twigs, branches, and garden bed clean up with perennial care.",
+    description: "Removal of winter debris including leaves, twigs, branches, and garden bed clean up with perennial care. Includes waste haul-away and disposal.",
     highlights: ["Debris removal", "Garden bed cleaning", "Perennial care"],
     slug: "brush-yard-cleanup",
     pricing: [
@@ -33,7 +33,7 @@ const services = [
   {
     icon: Leaf,
     title: "Fall / Leaf Clean Up",
-    description: "Full leaf and debris removal to prevent lawn damage and prepare your yard for winter.",
+    description: "Full leaf and debris removal to prevent lawn damage and prepare your yard for winter. Includes waste haul-away and disposal.",
     highlights: ["Leaf removal", "Lawn protection", "Winter prep"],
     slug: "brush-yard-cleanup",
     pricing: [
@@ -59,7 +59,7 @@ const services = [
   {
     icon: Leaf,
     title: "Lawn Dethatching",
-    description: "Removal of built-up organic matter to improve water, oxygen, and nutrient absorption.",
+    description: "Removal of built-up organic matter to improve water, oxygen, and nutrient absorption. Includes waste haul-away and disposal.",
     highlights: ["Thatch removal", "Better absorption", "Healthier lawn"],
     slug: "dethatching",
     pricing: [
